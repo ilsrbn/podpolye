@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <!--<Header />-->
     <nuxt />
     <LazyFooter />
   </div>

@@ -26,6 +26,8 @@ header {
   position: sticky;
   top: 0;
   height: auto;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 
   .header-container {
     display: flex;

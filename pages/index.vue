@@ -1,8 +1,8 @@
 <template>
   <div class="content">
     <Hero />
-    <About />
-    <Gallery />
+    <LazyAbout />
+    <LazyGallery />
   </div>
 </template>
 
@@ -11,6 +11,7 @@
 body {
   font-family: "Amatic SC";
   overflow-x: hidden;
+  background-color: #000204;
 }
 
 * {
@@ -20,7 +21,7 @@ body {
 }
 
 .content {
-  min-width: 100vw;
+  max-width: 100vw;
   min-height: 100vh;
 }
 </style>
