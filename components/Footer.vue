@@ -1,8 +1,8 @@
 <template>
   <footer>
     <div class="footer-container">
-      <div>Designed by: VOVANDOS</div>
-      <div>Coded by: Serbin Inc.</div>
+      <div>Designed by <i>VOVANDOS</i></div>
+      <div>Coded by <i>Serbin Inc.</i></div>
     </div>
   </footer>
 </template>
@@ -30,6 +30,10 @@ footer {
     div {
       font-family: 'Oswald';
       color: white;
+      
+      i {
+        color:#bf9a78;
+      }
     }
   }
 }
