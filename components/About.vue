@@ -1,8 +1,15 @@
 <template>
   <div class="container">
-    <div class="splash splash_big"><div class="splash__header">Что такое ПОДПОЛЬЕ?</div></div>
-    <div class="splash"><div class="splash__header">Для чего наше пространство?</div></div>
-    <div class="splash"><div class="splash__header">Какие меропрития вы проводите?</div></div>
+    <div class="splash splash_big">
+      <div class="splash__header">Что такое ПОДПОЛЬЕ?</div>
+      <div class="splash__subheader">Это некомерческое городское пространство для интеллектуального (и не очень) отдыха, развития или работы. Мы подготовили ответы на вопросы для тех, кто недавно узнал о нас</div>
+    </div>
+    <div class="splash">
+      <div class="splash__header">Для чего наше пространство?</div>
+    </div>
+    <div class="splash">
+      <div class="splash__header">Какие меропрития вы проводите?</div>
+    </div>
   </div>
 </template>
 
@@ -15,7 +22,7 @@
   align-items: flex-end;
 
   .splash {
-    background-image: url('@/assets/images/index__splash.png');
+    background-image: url("@/assets/images/index__splash.png");
     width: 47.5rem;
     height: 13.25rem;
     background-position: center;
@@ -30,6 +37,7 @@
     transition-timing-function: ease-in;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -47,19 +55,30 @@
       .splash__header {
         color: white;
       }
+
+      .splash__subheader {
+        color: white;
+      }
+      
     }
   }
 
-
-
-  .splash_big{
+  .splash_big {
     width: 70rem;
     height: 18rem;
 
     .splash__header {
       font-size: 5.7rem;
       margin-right: 17rem;
-      margin-bottom: 3rem;
+    }
+
+    .splash__subheader {
+      font-family: 'Oswald';
+      text-transform: capitalize;
+      color: #592202;
+      transition: color 150ms ease-in;
+      font-size: 1rem;
+      width: 70%;
     }
   }
 }
