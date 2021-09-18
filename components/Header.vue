@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header :class="classN">
     <div class="header-container">
       <nuxt-link class="logo" to="/">
         <img src="@/assets/images/logo/wide2.png" alt="Логотип Подполья" />
@@ -14,20 +14,24 @@
 </template>
 <script>
 export default {
+  props: ['classN'],
     name: 'Header'
 }
 </script>
 
 <style lang="scss">
 header {
+  z-index: 5000;
   width: 100%;
   padding: 0 2rem;
   background: #bf9a78;
-  position: sticky;
-  top: 0;
+  position: fixed;
+  top: -5rem;
   height: auto;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
+
+  box-shadow: -2px 0 .5rem .2rem black;
 
   .header-container {
     display: flex;
