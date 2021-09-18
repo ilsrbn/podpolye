@@ -17,16 +17,24 @@ export default {
   display: flex;
   flex-direction: column;
   position: relative;
+  min-height: 100vh;
 
-  animation: appear 5s;
 
   .title {
     position: absolute;
-    width: 100%;
-    padding: 1rem;
+    width: 200%;
+    padding: 0 55%;
+    left: -50%;
     background-color: rgba(0, 0, 0, 0.9);
     height: 100%;
     object-fit: contain;
+    animation: appear 3s;
+
+  }
+
+  .background {
+    animation: appear 2s;
+    min-height: 100vh;
   }
 }
 

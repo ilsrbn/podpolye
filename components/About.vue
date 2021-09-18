@@ -74,10 +74,10 @@
 
     .splash__subheader {
       font-family: 'Oswald';
-      text-transform: capitalize;
+      
       color: #592202;
       transition: color 150ms ease-in;
-      font-size: 1rem;
+      font-size: 1.2rem;
       width: 70%;
     }
   }
