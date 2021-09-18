@@ -1,6 +1,12 @@
 <template>
-  <div class="content"></div>
+  <div class="content">
+    <Hero />
+    <About />
+    <Gallery />
+  </div>
 </template>
+
+
 <style>
 body {
   font-family: "Amatic SC";
