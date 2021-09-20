@@ -7,7 +7,7 @@
           <img
             class="slide-img"
             :class="count(i - 1)"
-            src="../../assets/images/gallery/0.jpg"
+            :src="i - 1 == 1 ? require(`~/assets/images/gallery/${6}.jpg`)  : require(`~/assets/images/gallery/${i - 1}.jpg`)"
           />
         </div>
       </div>
@@ -54,11 +54,13 @@ export default {
     .slide-wrapper {
       min-width: 33.333%;
       max-width: 33.333%;
+      height: initial;
 
       .slide {
         width: 100%;
         perspective: 1000px;
         perspective-origin: 50% 50%;
+        height: 100%;
 
         .slide-img {
           width: 100%;
