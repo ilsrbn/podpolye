@@ -16,10 +16,10 @@ export default {
     handleScroll () {
       if (window.scrollY <= (window.innerHeight * 0.6)) {
         this.appear = true
-        console.log(this.appear)
+
       } else {
         this.appear = false
-        console.log(this.appear)
+
       }
     }
   },
