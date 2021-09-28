@@ -24,7 +24,7 @@ header {
   z-index: 5000;
   width: 100%;
   padding: 0 2rem;
-  background: #bf9a78;
+  background: #BF895A;
   position: fixed;
   top: -5rem;
   height: auto;
@@ -53,7 +53,7 @@ header {
 
       .item {
         margin: 0 2rem;
-        color: #592202;
+        color: #400D09;
         text-transform: uppercase;
         font-weight: 600;
         font-size: 1.5rem;
@@ -63,7 +63,7 @@ header {
         transition: color 150ms ease-in;
 
         &:hover {
-          color: #995e3c;
+          color: #8C7764;
         }
 
         &:last-child {
@@ -71,7 +71,7 @@ header {
         }
 
         &.nuxt-link-active {
-          color: white;
+          color: #D9D5CC;
         }
       }
     }

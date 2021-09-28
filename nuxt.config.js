@@ -33,7 +33,8 @@ export default {
     ['@nuxtjs/google-fonts', {
       families: {
         'Amatic+SC': true,
-        Oswald: true
+        Oswald: true,
+        Merriweather: true
       },
       prefetch: true,
       downoload: true

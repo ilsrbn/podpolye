@@ -2,7 +2,7 @@
   <div class="content">
     <Hero />
     <LazyAbout />
-    <LazyGallery />
+    <Gallery />
   </div>
 </template>
 
@@ -11,7 +11,7 @@
 body {
   font-family: "Amatic SC";
   overflow-x: hidden;
-  background-color: #000204;
+  background-color: #0d0d0d;
 }
 
 * {

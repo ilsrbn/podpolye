@@ -25,7 +25,7 @@ export default {
       autoplay: true,
       loop: true,
       slidesPerView: 3,
-      effect: "coverflow",
+      spaceBetween: 30,
       coverflowEffect: {
         slideShadows: false,
       },
