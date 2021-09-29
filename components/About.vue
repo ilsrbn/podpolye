@@ -4,12 +4,16 @@
       <h1>Ближайшие 15 событий</h1>
       <div v-swiper="swiperOption">
         <div class="swiper-wrapper">
-          <div v-for="(event, index) in items" :key="index" class="swiper-slide">
+          <div
+            v-for="(event, index) in items"
+            :key="index"
+            class="swiper-slide"
+          >
             <div class="event">
-              <p>{{event.summary}}</p>
+              <p>{{ event.summary }}</p>
               <div class="time">
-                <small>{{event.start.dateTime.slice(0, 10)}}</small>
-                <small>{{event.start.dateTime.slice(11, 16)}}</small>
+                <small>{{ formatDate(event.start.dateTime) }}</small>
+                <small>{{ event.start.dateTime.slice(11, 16) }}</small>
               </div>
             </div>
           </div>
@@ -24,10 +28,18 @@
         тех, кто недавно узнал о нас:
       </div>
     </div>
-    <div class="splash" :class="spreaded1 ? 'wide' : ''" @click="spreaded1 = !spreaded1">
+    <div
+      class="splash"
+      :class="spreaded1 ? 'wide' : ''"
+      @click="spreaded1 = !spreaded1"
+    >
       <div class="splash__header">Для чего наше пространство?</div>
     </div>
-    <div class="splash" :class="spreaded2 ? 'wide' : ''" @click="spreaded2 = !spreaded2">
+    <div
+      class="splash"
+      :class="spreaded2 ? 'wide' : ''"
+      @click="spreaded2 = !spreaded2"
+    >
       <div class="splash__header">Какие меропрития вы проводите?</div>
     </div>
   </div>
@@ -43,9 +55,19 @@ export default {
       autoplay: true,
       loop: true,
       slidesPerView: 3,
-      spaceBetween: 30
+      spaceBetween: 30,
     },
   }),
+  methods: {
+    formatDate(date) {
+      let newDate = Date.parse(date);
+      return new Date(newDate).toLocaleDateString("ru-RU", {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+      });
+    },
+  },
   async mounted() {
     let date = new Date().toISOString();
     let items = await this.$axios.$get(
@@ -76,32 +98,36 @@ export default {
       margin-bottom: 5rem;
     }
 
-
     .event {
       width: 100%;
       height: 100%;
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
-      background: linear-gradient(to top, #BF895A, #0d0d0d 20%);
+      border-left: 8px solid #bf895a;
+      background: linear-gradient(to right, rgba($color: #bf895a, $alpha: 0.1), #0d0d0d 95%);
       border-radius: 5px;
 
       p {
         color: #d9d5cc;
         font-size: 1rem;
         font-family: "Merriweather";
+        align-self: center;
       }
 
       .time {
         display: flex;
         flex-direction: column;
         small {
-        color: #d9d5cc;
-        opacity: 0.7;
-        font-size: 0.8rem;
-        margin-left: 1rem;
-        font-family: "Merriweather";
-      }
+          color: #d9d5cc;
+          width: max-content;
+          word-wrap: normal;
+          text-transform: capitalize;
+          opacity: 0.7;
+          font-size: 0.8rem;
+          margin-left: 1rem;
+          font-family: "Merriweather";
+        }
       }
     }
   }
