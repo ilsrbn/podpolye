@@ -1,5 +1,21 @@
 <template>
   <div class="container2">
+    <div class="events">
+      <h1>Ближайшие 15 событий</h1>
+      <div v-swiper="swiperOption">
+        <div class="swiper-wrapper">
+          <div v-for="(event, index) in items" :key="index" class="swiper-slide">
+            <div class="event">
+              <p>{{event.summary}}</p>
+              <div class="time">
+                <small>{{event.start.dateTime.slice(0, 10)}}</small>
+                <small>{{event.start.dateTime.slice(11, 16)}}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="splash splash_big">
       <div class="splash__header">Что такое ПОДПОЛЬЕ?</div>
       <div class="splash__subheader">
@@ -22,8 +38,22 @@ export default {
   data: () => ({
     spreaded1: false,
     spreaded2: false,
-  })
-}
+    items: [],
+    swiperOption: {
+      autoplay: true,
+      loop: true,
+      slidesPerView: 3,
+      spaceBetween: 30
+    },
+  }),
+  async mounted() {
+    let date = new Date().toISOString();
+    let items = await this.$axios.$get(
+      `https://www.googleapis.com/calendar/v3/calendars/65k2m2ep03mnqkuthtdkjs6h0g%40group.calendar.google.com/events?maxResults=15&orderBy=startTime&timeMin=${date}&singleEvents=true&key=AIzaSyC-OIomtul6ENmZLoZX0uMiJXD7Kwt0w74`
+    );
+    this.items = items.items;
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -33,7 +63,48 @@ export default {
   flex-direction: column;
   align-items: flex-end;
 
-  border-bottom: 6px dashed white;
+  border-bottom: 6px dashed #d9d5cc;
+
+  .events {
+    align-self: flex-start;
+    width: 100%;
+    margin-bottom: 5rem;
+
+    h1 {
+      color: white;
+      font-size: 3rem;
+      margin-bottom: 5rem;
+    }
+
+
+    .event {
+      width: 100%;
+      height: 100%;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      background: linear-gradient(to top, #BF895A, #0d0d0d 20%);
+      border-radius: 5px;
+
+      p {
+        color: #d9d5cc;
+        font-size: 1rem;
+        font-family: "Merriweather";
+      }
+
+      .time {
+        display: flex;
+        flex-direction: column;
+        small {
+        color: #d9d5cc;
+        opacity: 0.7;
+        font-size: 0.8rem;
+        margin-left: 1rem;
+        font-family: "Merriweather";
+      }
+      }
+    }
+  }
 
   .splash {
     background-image: url("@/assets/images/index__splash-2.png");
@@ -45,7 +116,7 @@ export default {
     opacity: 1;
     margin-bottom: 0;
 
-    cursor: cursor;
+    cursor: pointer;
 
     transition-property: opacity margin-bottom;
     transition-duration: 150ms;
@@ -60,8 +131,9 @@ export default {
       background-image: unset;
       width: 100%;
       cursor: default;
-      .splash__header, .splash__subheader {
-        color: #D9D5CC;
+      .splash__header,
+      .splash__subheader {
+        color: #d9d5cc;
         width: 80%;
         margin: 0;
         text-align: left;
@@ -73,14 +145,14 @@ export default {
         font-size: 1.4rem;
         font-weight: 200;
         font-style: italic;
-        color: rgba($color: #D9D5CC, $alpha: 0.7);
+        color: rgba($color: #d9d5cc, $alpha: 0.7);
       }
     }
 
     &:first-child:hover {
       opacity: unset;
       .splash__subheader {
-        color: rgba($color: #D9D5CC, $alpha: 0.7);
+        color: rgba($color: #d9d5cc, $alpha: 0.7);
       }
     }
 
@@ -122,7 +194,7 @@ export default {
     .splash__subheader {
       font-family: "Merriweather";
 
-      color: #400D09;
+      color: #400d09;
       transition: color 150ms ease-in;
       font-size: 1.2rem;
       width: 70%;

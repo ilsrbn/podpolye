@@ -6,14 +6,17 @@
       :class="shadow ? 'light' : ''"
       src="@/assets/images/logo/wide2.png"
     />
+    
   </div>
 </template>
 
 <script>
 export default {
   data: () => ({
-    shadow: false,
+    shadow: false
   }),
+
+  
 };
 </script>
 
@@ -24,6 +27,10 @@ export default {
   position: relative;
   min-height: 100vh;
 
+  .calendar {
+    width: 100%;
+    height: 100vh;
+  }
   .title {
     position: absolute;
     width: 200%;
@@ -31,7 +38,7 @@ export default {
     left: -50%;
     background-color: rgba(0, 0, 0, 0.9);
     transition-property: background-color;
-    transition-duration: 50ms;
+    transition-duration: 100ms;
     transition-timing-function: ease-in-out;
     height: 100%;
     object-fit: contain;
@@ -39,7 +46,7 @@ export default {
     &.light {
       background-color: rgba(0, 0, 0, 0.2);
       transition-property: background-color;
-      transition-duration: 50ms;
+      transition-duration: 100ms;
       transition-timing-function: ease-in;
     }
   }

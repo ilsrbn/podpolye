@@ -14,7 +14,7 @@ export default {
 
   methods: {
     handleScroll () {
-      if (window.scrollY <= (window.innerHeight * 0.3)) {
+      if (window.scrollY <= (window.innerHeight * 0.2)) {
         this.appear = true
 
       } else {

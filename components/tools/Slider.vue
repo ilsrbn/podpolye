@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <h1>Slider</h1>
-    <div class="container">
+    <div class="container3">
       <div v-swiper="swiperOption">
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="image in 10" :key="image">
@@ -24,6 +24,7 @@ export default {
     swiperOption: {
       autoplay: true,
       loop: true,
+      centeredSlides: true,
       slidesPerView: 3,
       spaceBetween: 30,
       coverflowEffect: {
@@ -47,7 +48,7 @@ export default {
     margin-bottom: 2rem;
   }
 
-  .container {
+  .container3 {
     width: 100%;
 
     display: flex;
@@ -55,9 +56,10 @@ export default {
     flex-wrap: wrap;
 
     .swiper-container {
-      padding: 5rem 0 10rem;
+      padding: 5rem 0 0;
       height: initial;
     }
+
 
     .slide-imagee {
       max-width: 100%;
