@@ -56,6 +56,7 @@ export default {
       loop: true,
       slidesPerView: 3,
       spaceBetween: 30,
+      pagination: true
     },
   }),
   methods: {
@@ -90,12 +91,12 @@ export default {
   .events {
     align-self: flex-start;
     width: 100%;
-    margin-bottom: 5rem;
+    margin-bottom: 6rem;
 
     h1 {
       color: white;
       font-size: 3rem;
-      margin-bottom: 5rem;
+      margin-bottom: 2rem;
     }
 
     .event {
@@ -153,7 +154,7 @@ export default {
     justify-content: center;
     align-items: center;
 
-    &:first-child {
+    &.splash_big {
       background-image: unset;
       width: 100%;
       cursor: default;
@@ -175,7 +176,7 @@ export default {
       }
     }
 
-    &:first-child:hover {
+    &.splash_big:hover {
       opacity: unset;
       .splash__subheader {
         color: rgba($color: #d9d5cc, $alpha: 0.7);

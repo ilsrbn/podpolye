@@ -56,7 +56,6 @@ export default {
     flex-wrap: wrap;
 
     .swiper-container {
-      padding: 5rem 0 0;
       height: initial;
     }
 
