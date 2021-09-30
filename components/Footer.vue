@@ -15,10 +15,13 @@ export default {
 
 <style lang="scss">
 footer {
-  width: 100%;
-  padding: 4rem 1rem 2rem;
+  width: auto;
+  padding: 4rem 0 2rem;
+  margin: 0 2rem;
 
-  background-color: #000204;
+
+  background-color: #0d0d0d;
+  border-top: 3px dashed #D9D5CC;
 
   .footer-container {
     display: flex;
@@ -29,10 +32,10 @@ footer {
 
     div {
       font-family: 'Oswald';
-      color: white;
+      color: #D9D5CC;
       
       i {
-        color:#bf9a78;
+        color:#8C7764;
       }
     }
   }

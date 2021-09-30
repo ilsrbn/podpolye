@@ -1,8 +1,8 @@
 <template>
-  <div class="content">
+  <div>
     <Hero />
     <LazyAbout />
-    <Gallery />
+    <LazyGallery />
   </div>
 </template>
 
@@ -18,10 +18,5 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-
-.content {
-  max-width: 100vw;
-  min-height: 100vh;
 }
 </style>

@@ -6,8 +6,8 @@
       </nuxt-link>
       <nav>
         <nuxt-link class="item" to="/">Главная</nuxt-link>
-        <nuxt-link class="item" to="/announcements">События</nuxt-link>
-        <nuxt-link class="item" to="/rules">правила</nuxt-link>
+        <nuxt-link class="item" to="/events">События</nuxt-link>
+        <nuxt-link class="item" to="/rules">Контакты</nuxt-link>
       </nav>
     </div>
   </header>
@@ -51,6 +51,9 @@ header {
     nav {
       display: flex;
 
+      width: 50%;
+      justify-content: flex-end;
+
       .item {
         margin: 0 2rem;
         color: #400D09;
@@ -70,8 +73,9 @@ header {
           margin-right: 0;
         }
 
-        &.nuxt-link-active {
+        &.nuxt-link-exact-active {
           color: #D9D5CC;
+          transition: color 150ms ease-in;
         }
       }
     }
