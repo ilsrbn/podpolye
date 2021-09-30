@@ -35,7 +35,7 @@
 
 <script>
 export default {
-  layout: 'main',
+  layout: "main",
   data: () => ({
     items: [],
     swiperOption: {
@@ -43,21 +43,23 @@ export default {
       loop: true,
       slidesPerView: 3,
       spaceBetween: 30,
+      centeredSlides: true,
       pagination: true,
-      speed: 1000
+      keyboard: true,
+      speed: 1000,
     },
     imageURL: "https://drive.google.com/uc?id=",
   }),
 
   async mounted() {
     let startDate = new Date().toISOString();
-    let endDate = new Date(Date.now() + 1209600000).toISOString()
+    let endDate = new Date(Date.now() + 1209600000).toISOString();
 
     let items = await this.$axios.$get(
       `https://www.googleapis.com/calendar/v3/calendars/65k2m2ep03mnqkuthtdkjs6h0g%40group.calendar.google.com/events?orderBy=startTime&timeMin=${startDate}&timeMax=${endDate}&singleEvents=true&key=AIzaSyC-OIomtul6ENmZLoZX0uMiJXD7Kwt0w74`
     );
     this.items = items.items;
-    this.mySwiper.slideTo(3, 1000, false)
+    this.mySwiper.slideTo(3, 1000, false);
   },
 
   methods: {
@@ -69,7 +71,7 @@ export default {
         day: "numeric",
       });
     },
-  }
+  },
 };
 </script>
 
@@ -90,7 +92,7 @@ export default {
     .event {
       width: 100%;
       height: 100%;
-      padding: 1rem 2rem;
+      padding-left: 2rem;
       display: flex;
       justify-content: space-between;
       border-left: 8px solid #bf895a;
@@ -99,13 +101,23 @@ export default {
         rgba($color: #bf895a, $alpha: 0.1),
         #0d0d0d 95%
       );
-      border-radius: 5px;
+      border-radius: 8px;
+
+      cursor: pointer;
+
+      transition-property: border-left background;
+      transition-duration: 80ms;
+      transition-timing-function: ease-in;
 
       .event__image {
         max-width: 50%;
         margin-left: 2rem;
         border-radius: 5px;
         border-right: 2px solid #bf895a;
+
+        transition-property: border-right;
+        transition-duration: 80ms;
+        transition-timing-function: ease-in;
       }
 
       .text {
@@ -113,6 +125,7 @@ export default {
         flex-direction: column;
         justify-content: space-between;
         width: 100%;
+        margin: 1rem 0;
 
         p {
           color: #d9d5cc;
@@ -139,9 +152,11 @@ export default {
           }
         }
       }
+
+      &:hover {
+        border-left: 8px solid #400d09;
+      }
     }
   }
-
 }
-
 </style>
