@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="events">
-      <h1>Ближайшие 15 событий</h1>
+      <h1>В ближайшие 2 недели Вас ждет:</h1>
       <div v-swiper:mySwiper="swiperOption">
         <div class="swiper-wrapper">
           <div
