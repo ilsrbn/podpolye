@@ -4,7 +4,7 @@
       <h1>В ближайшие 2 недели Вас ждет:</h1>
       <div v-swiper:mySwiper="swiperOption">
         <div class="swiper-wrapper">
-          <div
+          <NuxtLink :to="'/events/' + event.id"
             v-for="(event, index) in items"
             :key="index"
             class="swiper-slide"
@@ -26,7 +26,7 @@
                 alt=""
               />
             </div>
-          </div>
+          </NuxtLink>
         </div>
       </div>
     </div>
@@ -41,9 +41,8 @@ export default {
     swiperOption: {
       autoplay: true,
       loop: true,
-      slidesPerView: 3,
+      slidesPerView: 1.5,
       spaceBetween: 30,
-      pagination: true,
       keyboard: true,
       speed: 1000,
     },
@@ -88,70 +87,78 @@ export default {
       margin-bottom: 2rem;
     }
 
-    .event {
-      width: 100%;
-      height: 100%;
-      padding-left: 2rem;
-      display: flex;
-      justify-content: space-between;
+    .swiper-slide {
       border-left: 8px solid #bf895a;
       background: linear-gradient(
         to right,
         rgba($color: #bf895a, $alpha: 0.1),
-        #0d0d0d 95%
+        rgba($color: #bf895a, $alpha: 0) 95%
       );
       border-radius: 8px;
+      border-right: none;
+      outline: none;
 
       cursor: pointer;
+      text-decoration: none;
 
-      transition-property: border-left background;
-      transition-duration: 80ms;
+      transition-property: border-left;
+      transition-duration: 300ms;
       transition-timing-function: ease-in;
-
-      .event__image {
-        max-width: 50%;
-        margin-left: 2rem;
-        border-radius: 5px;
-        border-right: 2px solid #bf895a;
-
-        transition-property: border-right;
-        transition-duration: 80ms;
-        transition-timing-function: ease-in;
-      }
-
-      .text {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+      .event {
         width: 100%;
-        margin: 1rem 0;
+        height: 100%;
+        padding-left: 2rem;
+        display: flex;
+        justify-content: space-between;
 
-        p {
-          color: #d9d5cc;
-          font-size: 1rem;
-          font-family: "Merriweather";
-          align-self: flex-start;
-          text-shadow: 3px 0 #0d0d0d;
-          text-align: left;
+        .event__image {
+          max-width: 70%;
+          margin-left: 2rem;
+          border-radius: 5px;
+          border-right: 2px solid #bf895a;
+
+          transition-property: border-right;
+          transition-duration: 80ms;
+          transition-timing-function: ease-in;
         }
-        .time {
+
+        .text {
           display: flex;
           flex-direction: column;
-          align-items: flex-start;
+          justify-content: space-between;
+          width: 100%;
+          margin: 1rem 0;
 
-          small {
+          p {
             color: #d9d5cc;
-            width: max-content;
-            word-wrap: normal;
-            text-transform: capitalize;
-            opacity: 0.7;
-            font-size: 0.8rem;
-            font-family: "Merriweather";
-            text-shadow: 5px 0 #0d0d0d;
+            font-size: 3rem;
+            font-family: "Amatic SC";
+            align-self: flex-start;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-shadow: 3px 0 #0d0d0d;
+            text-align: left;
+          }
+          .time {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            width: 100%;
+            justify-content: space-between;
+
+            small {
+              color: #d9d5cc;
+              width: max-content;
+              word-wrap: normal;
+              text-transform: capitalize;
+              opacity: 0.7;
+              font-size: 0.8rem;
+              font-family: "Merriweather";
+              text-shadow: 2px 0 #0d0d0d;
+            }
           }
         }
       }
-
       &:hover {
         border-left: 8px solid #400d09;
       }
