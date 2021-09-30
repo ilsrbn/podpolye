@@ -43,7 +43,6 @@ export default {
       loop: true,
       slidesPerView: 3,
       spaceBetween: 30,
-      centeredSlides: true,
       pagination: true,
       keyboard: true,
       speed: 1000,
