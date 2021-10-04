@@ -1,27 +1,77 @@
 <template>
   <div class="container2">
-    <div class="splash splash_big">
-      <div class="splash__header">Что такое ПОДПОЛЬЕ?</div>
-      <div class="splash__subheader">
-        Это некомерческое городское пространство для интеллектуального (и не
-        очень) отдыха, развития или работы. Мы подготовили ответы на вопросы для
-        тех, кто недавно узнал о нас:
-      </div>
-    </div>
-    <div
-      class="splash"
-      :class="spreaded1 ? 'wide' : ''"
-      @click="spreaded1 = !spreaded1"
-    >
-      <div class="splash__header">Для чего наше пространство?</div>
-    </div>
-    <div
-      class="splash"
-      :class="spreaded2 ? 'wide' : ''"
-      @click="spreaded2 = !spreaded2"
-    >
-      <div class="splash__header">Какие меропрития вы проводите?</div>
-    </div>
+    <article class="title">
+      <h1 class="title__header">
+        Что такое <span class="title__header-colored">ПОДПОЛЬЕ</span>?
+      </h1>
+      <small class="title__description">
+        Это некоммерческое городское пространство для интеллектуального (и не
+        очень) отдыха, развития или работы. Мы подготовили ответы на часто
+        задаваемые вопросы для тех, кто недавно узнал о нас:
+      </small>
+    </article>
+    <article class="splash">
+      <button @click="collapse(1)" class="button" :class="spreaded1 ? 'active' : ''">
+        <img class="button__image" src="~/assets/images/index__splash-2.png" alt="">
+        <div class="button__text">
+          Для чего наше ПРОСТРАНСТВО ?
+        </div>
+      </button>
+      <span class="content" :class="spreaded1 ? 'show' : '' ">
+        <article class="content__container">
+          <h1 class="content__header">мы работаем в двух форматах</h1>
+          <div class="content__row">
+            <div class="content__col col">
+              <h2 class="col__header">антикафе/коворкинг</h2>
+              <p class="col__description">
+                Вы можете отдохнуть или поработать здесь. Мы предоставляем место, электричество, Wi-Fi, умные (и не очень)
+                книги, настольные игры, чай/кофе. Обычно в будние дни до 17:00 у нас тихо и можно заняться своими делами,
+                почитать или провести время с компанией.<br>Оплата free donation (желаемая сумма: 30 грн/час).
+              </p>
+            </div>
+            <div class="content__col col">
+              <h2 class="col__header">ПРОВЕДЕНИЕ МЕРОПРИЯТИЙ</h2>
+              <p class="col__description">
+                Стараемся регулярно организовывать различные совместные посиделки образовательного и развлекательного
+                характеров.<br>Также вы можете провести у нас свое мероприятие, взяв помещение в аренду за 100 грн/час. Мы
+                можем предоставить проектор, колонки, столы и стулья.
+              </p>
+            </div>
+          </div>
+        </article>
+      </span>
+    </article>
+    <article class="splash">
+      <button @click="collapse(2)" class="button" :class="spreaded2 ? 'active' : ''">
+        <img class="button__image" src="~/assets/images/index__splash-2.png" alt="">
+        <div class="button__text">
+          Для чего наше ПРОСТРАНСТВО ?
+        </div>
+      </button>
+      <span class="content" :class="spreaded2 ? 'show' : '' ">
+        <article class="content__container">
+          <h1 class="content__header">мы работаем в двух форматах</h1>
+          <div class="content__row">
+            <div class="content__col col">
+              <h2 class="col__header">антикафе/коворкинг</h2>
+              <p class="col__description">
+                Вы можете отдохнуть или поработать здесь. Мы предоставляем место, электричество, Wi-Fi, умные (и не очень)
+                книги, настольные игры, чай/кофе. Обычно в будние дни до 17:00 у нас тихо и можно заняться своими делами,
+                почитать или провести время с компанией.<br>Оплата free donation (желаемая сумма: 30 грн/час).
+              </p>
+            </div>
+            <div class="content__col col">
+              <h2 class="col__header">ПРОВЕДЕНИЕ МЕРОПРИЯТИЙ</h2>
+              <p class="col__description">
+                Стараемся регулярно организовывать различные совместные посиделки образовательного и развлекательного
+                характеров.<br>Также вы можете провести у нас свое мероприятие, взяв помещение в аренду за 100 грн/час. Мы
+                можем предоставить проектор, колонки, столы и стулья.
+              </p>
+            </div>
+          </div>
+        </article>
+      </span>
+    </article>
   </div>
 </template>
 
@@ -30,114 +80,162 @@ export default {
   data: () => ({
     spreaded1: false,
     spreaded2: false,
-
-  })
-  
+  }),
+  methods: {
+    collapse(id) {
+      if (id == 1) {
+        this.spreaded1 = !this.spreaded1
+        return
+      } else if (id == 2) {
+        this.spreaded2 = !this.spreaded2
+        return
+      }
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 .container2 {
-  margin: 2rem 2rem 0;
+  margin: 30px 4.15vw 0 11vw;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
 
-  border-bottom: 6px dashed #d9d5cc;
-
-
-  .splash {
-    background-image: url("@/assets/images/index__splash-2.png");
-    width: 47.5rem;
-    height: 13.25rem;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 1;
-    margin-bottom: 0;
-
-    cursor: pointer;
-
-    transition-property: opacity margin-bottom;
-    transition-duration: 150ms;
-    transition-timing-function: ease-in;
-
+  .title {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin-bottom: 90px;
+    .title__header {
+      font-size: 7rem;
+      color: #d9d5cc;
 
-    &.splash_big {
-      background-image: unset;
+      .title__header-colored {
+        color: #bf895a;
+      }
+    }
+    .title__description {
+      margin-top: 30px;
+
+      font-family: 'Merriweather', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 2.17rem;
+      color: #D9D5CC;
+    }
+  }
+
+  .splash {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .button {
+      background: none;
+      border: none;
+      outline: none;
+      position: relative;
+      width: 50%;
+      cursor: pointer;
+      .button__image {
+        max-width: 100%;
+        opacity: 1;
+        transition-property: opacity;
+        transition-duration: 100ms;
+        transition-timing-function: ease-in;
+      }
+      .button__text {
+        width: max-content;
+        position: absolute;
+        top: 50%;
+        left: 40%;
+        transform: translateX(-50%) translateY(-50%);
+
+        font-family: 'Amatic SC', sans-serif;
+        font-weight: bold;
+        line-height: 100%;
+        font-size: 3.75rem;
+        color: #592202;
+
+        transition-property: color;
+        transition-duration: 100ms;
+        transition-timing-function: ease-in;
+      }
+      &:hover, &.active {
+        .button__image {
+          opacity: 0.5;
+        }
+        .button__text {
+          color: #D9D5CC;
+        }
+      }
+    }
+    .content {
       width: 100%;
-      cursor: default;
-      .splash__header,
-      .splash__subheader {
-        color: #d9d5cc;
-        width: 80%;
-        margin: 0;
-        text-align: left;
-        margin: 1rem 0;
+      margin: 0;
+
+      overflow: hidden;
+      max-height: 0;
+
+      transition-property: max-height margin;
+      transition-duration: 200ms;
+      transition-timing-function: ease-in;
+
+      .content__container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-top: 6px dashed #D9D5CC;
+        border-bottom: 6px dashed #D9D5CC;
+        padding: 3.75rem 0;
+
+        .content__header {
+          font-family: 'Amatic SC', sans-serif;
+          font-style: normal;
+          font-weight: bold;
+          text-transform: uppercase;
+          color: #D9D5CC;
+          font-size: 3.75rem;
+          margin-bottom: 4.75rem;
+        }
+
+        .content__row {
+          width: 100%;
+          display: flex;
+
+          .col {
+            flex: 0 1 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .col__header {
+              font-family: 'Amatic SC', sans-serif;
+              font-size: 3.75rem;
+              font-style: normal;
+              font-weight: bold;
+              color: #bf895a;
+              margin-bottom: 4.125rem;
+            }
+            .col__description {
+              font-size: 2.17rem;
+              color: #D9D5CC;
+              font-family: 'Merriweather', serif;
+              font-weight: 300;
+              font-style: italic;
+              text-align: center;
+              width: 90%;
+            }
+          }
+        }
       }
 
-      .splash__subheader {
-        line-height: 2.5rem;
-        font-size: 1.4rem;
-        font-weight: 200;
-        font-style: italic;
-        color: rgba($color: #d9d5cc, $alpha: 0.7);
+      &.show {
+        max-height: 50vw;
+        margin: 95px 0;
       }
-    }
-
-    &.splash_big:hover {
-      opacity: unset;
-      .splash__subheader {
-        color: rgba($color: #d9d5cc, $alpha: 0.7);
-      }
-    }
-
-    .splash__header {
-      color: #592202;
-      margin-right: 7rem;
-      font-size: 3.75rem;
-
-      transition: color 150ms ease-in;
-    }
-
-    &:hover {
-      opacity: 0.5;
-
-      .splash__header {
-        color: white;
-      }
-
-      .splash__subheader {
-        color: white;
-      }
-    }
-  }
-
-  .wide {
-    margin-bottom: 15rem;
-    transition: margin-bottom 100ms ease-in;
-  }
-
-  .splash_big {
-    width: 70rem;
-    height: 18rem;
-
-    .splash__header {
-      font-size: 5.7rem;
-      margin-right: 17rem;
-    }
-
-    .splash__subheader {
-      font-family: "Merriweather";
-
-      color: #400d09;
-      transition: color 150ms ease-in;
-      font-size: 1.2rem;
-      width: 70%;
     }
   }
 }

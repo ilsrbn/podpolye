@@ -38,7 +38,10 @@ export default {
       families: {
         'Amatic+SC': true,
         Oswald: true,
-        Merriweather: true
+        Merriweather: {
+          wght: [300, 400],
+          ital: [300]
+        }
       },
       prefetch: true,
       downoload: true

@@ -75,7 +75,7 @@ export default {
 
 <style lang="scss" scoped>
 .content {
-  padding: 0 2rem;
+  padding: 0 11vw 0 4.15vw;
   .events {
     align-self: flex-start;
     width: 100%;
@@ -97,6 +97,7 @@ export default {
       border-radius: 8px;
       border-right: none;
       outline: none;
+      height: 50vh;
 
       cursor: pointer;
       text-decoration: none;
