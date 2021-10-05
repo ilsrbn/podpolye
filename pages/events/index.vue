@@ -1,37 +1,7 @@
 <template>
   <div class="content">
-    <div v-if="loaded" class="events">
-      <h1>В ближайшие 2 недели Вас ждет:</h1>
-      <div v-swiper:mySwiper="swiperOption">
-        <div class="swiper-wrapper">
-          <NuxtLink
-            :to="'/events/' + event.id"
-            v-for="(event, index) in items"
-            :key="index"
-            class="swiper-slide"
-          >
-            <div class="event">
-              <div class="text">
-                <p>{{ event.summary }}</p>
-                <div class="time">
-                  <small class="date">{{
-                    formatDate(event.start.dateTime)
-                  }}</small>
-                  <small>{{ event.start.dateTime.slice(11, 16) }}</small>
-                </div>
-              </div>
-              <img
-                class="event__image"
-                v-if="event.attachments != undefined"
-                :src="imageURL + event.attachments[0].fileId"
-                alt=""
-              />
-            </div>
-          </NuxtLink>
-        </div>
-      </div>
-    </div>
-    <div v-else class="preload">
+    <div class="events">
+      <div v-if="!loaded" class="preload" :class="light ? 'loaded' : ''">
       <svg
         class="lamp"
         :class="light ? 'loaded' : ''"
@@ -103,6 +73,36 @@
         </g>
       </svg>
     </div>
+      <h1>В ближайшие 2 недели Вас ждет:</h1>
+      <div v-swiper:mySwiper="swiperOption">
+        <div class="swiper-wrapper">
+          <NuxtLink
+            :to="'/events/' + event.id"
+            v-for="(event, index) in items"
+            :key="index"
+            class="swiper-slide"
+          >
+            <div class="event">
+              <div class="text">
+                <p>{{ event.summary }}</p>
+                <div class="time">
+                  <small class="date">{{
+                    formatDate(event.start.dateTime)
+                  }}</small>
+                  <small>{{ event.start.dateTime.slice(11, 16) }}</small>
+                </div>
+              </div>
+              <img
+                class="event__image"
+                v-if="event.attachments != undefined"
+                :src="imageURL + event.attachments[0].fileId"
+                alt=""
+              />
+            </div>
+          </NuxtLink>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -134,7 +134,7 @@ export default {
     this.items = items.items;
     setTimeout(() => {
       this.mySwiper.slideTo(3, 1000, false);
-    }, 2000);
+    }, 1000);
     this.light = true
     setTimeout(()=>{this.loaded = true}, 2000)
   },
@@ -164,9 +164,13 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    background:  #0d0d0d;
+    background:  rgba($color:#0d0d0d, $alpha: 1);
     padding: 0;
     margin: 0;
+
+    opacity: 1;
+
+    transition: opacity 500ms 1s ease-in;
     .lamp {
       height: 100px;
       #g30 {
@@ -187,6 +191,9 @@ export default {
           }
         }
       }
+    }
+    &.loaded {
+      opacity: 0;
     }
   }
   .events {
