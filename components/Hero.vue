@@ -16,12 +16,11 @@
       xmlns="http://www.w3.org/2000/svg"
       xmlns:svg="http://www.w3.org/2000/svg"
     >
-
       <g id="layer1" transform="translate(-9.7311026,-3.0519878)">
         <path
           style="
             fill: none;
-            fill-opacity: 1;
+            fill-opacity: 0;
             stroke: #bf895a;
             stroke-width: 0.26458334;
             stroke-linecap: round;
@@ -118,12 +117,20 @@ export default {
     animation: arrowJump 2s infinite;
 
     path {
+      fill: none;
       stroke-dasharray: 25 !important;
       stroke-dashoffset: 25;
       animation-name: draw;
       animation-delay: 3s;
       animation-duration: 3s;
       animation-fill-mode: forwards;
+      stroke: #bf895a;
+      stroke-width: 0.26458334;
+      stroke-linecap: round;
+      stroke-linejoin: bevel;
+      stroke-miterlimit: 4;
+      stroke-opacity: 1;
+      paint-order: markers fill stroke;
     }
   }
 
