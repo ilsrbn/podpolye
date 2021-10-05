@@ -16,15 +16,7 @@
       xmlns="http://www.w3.org/2000/svg"
       xmlns:svg="http://www.w3.org/2000/svg"
     >
-      <defs id="defs2">
-        <linearGradient id="linearGradient18227">
-          <stop
-            style="stop-color: #000000; stop-opacity: 1"
-            offset="0"
-            id="stop18225"
-          />
-        </linearGradient>
-      </defs>
+
       <g id="layer1" transform="translate(-9.7311026,-3.0519878)">
         <path
           style="
