@@ -117,7 +117,7 @@ export default {
     animation: arrowJump 2s infinite;
 
     path {
-      fill: none;
+      fill: rgba($color: #bf895a,  $alpha: 0);
       stroke-dasharray: 25 !important;
       stroke-dashoffset: 25;
       animation-name: draw;
