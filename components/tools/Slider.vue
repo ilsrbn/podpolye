@@ -44,17 +44,19 @@ export default {
     swiperOption: {
       autoplay: true,
       loop: true,
+      zoom: true,
       speed: 500,
       simulateTouch: false,
       centeredSlides: true,
       slidesPerView: 3,
-      spaceBetween: 30,
+      spaceBetween: 30
     },
     second: {
       autoplay: {
         reverseDirection: true,
       },
       speed: 500,
+      zoom: true,
       simulateTouch: false,
       loop: true,
       centeredSlides: true,
