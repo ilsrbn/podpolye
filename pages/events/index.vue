@@ -133,7 +133,7 @@ export default {
     );
     this.items = items.items;
     setTimeout(() => {
-      this.mySwiper.slideTo(3, 1000, false);
+      this.mySwiper.slideTo(2, 1000, false);
     }, 1000);
     this.light = true
     setTimeout(()=>{this.loaded = true}, 2000)
@@ -155,10 +155,12 @@ export default {
 <style lang="scss" scoped>
 .content {
   position: relative;
+  width: 100%;
   .preload {
     position: absolute;
     z-index: 9999;
     top: -5rem;
+    left: 0;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -199,6 +201,7 @@ export default {
   .events {
     align-self: flex-start;
     width: 100%;
+    padding: 1rem 2rem 0;
     margin-bottom: 6rem;
 
     h1 {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Hero />
+    <LazyHero />
     <LazyAbout />
     <LazyGallery />
   </div>
