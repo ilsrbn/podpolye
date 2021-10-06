@@ -1,6 +1,6 @@
 <template>
   <div>
-    <LazyHero />
+    <Hero />
     <LazyAbout />
     <LazyGallery />
   </div>
@@ -9,7 +9,7 @@
 
 <style>
 body {
-  font-family: "Amatic SC";
+  font-family: "Amatic SC", cursive;
   overflow-x: hidden;
   background-color: #0d0d0d;
 }

@@ -177,7 +177,7 @@ export default {
         left: 40%;
         transform: translateX(-50%) translateY(-50%);
 
-        font-family: "Amatic SC", sans-serif;
+        font-family: "Amatic SC", cursive;
         font-weight: bold;
         line-height: 100%;
         font-size: 3.75rem;
@@ -219,7 +219,7 @@ export default {
         padding: 3.75rem 0;
 
         .content__header {
-          font-family: "Amatic SC", sans-serif;
+          font-family: "Amatic SC", cursive;
           font-style: normal;
           font-weight: bold;
           text-transform: uppercase;
@@ -239,7 +239,7 @@ export default {
             align-items: center;
 
             .col__header {
-              font-family: "Amatic SC", sans-serif;
+              font-family: "Amatic SC", cursive;
               text-align: center;
               font-size: 3.75rem;
               font-style: normal;

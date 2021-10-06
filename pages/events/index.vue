@@ -256,7 +256,7 @@ export default {
           p {
             color: #d9d5cc;
             font-size: 3rem;
-            font-family: "Amatic SC";
+            font-family: "Amatic SC", cursive;
             align-self: flex-start;
             font-weight: 600;
             letter-spacing: 2px;
@@ -277,7 +277,7 @@ export default {
               text-transform: capitalize;
               opacity: 0.7;
               font-size: 0.8rem;
-              font-family: "Merriweather";
+              font-family: "Merriweather", serif;
               text-shadow: 2px 0 #0d0d0d;
             }
           }

@@ -31,7 +31,7 @@ footer {
     text-align: center;
 
     div {
-      font-family: 'Oswald';
+      font-family: 'Merriweather', serif;
       color: #D9D5CC;
       
       i {
