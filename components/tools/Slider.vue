@@ -9,7 +9,7 @@
               <img
                 class="slide-imagee"
                 :src="require(`~/assets/images/gallery/${image}.jpg`)"
-                alt=""
+                :alt="`Подполье. Фото галереи №${image}`"
               />
             </div>
           </div>
@@ -26,7 +26,7 @@
               <img
                 class="slide-imagee"
                 :src="require(`~/assets/images/gallery/${image}.jpg`)"
-                alt=""
+                :alt="`Подполье. Фото галереи №${image}`"
               />
             </div>
           </div>
