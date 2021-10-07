@@ -1,7 +1,7 @@
 <template>
   <div class="all">
     <Header class="show" />
-    <nuxt class="cnt" />
+    <nuxt keep-alive class="cnt" />
     <LazyFooter />
   </div>
 </template>
