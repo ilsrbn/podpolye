@@ -1,6 +1,6 @@
 <template>
   <div class="all">
-    <Header @showMenu="showMenu" :classN="appear ? 'hide' : 'show'" />
+    <Header @showMenu="showMenu" :isNav="isNav" :classN="appear ? 'hide' : 'show'" />
     <nuxt keep-alive class="cnt" :class="isNav ? 'hide' : ''" />
     <LazyFooter class="footer" :class="isNav ? 'hide' : ''" />
     <nav :class="isNav ? 'nav' : ''">
@@ -43,7 +43,7 @@ export default {
 <style lang="scss" scoped>
 .all {
   position: relative;
-  overflow-x: hidden;
+
   .hide {
     opacity: 0;
     transform: translateY(0);
@@ -61,6 +61,7 @@ export default {
   }
 
   .cnt {
+    overflow-x: hidden;
     &.hide {
       display: none;
     }
@@ -74,6 +75,7 @@ export default {
   nav {
     display: none;
     @media screen and (max-width: 768px) {
+      animation: fadeOut 200ms forwards;
       position: absolute;
       top: 0;
       left: 0;
@@ -81,12 +83,11 @@ export default {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width: 100vw;
+      width: 0;
       height: 100vh;
-      overflow-y: hidden;
-      opacity: 0;
+      overflow-x: hidden;
+
       background: #0d0d0d;
-      animation: fadeOut 200ms forwards;
 
       .item {
         margin: 0;
@@ -114,6 +115,7 @@ export default {
       &.nav {
         animation: fadeIn 200ms forwards;
         margin: -1rem 0;
+        width: 100vw;
       }
       .item {
         margin: 0;
@@ -148,6 +150,9 @@ export default {
 }
 
 @keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
   to {
     opacity: 1;
   }

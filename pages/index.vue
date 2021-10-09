@@ -10,7 +10,6 @@
 <style>
 body {
   font-family: "Amatic SC", cursive;
-  overflow-x: hidden;
   background-color: #0d0d0d;
 }
 

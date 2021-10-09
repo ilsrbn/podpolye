@@ -1,6 +1,6 @@
 <template>
   <div class="all">
-    <Header @showMenu="showMenu" class="show" />
+    <Header @showMenu="showMenu" :isNav="isNav" class="show" />
     <nuxt keep-alive class="cnt" :class="isNav ? 'hide' : ''" />
     <LazyFooter class="footer" :class="isNav ? 'hide' : ''" />
     <nav :class="isNav ? 'nav' : ''">
@@ -59,10 +59,10 @@ export default {
       align-items: center;
       width: 100vw;
       height: 100vh;
-      overflow-y: hidden;
+      overflow-x: hidden;
       opacity: 0;
       background: #0d0d0d;
-      animation: fadeOut 200ms forwards;
+      animation: fadeOut 400ms forwards;
 
       .item {
         margin: 0;
@@ -88,7 +88,7 @@ export default {
       }
 
       &.nav {
-        animation: fadeIn 200ms forwards;
+        animation: fadeIn 400ms forwards;
         margin: -1rem 0;
       }
     }

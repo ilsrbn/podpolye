@@ -81,9 +81,10 @@ export default {
   display: flex;
   flex-direction: column;
 
+
   @media screen and (max-width: 768px) {
     margin: 30px 4.15vw;
-    overflow-x: hidden;
+    max-width: 100vw;
   }
 
   .title {
