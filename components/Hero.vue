@@ -81,11 +81,6 @@ export default {
   position: relative;
   min-height: 100vh;
   max-height: 100vh;
-
-  .calendar {
-    width: 100%;
-    height: 100vh;
-  }
   .title {
     position: absolute;
     width: 200%;
@@ -137,6 +132,11 @@ export default {
   .background {
     animation: appear 2s;
     min-height: 100vh;
+
+    @media screen and (max-width: 768px) {
+      object-fit: cover;
+      object-position: left;
+    }
   }
 }
 
