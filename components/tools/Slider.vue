@@ -50,6 +50,7 @@ export default {
       centeredSlides: true,
       slidesPerView: 1,
       spaceBetween: 30,
+      allowTouchMove: false,
       breakpoints: {
         768: {
           slidesPerView: 3
@@ -67,6 +68,7 @@ export default {
       centeredSlides: true,
       spaceBetween: 30,
       slidesPerView: 1,
+      allowTouchMove: false,
       breakpoints: {
         768: {
           slidesPerView: 1,
