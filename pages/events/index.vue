@@ -124,22 +124,7 @@ export default {
     imageURL: "https://drive.google.com/uc?id=",
   }),
 
-  /*async mounted() {
-    let startDate = new Date().toISOString();
-    let endDate = new Date(Date.now() + 1209600000).toISOString();
-
-    let items = await this.$axios.$get(
-      `https://www.googleapis.com/calendar/v3/calendars/65k2m2ep03mnqkuthtdkjs6h0g%40group.calendar.google.com/events?orderBy=startTime&timeMin=${startDate}&timeMax=${endDate}&singleEvents=true&key=AIzaSyC-OIomtul6ENmZLoZX0uMiJXD7Kwt0w74`
-    );
-    this.items = items.items;
-    setTimeout(() => {
-      this.mySwiper.slideTo(2, 1000, false);
-    }, 1000);
-    this.light = true
-    setTimeout(()=>{this.loaded = true}, 2000)
-  },*/
-
-  async fetch() {
+  async mounted() {
     let startDate = new Date().toISOString();
     let endDate = new Date(Date.now() + 1209600000).toISOString();
 
@@ -153,6 +138,21 @@ export default {
     this.light = true
     setTimeout(()=>{this.loaded = true}, 2000)
   },
+
+  /*async fetch() {
+    let startDate = new Date().toISOString();
+    let endDate = new Date(Date.now() + 1209600000).toISOString();
+
+    let items = await this.$axios.$get(
+      `https://www.googleapis.com/calendar/v3/calendars/65k2m2ep03mnqkuthtdkjs6h0g%40group.calendar.google.com/events?orderBy=startTime&timeMin=${startDate}&timeMax=${endDate}&singleEvents=true&key=AIzaSyC-OIomtul6ENmZLoZX0uMiJXD7Kwt0w74`
+    );
+    this.items = items.items;
+    setTimeout(() => {
+      this.mySwiper.slideTo(2, 1000, false);
+    }, 1000);
+    this.light = true
+    setTimeout(()=>{this.loaded = true}, 2000)
+  },*/
 
   methods: {
     formatDate(date) {

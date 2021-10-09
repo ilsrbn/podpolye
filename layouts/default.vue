@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header :classN="appear ? 'hide' : 'show'" />
+    <Header @showMenu="showMenu" :classN="appear ? 'hide' : 'show'" />
     <nuxt />
     <LazyFooter />
   </div>
@@ -9,10 +9,14 @@
 <script>
 export default {
   data: () => ({
-    appear: true
+    appear: true,
+    isNav: false,
   }),
 
   methods: {
+    showMenu() {
+      this.isNav = !this.isNav
+    },
     handleScroll () {
       if (window.scrollY <= (window.innerHeight * 0.2)) {
         this.appear = true
