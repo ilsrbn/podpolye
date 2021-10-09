@@ -48,8 +48,13 @@ export default {
       speed: 500,
       simulateTouch: false,
       centeredSlides: true,
-      slidesPerView: 3,
-      spaceBetween: 30
+      slidesPerView: 1,
+      spaceBetween: 30,
+      breakpoints: {
+        768: {
+          slidesPerView: 3
+        }
+      }
     },
     second: {
       autoplay: {
@@ -61,7 +66,12 @@ export default {
       loop: true,
       centeredSlides: true,
       spaceBetween: 30,
-      slidesPerView: 3,
+      slidesPerView: 1,
+      breakpoints: {
+        768: {
+          slidesPerView: 1,
+        }
+      }
     },
   }),
   methods: {
@@ -119,6 +129,18 @@ export default {
           background: #0d0d0d;
         }
       }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    margin: 2rem 0 1rem;
+
+    h1 {
+      font-size: 5rem;
+    }
+
+    .black {
+      display: none;
     }
   }
 }

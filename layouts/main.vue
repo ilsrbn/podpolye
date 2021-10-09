@@ -48,6 +48,7 @@ export default {
   }
 
   nav {
+    display: none;
     @media screen and (max-width: 768px) {
       position: absolute;
       top: 0;

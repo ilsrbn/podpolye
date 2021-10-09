@@ -52,48 +52,6 @@
         </article>
       </span>
     </article>
-    <article class="splash">
-      <button
-        @click="collapse(2)"
-        class="button"
-        :class="spreaded2 ? 'active' : ''"
-      >
-        <img
-          class="button__image"
-          src="~/assets/images/index__splash-2.png"
-          alt=""
-        />
-        <div class="button__text">Для чего наше ПРОСТРАНСТВО ?</div>
-      </button>
-      <span class="content" :class="spreaded2 ? 'show' : ''">
-        <article class="content__container">
-          <h1 class="content__header">мы работаем в двух форматах</h1>
-          <div class="content__row">
-            <div class="content__col col">
-              <h2 class="col__header">антикафе/коворкинг</h2>
-              <p class="col__description">
-                Вы можете отдохнуть или поработать здесь. Мы предоставляем
-                место, электричество, Wi-Fi, умные (и не очень) книги,
-                настольные игры, чай/кофе. Обычно в будние дни до 17:00 у нас
-                тихо и можно заняться своими делами, почитать или провести время
-                с компанией.<br />Оплата free donation (желаемая сумма: 30
-                грн/час).
-              </p>
-            </div>
-            <div class="content__col col">
-              <h2 class="col__header">ПРОВЕДЕНИЕ МЕРОПРИЯТИЙ</h2>
-              <p class="col__description">
-                Стараемся регулярно организовывать различные совместные
-                посиделки образовательного и развлекательного характеров.<br />Также
-                вы можете провести у нас свое мероприятие, взяв помещение в
-                аренду за 100 грн/час. Мы можем предоставить проектор, колонки,
-                столы и стулья.
-              </p>
-            </div>
-          </div>
-        </article>
-      </span>
-    </article>
   </div>
 </template>
 
@@ -123,6 +81,10 @@ export default {
   display: flex;
   flex-direction: column;
 
+  @media screen and (max-width: 768px) {
+    margin: 30px 4.15vw;
+  }
+
   .title {
     width: 100%;
     display: flex;
@@ -144,6 +106,19 @@ export default {
       font-weight: 300;
       font-size: 2.17rem;
       color: #d9d5cc;
+    }
+
+    @media screen and (max-width: 768px) {
+      .title__header {
+        font-size: 5rem;
+        line-height: 100%;
+        text-align: center;
+      }
+
+      .title__description {
+        font-size: 1.4rem;
+        text-align: justify;
+      }
     }
   }
 
@@ -253,7 +228,7 @@ export default {
               font-family: "Merriweather", serif;
               font-weight: 300;
               font-style: italic;
-              text-align: center;
+              text-align: left;
               width: 90%;
             }
           }
@@ -263,6 +238,49 @@ export default {
       &.show {
         max-height: 100vw;
         margin: 95px 0;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      align-items: center;
+      .button {
+        min-width: 100vw;
+
+        .button__text {
+          font-size: 2.2rem;
+          left: 45%;
+        }
+        .button__image {
+          max-width: 110%;
+        }
+      }
+      .content {
+        .content__container {
+          .content__header {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+          }
+
+          .content__row {
+            flex-direction: column;
+            margin: -1rem 0;
+            .col {
+              padding: 1rem 0;
+              .col__header {
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+              }
+              .col__description {
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+
+        &.show {
+          max-height: 200vh;
+          margin-top: 20px;
+        }
       }
     }
   }
