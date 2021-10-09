@@ -49,11 +49,11 @@ export default {
       simulateTouch: false,
       centeredSlides: true,
       slidesPerView: 1,
-      spaceBetween: 30,
       allowTouchMove: false,
       breakpoints: {
         768: {
-          slidesPerView: 3
+          slidesPerView: 3,
+          spaceBetween: 30,
         }
       }
     },
@@ -66,12 +66,12 @@ export default {
       simulateTouch: false,
       loop: true,
       centeredSlides: true,
-      spaceBetween: 30,
       slidesPerView: 1,
       allowTouchMove: false,
       breakpoints: {
         768: {
           slidesPerView: 3,
+          spaceBetween: 30,
         }
       }
     },
