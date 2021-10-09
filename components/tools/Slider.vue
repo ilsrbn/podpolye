@@ -71,7 +71,7 @@ export default {
       allowTouchMove: false,
       breakpoints: {
         768: {
-          slidesPerView: 1,
+          slidesPerView: 3,
         }
       }
     },
