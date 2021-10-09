@@ -43,6 +43,7 @@ export default {
 <style lang="scss" scoped>
 .all {
   position: relative;
+  overflow-x: hidden;
   .hide {
     opacity: 0;
     transform: translateY(0);
