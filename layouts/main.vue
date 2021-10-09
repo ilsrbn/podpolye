@@ -63,31 +63,32 @@ export default {
       background: #0d0d0d;
       animation: fadeOut 200ms forwards;
 
+      .item {
+        margin: 0;
+        padding: 1rem 0;
+        color: #bf895a;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        font-weight: 600;
+        font-size: 2rem;
+        text-decoration: none;
+
+        cursor: pointer;
+        transition: color 150ms ease-in;
+
+        &:hover {
+          color: #8c7764;
+        }
+
+        &.nuxt-link-exact-active {
+          color: #d9d5cc;
+          transition: color 150ms ease-in;
+        }
+      }
+
       &.nav {
         animation: fadeIn 200ms forwards;
         margin: -1rem 0;
-        .item {
-          margin: 0;
-          padding: 1rem 0;
-          color: #bf895a;
-          text-transform: uppercase;
-          letter-spacing: 0.1rem;
-          font-weight: 600;
-          font-size: 2rem;
-          text-decoration: none;
-
-          cursor: pointer;
-          transition: color 150ms ease-in;
-
-          &:hover {
-            color: #8c7764;
-          }
-
-          &.nuxt-link-exact-active {
-            color: #d9d5cc;
-            transition: color 150ms ease-in;
-          }
-        }
       }
     }
   }
