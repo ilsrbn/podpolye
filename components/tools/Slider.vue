@@ -126,7 +126,7 @@ export default {
         .black {
           position: absolute;
           width: calc(66.666% + 20px);
-          z-index: 9999;
+          z-index: 1000;
           height: 25vw;
           background: #0d0d0d;
         }

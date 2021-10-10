@@ -3,6 +3,7 @@
     <Hero />
     <LazyAbout />
     <LazyGallery />
+    <BottomSplash />
   </div>
 </template>
 

@@ -8,6 +8,14 @@
         <nuxt-link class="item" to="/">Главная</nuxt-link>
         <nuxt-link class="item" to="/events">События</nuxt-link>
         <nuxt-link class="item" to="/rules">Контакты</nuxt-link>
+        <div class="links">
+          <a class="link" href="https://t.me/de_profundis_clamavi">
+            <img :src="require('~/assets/images/telega.png')" alt="" />
+          </a>
+          <a class="link" href="https://www.instagram.com/podpolie.odessa/">
+            <img :src="require('~/assets/images/insta.png')" alt="" />
+          </a>
+        </div>
       </nav>
     </div>
     <div class="header__container-mobile">
@@ -93,6 +101,7 @@ header {
 
       width: 50%;
       justify-content: flex-end;
+      align-items: center;
 
       .item {
         margin: 0 2rem;
@@ -105,17 +114,28 @@ header {
         cursor: pointer;
         transition: color 150ms ease-in;
 
+
         &:hover {
           color: #8c7764;
-        }
-
-        &:last-child {
-          margin-right: 0;
         }
 
         &.nuxt-link-exact-active {
           color: #d9d5cc;
           transition: color 150ms ease-in;
+        }
+      }
+      .links {
+        margin-left: 2rem;
+        .link {
+          opacity: 1;
+          transition: opacity 150ms ease-in;
+          margin: 0 0.3rem;
+          img {
+            max-height: 1.8rem;
+          }
+          &:hover {
+            opacity: 0.7;
+          }
         }
       }
     }
