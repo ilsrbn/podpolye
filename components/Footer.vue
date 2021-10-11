@@ -34,6 +34,8 @@ export default {
 <style lang="scss" scoped>
 footer {
   width: auto;
+  max-width: 100vw;
+  overflow-x: hidden;
   padding: 0 2rem 2rem;
   margin: 0;
   margin-top: 2rem;
