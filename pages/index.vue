@@ -45,7 +45,7 @@ export default {
     top: 50%;
     width: 11vw;
     opacity: 0;
-    z-index: 1;
+    z-index: 0;
     transition-property: opacity transform;
     transition-duration: 100ms;
     transition-timing-function: ease-in;

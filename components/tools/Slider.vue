@@ -18,10 +18,9 @@
           v-swiper="swiperOption"
           @slidePrevTransitionStart="move('prev')"
           @slideNextTransitionStart="move('next')"
-          class="chiiii"
+          class="new_slider"
         >
-          <div class="black"></div>
-          <div class="swiper-wrapper another">
+          <div class="swiper-wrapper">
             <div class="swiper-slide" v-for="image in secondArr" :key="image">
               <img
                 class="slide-imagee"
@@ -40,29 +39,28 @@
 export default {
   data: () => ({
     firstArr: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
-    secondArr: ["3", "2", "1", "0", "9", "8", "7", "6", "5", "4"],
+    //secondArr: ["3", "2", "1", "0", "9", "8", "7", "6", "5", "4"],
+    secondArr: ["2", "1", "0", "9", "8", "7", "6", "5", "4", "3"],
     swiperOption: {
       autoplay: true,
       loop: true,
-      zoom: true,
       speed: 500,
-      simulateTouch: false,
       centeredSlides: true,
+      simulateTouch: false,
       slidesPerView: 1,
       allowTouchMove: false,
       breakpoints: {
         768: {
-          slidesPerView: 3,
-          spaceBetween: 30,
-        }
-      }
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+      },
     },
     second: {
       autoplay: {
         reverseDirection: true,
       },
       speed: 500,
-      zoom: true,
       simulateTouch: false,
       loop: true,
       centeredSlides: true,
@@ -72,8 +70,8 @@ export default {
         768: {
           slidesPerView: 3,
           spaceBetween: 30,
-        }
-      }
+        },
+      },
     },
   }),
   methods: {
@@ -96,42 +94,23 @@ export default {
   width: auto;
   overflow: hidden;
 
+  .container3 {
+    .slide-imagee {
+      max-width: 100%;
+    }
+
+    .new_slider {
+      margin-top: 30px;
+      width: calc(33% - 10px);
+      margin-right: 0;
+    }
+  }
+
   h1 {
     font-size: 7rem;
     color: #d9d5cc;
     text-align: center;
     margin-bottom: 2rem;
-  }
-
-  .container3 {
-    width: 100%;
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    .swiper-container {
-      height: initial;
-      margin-top: 30px;
-
-      .swiper-wrapper {
-        .swiper-slide {
-          .slide-imagee {
-            max-width: 100%;
-          }
-        }
-      }
-      &.chiiii {
-        position: relative;
-        .black {
-          position: absolute;
-          width: calc(66.666% + 20px);
-          z-index: 1000;
-          height: 25vw;
-          background: #0d0d0d;
-        }
-      }
-    }
   }
 
   @media screen and (max-width: 768px) {

@@ -83,21 +83,32 @@
             class="swiper-slide"
           >
             <div class="event">
-              <div class="text">
-                <p>{{ event.summary }}</p>
-                <div class="time">
-                  <small class="date">{{
-                    formatDate(event.start.dateTime)
-                  }}</small>
-                  <small>{{ event.start.dateTime.slice(11, 16) }}</small>
-                </div>
-              </div>
               <img
                 class="event__image"
                 v-if="event.attachments != undefined"
                 :src="imageURL + event.attachments[0].fileId"
                 alt=""
               />
+              <img
+                v-else
+                class="event__image"
+                :src="require('~/assets/images/gallery/1-test.jpg')"
+              />
+              <div class="text">
+                <h1 class="title">{{ event.summary }}</h1>
+                <p class="description">{{ event.description }}</p>
+                <div class="time">
+                  <span class="el">
+                  <img :src="require('~/assets/images/time.png')" alt="">
+                  </span>
+                  <span class="el">
+                  <small class="date">
+                    {{ formatDate(event.start.dateTime) }}
+                  </small>
+                  <small>{{ event.start.dateTime.slice(11, 16) }}</small>
+                  </span>
+                </div>
+              </div>
             </div>
           </NuxtLink>
         </div>
@@ -116,7 +127,8 @@ export default {
     swiperOption: {
       autoplay: true,
       loop: true,
-      slidesPerView: 1.5,
+      slidesPerView: 3,
+      centeredSlides: true,
       spaceBetween: 30,
       keyboard: true,
       speed: 1000,
@@ -158,8 +170,8 @@ export default {
     formatDate(date) {
       let newDate = Date.parse(date);
       return new Date(newDate).toLocaleDateString("ru-RU", {
-        year: "numeric",
-        month: "long",
+        weekday: "short",
+        month: "short",
         day: "numeric",
       });
     },
@@ -178,6 +190,7 @@ export default {
     left: 0;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -218,6 +231,7 @@ export default {
     width: 100%;
     padding: 1rem 2rem 0;
     margin-bottom: 6rem;
+    overflow-x: hidden;
 
     h1 {
       color: white;
@@ -226,35 +240,24 @@ export default {
     }
 
     .swiper-slide {
-      border-left: 8px solid #bf895a;
-      background: linear-gradient(
-        to right,
-        rgba($color: #bf895a, $alpha: 0.1),
-        rgba($color: #bf895a, $alpha: 0) 95%
-      );
-      border-radius: 8px;
-      border-right: none;
+      border: 6px dashed #d9d5cc;
       outline: none;
-      height: 50vh;
 
-      cursor: pointer;
       text-decoration: none;
+      opacity: 0.5;
+      transition: opacity 150ms ease-in;
 
-      transition-property: border-left;
-      transition-duration: 300ms;
-      transition-timing-function: ease-in;
       .event {
         width: 100%;
         height: 100%;
-        padding-left: 2rem;
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
+        padding: 0;
 
         .event__image {
-          max-width: 70%;
-          margin-left: 2rem;
-          border-radius: 5px;
-          border-right: 2px solid #bf895a;
+          max-width: 100%;
+          outline: 6px solid #d9d5cc;
 
           transition-property: border-right;
           transition-duration: 80ms;
@@ -264,42 +267,55 @@ export default {
         .text {
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
           width: 100%;
-          margin: 1rem 0;
 
-          p {
+          h1 {
             color: #d9d5cc;
             font-size: 3rem;
             font-family: "Amatic SC", cursive;
-            align-self: flex-start;
             font-weight: 600;
             letter-spacing: 2px;
-            text-shadow: 3px 0 #0d0d0d;
-            text-align: left;
+            text-align: center;
+            margin-bottom: 0;
+            padding: 1rem 0;
+          }
+          .description {
+            border-top: 1px solid #d9d5cc;
+            border-bottom: 1px solid #d9d5cc;
           }
           .time {
             display: flex;
             flex-direction: row;
-            align-items: flex-start;
             width: 100%;
             justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            .el {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+              img {
+              max-height: 5rem;
+            }
+            }
+
 
             small {
               color: #d9d5cc;
               width: max-content;
               word-wrap: normal;
-              text-transform: capitalize;
+              text-transform: uppercase;
               opacity: 0.7;
-              font-size: 0.8rem;
+              font-size: 2.18rem;
               font-family: "Merriweather", serif;
-              text-shadow: 2px 0 #0d0d0d;
+              font-style: italic;
             }
           }
         }
       }
-      &:hover {
-        border-left: 8px solid #400d09;
+      &.swiper-slide-active {
+        opacity: 1;
       }
     }
   }
