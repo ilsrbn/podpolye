@@ -81,6 +81,7 @@ export default {
     flex-direction: column;
     align-items: flex-start;
     margin-top: -15vw;
+    margin-bottom: 2vw;
 
     .button {
       margin-left: 10vw;
