@@ -65,7 +65,7 @@ export default {
       loop: true,
       centeredSlides: true,
       slidesPerView: 1,
-      allowTouchMove: false,
+      allowTouchMove: true,
       breakpoints: {
         768: {
           slidesPerView: 3,
@@ -120,9 +120,10 @@ export default {
       font-size: 5rem;
     }
 
-    .black {
+    .new_slider {
       display: none;
     }
+
   }
 }
 </style>>

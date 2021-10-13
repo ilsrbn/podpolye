@@ -326,5 +326,26 @@ export default {
       }
     }
   }
+  @media screen and (max-width: 768px) {
+    .events {
+      h1 {
+        font-size: 3rem;
+        line-height: 3.4rem;
+        text-align: center;
+      }
+      hr {
+        margin: 2rem 0;
+      }
+      small {
+        font-size: 1.5rem !important;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    hr {
+      margin: 2rem 0;
+    }
+    
+  }
 }
 </style>

@@ -132,5 +132,27 @@ export default {};
       }
     }
   }
+
+  @media screen and (max-width: 768px) {
+
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .rules {
+      .rule {
+        font-size: 1.5rem;
+        img {
+          max-height: 40px;
+        }
+      }
+
+    }
+  }
 }
 </style>

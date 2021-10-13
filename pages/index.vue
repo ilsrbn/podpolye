@@ -50,6 +50,10 @@ export default {
     transition-duration: 100ms;
     transition-timing-function: ease-in;
     transform: translateX(-11vw);
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
     img {
       max-width: 100%;
     }

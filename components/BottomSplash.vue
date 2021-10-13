@@ -83,6 +83,24 @@ export default {
     margin-top: -15vw;
     margin-bottom: 2vw;
 
+    @media screen and (max-width: 768px) {
+      margin-top: unset;
+
+      button.button {
+        margin-left: 0;
+        width: 100%;
+
+        .button__image {
+          max-width: 110%;
+        }
+
+        .button__text {
+          left: 45%;
+          font-size: 1.8rem;
+        }
+      }
+    }
+
     .button {
       margin-left: 10vw;
       background: none;

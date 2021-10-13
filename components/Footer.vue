@@ -16,8 +16,11 @@
         </div>
         <div class="text-bottom">
           <span>2021</span>
-          <img :src="require('~/assets/images/copyright.png')">
-          <span>Designed by <a href="https://instagram.com/earl_g6">EarlG6</a></span>
+          <img :src="require('~/assets/images/copyright.png')" />
+          <span
+            >Designed by
+            <a href="https://instagram.com/earl_g6">EarlG6</a></span
+          >
           <span>Coded by <a href="https://t.me/Zhyvny">Serbin</a></span>
         </div>
       </div>
@@ -89,12 +92,37 @@ footer {
           }
           a {
             margin: 0;
-            color: #BF895A;
+            color: #bf895a;
             transition: color 150ms ease-in;
             cursor: pointer;
 
             &:hover {
-              color: #8C7764;
+              color: #8c7764;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .footer__container {
+      flex-direction: column;
+      margin: -1rem 0;
+      border-left: 2px solid #d9d5cc;
+      .footer__item {
+        padding: 1rem 0;
+        flex: unset;
+        &.text {
+          border-top: 2px solid #d9d5cc;
+          border-left: none;
+
+          .text-bottom {
+            margin-top: 1rem;
+            width: 100%;
+            font-size: 1.3rem;
+            img {
+              margin-right: 1rem;
             }
           }
         }

@@ -176,12 +176,55 @@ export default {};
         }
       }
     }
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 5rem;
+      }
+
+      hr {
+        margin: 2rem 0;
+      }
+
+      summary {
+        font-size: 1rem;
+      }
+
+      section {
+        min-width: unset;
+        padding: 3rem 0;
+        .step {
+          margin: 1rem 0;
+          * {
+            padding: 0;
+          }
+          small {
+            font-size: 2rem;
+          }
+          &#second {
+            small {
+              text-align: right;
+            }
+          }
+          .number {
+            img {
+              max-width: 150px;
+            }
+            .line {
+              display: none;
+            }
+          }
+        }
+      }
+    }
   }
   .map {
     border: 6px dashed #d9d5cc;
     width: 70%;
     aspect-ratio: 1.3;
     margin: 4rem 0;
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
   }
   .contacts {
     width: 100%;
@@ -224,6 +267,15 @@ export default {};
         &:hover {
           opacity: 0.7;
         }
+      }
+    }
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 5rem;
+      }
+
+      p {
+        font-size: 1.5rem;
       }
     }
   }
