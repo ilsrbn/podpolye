@@ -63,6 +63,10 @@ footer {
           font-size: 3.438rem;
           color: #d9d5cc;
           font-weight: 700;
+
+          @media screen and (max-width: 1500px) {
+            font-size: 2.2rem;
+          }
         }
         .text-bottom {
           align-self: flex-end;
@@ -76,6 +80,10 @@ footer {
           justify-content: flex-end;
           align-items: center;
           border-top: 2px solid #d9d5cc;
+
+          @media screen and (max-width: 1500px) {
+            font-size: 1.5rem;
+          }
           * {
             margin: 0 0.5vw;
           }

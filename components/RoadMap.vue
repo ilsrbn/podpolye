@@ -107,6 +107,10 @@ export default {};
       color: #d9d5cc;
       font-size: 2.19rem;
       letter-spacing: 0.065em;
+
+      @media screen and (max-width: 1500px) {
+        font-size: 1.5rem;
+      }
     }
 
     section {
@@ -199,7 +203,7 @@ export default {};
       span {
         color: #bf895a;
       }
-      @media screen and (max-width: 1500px){
+      @media screen and (max-width: 1500px) {
         font-size: 2rem;
       }
     }
@@ -212,6 +216,11 @@ export default {};
         transition: opacity 150ms ease-in;
         max-height: 100px;
         height: 100px;
+
+        @media screen and (max-width: 1500px) {
+          max-height: 50px;
+          height: 50px;
+        }
 
         &:hover {
           opacity: 0.7;

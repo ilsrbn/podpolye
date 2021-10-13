@@ -93,6 +93,15 @@ export default {};
     color: #d9d5cc;
     margin-bottom: 60px;
   }
+  @media screen and (max-width: 1500px) {
+    h1 {
+      font-size: 5rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+    }
+  }
   .rules {
     display: flex;
     flex-direction: column;
@@ -106,12 +115,20 @@ export default {};
       font-size: 3rem;
       font-weight: 700;
       height: auto;
-      img {
-        max-height: 145px;
-        margin-right: 1rem;
-      }
       &.highlighted {
         color: #bf895a;
+      }
+    }
+    img {
+      max-height: 145px;
+      margin-right: 1rem;
+    }
+    @media screen and (max-width: 1500px) {
+      .rule {
+        font-size: 2rem;
+      }
+      img {
+        max-height: 100px;
       }
     }
   }
