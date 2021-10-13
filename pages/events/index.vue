@@ -162,7 +162,11 @@ export default {
     );
     this.items = items.items;
     setTimeout(() => {
-      this.mySwiper.slideTo(3, 1000, false);
+      if (window.innerWidth > 768) {
+        this.mySwiper.slideTo(3, 1000, false);
+      } else {
+        this.mySwiper.slideTo(1, 1000, false);
+      }
     }, 1000);
     this.light = true;
     setTimeout(() => {
