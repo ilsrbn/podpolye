@@ -20,7 +20,7 @@ export default {
       this.isSide = !this.isSide;
     },
     handleScroll() {
-        if (window.scrollY >= window.innerHeight * 0.4 && window.scrollY <= 1711) {
+        if (window.scrollY >= window.innerHeight * 0.4) {
           this.isSide = true;
         } else {
           this.isSide = false;

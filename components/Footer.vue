@@ -40,7 +40,7 @@ footer {
   margin: 0;
   margin-top: 2rem;
 
-  background-color: #000204;
+  background-color: #0d0d0d;
   border-top: 6px dashed #d9d5cc;
 
   .footer__container {
