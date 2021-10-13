@@ -63,6 +63,10 @@
         свободно общаться, координировать мероприятия и получать ответы на
         вопросы.
       </p>
+
+      <p>
+        Карта для донатов: <span>4441 1144 5406 1506</span>
+      </p>
       <span class="icons">
         <a class="link" href="https://t.me/de_profundis_clamavi">
           <img :src="require('~/assets/images/telega.png')" alt="" />
