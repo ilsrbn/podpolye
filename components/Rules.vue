@@ -146,9 +146,11 @@ export default {};
 
     .rules {
       .rule {
+        display: inline;
         font-size: 1.5rem;
         img {
-          max-height: 40px;
+          max-height: 1.4rem;
+          margin-right: 5px;
         }
       }
 

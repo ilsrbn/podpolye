@@ -223,7 +223,9 @@ export default {};
     aspect-ratio: 1.3;
     margin: 4rem 0;
     @media screen and (max-width: 768px) {
-      width: 100%;
+      width: calc(100% + 4rem);
+      border-left: none;
+      border-right: none;
     }
   }
   .contacts {
