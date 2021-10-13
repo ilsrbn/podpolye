@@ -15,13 +15,17 @@
           сотрудничества.
         </div>
         <div class="text-bottom">
-          <span>2021</span>
-          <img :src="require('~/assets/images/copyright.png')" />
-          <span
-            >Designed by
-            <a href="https://instagram.com/earl_g6">EarlG6</a></span
-          >
-          <span>Coded by <a href="https://t.me/Zhyvny">Serbin</a></span>
+          <section>
+            <span>2021</span>
+            <img :src="require('~/assets/images/copyright.png')" />
+          </section>
+          <section class="names">
+            <div class="name">
+              <span>Designed by</span>
+              <a href="https://instagram.com/earl_g6">EarlG6</a>
+            </div>
+            <div class="name"><span>Coded by</span><a href="https://t.me/Zhyvny">Serbin</a></div>
+          </section>
         </div>
       </div>
     </div>
@@ -90,6 +94,12 @@ footer {
           * {
             margin: 0 0.5vw;
           }
+
+          section {
+            display: flex;
+            align-items: center;
+          }
+
           a {
             margin: 0;
             color: #bf895a;
@@ -123,6 +133,11 @@ footer {
             font-size: 1.3rem;
             img {
               margin-right: 1rem;
+            }
+            section.names.name {
+              display: flex;
+              flex-direction: column;
+              
             }
           }
         }
