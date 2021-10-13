@@ -1,5 +1,7 @@
 <template>
-  <div><h1>shaaaalom</h1></div>
+  <div>
+    <RoadMap />
+  </div>
 </template>
 
 <script>
