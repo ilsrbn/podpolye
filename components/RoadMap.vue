@@ -112,8 +112,13 @@ export default {};
     section {
       padding: 7rem 21% 0;
       width: auto;
+      min-width: 1240px;
       display: flex;
       flex-direction: column;
+
+      @media screen and (max-width: 1500px) {
+        padding: 7rem 10% 0;
+      }
 
       .step {
         display: flex;
@@ -128,6 +133,7 @@ export default {};
           font-size: 3.75rem;
           color: #bf895a;
           font-weight: bold;
+          text-shadow: 0 0 3px #0d0d0d;
         }
         .number {
           position: relative;
@@ -151,6 +157,7 @@ export default {};
             &.second {
               bottom: -50%;
               left: 50%;
+              z-index: -1;
             }
           }
 
@@ -191,6 +198,9 @@ export default {};
       margin: 68px 0;
       span {
         color: #bf895a;
+      }
+      @media screen and (max-width: 1500px){
+        font-size: 2rem;
       }
     }
     .icons {
