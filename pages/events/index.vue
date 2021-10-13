@@ -134,7 +134,10 @@ export default {
     light: false,
     items: [],
     swiperOption: {
-      autoplay: true,
+      autoplay: {
+        disableOnInteraction: false,
+        delay: 2000,
+      },
       loop: true,
       slidesPerView: 1,
       centeredSlides: true,
