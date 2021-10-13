@@ -179,8 +179,8 @@ export default {};
   }
   .map {
     border: 6px dashed #d9d5cc;
-    height: 40vw;
     width: 70%;
+    aspect-ratio: 1.3;
     margin: 4rem 0;
   }
   .contacts {
