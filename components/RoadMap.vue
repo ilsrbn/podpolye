@@ -50,6 +50,7 @@
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d545.2731816572806!2d30.746376766779903!3d46.46841686299222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c631796232f195%3A0x338aa1633d33e7f2!2z0YPQuy4g0JrQsNC90LDRgtC90LDRjywgNzksINCe0LTQtdGB0YHQsCwg0J7QtNC10YHRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwgNjUwMDA!5e0!3m2!1sru!2sua!4v1634148543903!5m2!1sru!2sua"
       class="map"
       allowfullscreen=""
+      loading="lazy"
     ></iframe>
     <div class="contacts">
       <h1>Как с нами связаться ?</h1>
