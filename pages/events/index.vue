@@ -168,7 +168,7 @@ export default {
       if (window.innerWidth > 768) {
         this.mySwiper.slideTo(3, 1000, false);
       } else {
-        this.mySwiper.slideTo(1, 1000, false);
+        this.mySwiper.slideTo(2, 1000, false);
       }
     }, 1000);
     this.light = true;
