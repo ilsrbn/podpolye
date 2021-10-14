@@ -251,6 +251,8 @@ export default {
         &.show {
           max-height: 200vh;
           margin-top: 20px;
+          padding: 0;
+          margin-bottom: 0;
         }
       }
     }
