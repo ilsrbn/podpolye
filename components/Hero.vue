@@ -109,6 +109,7 @@ export default {
     transform: translateX(-50%) translateY(0);
     width: 200px;
     height: 300px;
+    z-index: 3;
 
     animation: arrowJump 2s infinite;
 
