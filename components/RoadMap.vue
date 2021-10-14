@@ -91,6 +91,9 @@ export default {};
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media screen and (max-width: 768px) {
+    padding: 2rem 2rem 0;
+  }
   .steps {
     h1 {
       color: #d9d5cc;
@@ -183,11 +186,11 @@ export default {};
     }
     @media screen and (max-width: 768px) {
       h1 {
-        font-size: 5rem;
+        font-size: 2.5rem;
       }
 
       hr {
-        margin: 2rem 0;
+        margin: 1rem 0;
       }
 
       summary {
@@ -196,14 +199,15 @@ export default {};
 
       section {
         min-width: unset;
-        padding: 3rem 0;
+        padding: 2rem 0;
         .step {
-          margin: 1rem 0;
+          margin: 1rem;
           * {
             padding: 0;
           }
           small {
-            font-size: 2rem;
+            font-size: 1.5rem;
+            padding: 0 1rem;
           }
           &#second {
             small {
@@ -211,8 +215,11 @@ export default {};
             }
           }
           .number {
+            span {
+              font-size: 5rem;
+            }
             img {
-              max-width: 150px;
+              max-width: 110px;
             }
             .line {
               display: none;
@@ -278,11 +285,12 @@ export default {};
     }
     @media screen and (max-width: 768px) {
       h1 {
-        font-size: 5rem;
+        font-size: 2.5rem;
       }
 
       p {
-        font-size: 1.5rem;
+        font-size: 1rem;
+        margin: 25px 0;
       }
     }
   }

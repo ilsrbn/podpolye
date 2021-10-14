@@ -111,14 +111,15 @@ export default {
     }
 
     @media screen and (max-width: 768px) {
+      margin-bottom: 2rem;
       .title__header {
-        font-size: 5rem;
+        font-size: 2.5rem;
         line-height: 100%;
         text-align: center;
       }
 
       .title__description {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
         text-align: justify;
       }
     }
@@ -246,10 +247,10 @@ export default {
     @media screen and (max-width: 768px) {
       align-items: center;
       .button {
-        min-width: 100vw;
+        min-width: 95vw;
 
         .button__text {
-          font-size: 2.2rem;
+          font-size: 2rem;
           left: 45%;
         }
         .button__image {
@@ -257,7 +258,12 @@ export default {
         }
       }
       .content {
+        margin-bottom: 0;
         .content__container {
+          padding: 2rem 0;
+          border-bottom: 3px dashed #d9d5cc;
+          border-top: 3px dashed #d9d5cc;
+          margin-bottom: 0;
           .content__header {
             font-size: 2rem;
             margin-bottom: 2rem;
@@ -274,6 +280,7 @@ export default {
               }
               .col__description {
                 font-size: 1rem;
+                text-align: center;
               }
             }
           }
@@ -282,6 +289,7 @@ export default {
         &.show {
           max-height: 200vh;
           margin-top: 20px;
+          margin-bottom: 0;
         }
       }
     }

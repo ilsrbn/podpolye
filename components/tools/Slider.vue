@@ -117,7 +117,7 @@ export default {
     margin: 2rem 0 1rem;
 
     h1 {
-      font-size: 5rem;
+      font-size: 2.5rem;
     }
 
     .new_slider {

@@ -136,11 +136,11 @@ export default {};
   @media screen and (max-width: 768px) {
 
     h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       text-align: center;
     }
     h2 {
-      font-size: 2rem;
+      font-size: 1.8rem;
       margin-bottom: 30px;
     }
 

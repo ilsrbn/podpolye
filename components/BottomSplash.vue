@@ -227,6 +227,7 @@ export default {
       }
       .content {
         .content__container {
+          padding: 2rem 0;
           .content__header {
             font-size: 2rem;
             margin-bottom: 2rem;
@@ -236,7 +237,7 @@ export default {
             flex-direction: column;
             margin: -1rem 0;
             .col {
-              padding: 1rem 0;
+              padding: 0;
               .col__header {
                 font-size: 2rem;
                 margin-bottom: 0.5rem;

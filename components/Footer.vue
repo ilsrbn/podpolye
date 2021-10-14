@@ -24,7 +24,9 @@
               <span>Designed by</span>
               <a href="https://instagram.com/earl_g6">EarlG6</a>
             </div>
-            <div class="name"><span>Coded by</span><a href="https://t.me/Zhyvny">Serbin</a></div>
+            <div class="name">
+              <span>Coded by</span><a href="https://t.me/Zhyvny">Serbin</a>
+            </div>
           </section>
         </div>
       </div>
@@ -117,28 +119,46 @@ footer {
   }
 
   @media screen and (max-width: 768px) {
+    border-top: 3px dashed #d9d5cc;
     .footer__container {
       flex-direction: column;
       margin: -1rem 0;
       border-left: 2px solid #d9d5cc;
       .footer__item {
-        padding: 1rem 0;
+        padding: 0 0;
         flex: unset;
+        order: 2;
+        img {
+          max-width: 50px;
+          display: none;
+        }
         &.text {
-          border-top: 2px solid #d9d5cc;
+          order: 1;
           border-left: none;
+          padding: 2rem 1rem 0;
+
+          .text-top {
+            font-size: 1.5rem;
+            text-align: center;
+          }
 
           .text-bottom {
             margin-top: 1rem;
             width: 100%;
             font-size: 1.3rem;
+            display: flex;
+            justify-content: space-between;
             img {
               margin-right: 1rem;
+              display: inline;
             }
-            section.names.name {
-              display: flex;
-              flex-direction: column;
-              
+            .names {
+              margin: 0 -1rem;
+              .name {
+                padding: 0 1rem;
+                display: flex;
+                flex-direction: column;
+              }
             }
           }
         }

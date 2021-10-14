@@ -139,7 +139,7 @@ export default {
         delay: 2000,
       },
       loop: true,
-      slidesPerView: 1,
+      slidesPerView: 1.5,
       centeredSlides: true,
       spaceBetween: 30,
       keyboard: true,
@@ -336,16 +336,38 @@ export default {
   @media screen and (max-width: 768px) {
     .events {
       h1 {
-        font-size: 3rem;
-        line-height: 3.4rem;
+        font-size: 2.5rem;
+        line-height: unset;
         text-align: center;
       }
       hr {
         margin: 2rem 0;
       }
       small {
-        font-size: 1.5rem !important;
+        font-size: 1.2rem !important;
       }
+
+      .swiper-slide {
+
+      border: 3px dashed #d9d5cc;
+
+      .event {
+        img {
+          outline: 3px solid #d9d5cc !important;
+        }
+        .text {
+          h1 {
+            font-size: 2.2rem !important;
+          }
+                  .time {
+          .el img {
+            max-height: 50px !important;
+            outline: none !important;
+          }
+        }
+        }
+
+      } }
     }
   }
   @media screen and (max-width: 768px) {

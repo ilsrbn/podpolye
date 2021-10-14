@@ -57,7 +57,6 @@ export default {
       position: absolute;
       top: 0;
       left: 0;
-      display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -94,6 +93,7 @@ export default {
       &.nav {
         animation: fadeIn 400ms forwards;
         margin: -1rem 0;
+        display: flex;
       }
     }
   }
@@ -102,18 +102,22 @@ export default {
 @keyframes fadeOut {
   from {
     opacity: 1;
+
   }
   to {
     opacity: 0;
+
   }
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
+
   }
   to {
     opacity: 1;
+
   }
 }
 </style>
