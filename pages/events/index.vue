@@ -153,7 +153,7 @@ export default {
     imageURL: "https://drive.google.com/uc?id=",
   }),
 
-  async mounted() {
+  async created() {
     let startDate = new Date().toISOString();
     let endDate = new Date(Date.now() + 1209600000).toISOString();
 
@@ -161,6 +161,9 @@ export default {
       `https://www.googleapis.com/calendar/v3/calendars/65k2m2ep03mnqkuthtdkjs6h0g%40group.calendar.google.com/events?orderBy=startTime&timeMin=${startDate}&timeMax=${endDate}&singleEvents=true&key=AIzaSyC-OIomtul6ENmZLoZX0uMiJXD7Kwt0w74`
     );
     this.items = items.items;
+  },
+
+  mounted() {
     setTimeout(() => {
       if (window.innerWidth > 768) {
         this.mySwiper.slideTo(3, 1000, false);
