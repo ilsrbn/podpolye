@@ -49,7 +49,7 @@ export default {
     transition-property: opacity transform;
     transition-duration: 100ms;
     transition-timing-function: ease-in;
-    transform: translateX(-11vw);
+
 
     @media screen and (max-width: 768px) {
       display: none;
@@ -59,7 +59,7 @@ export default {
     }
     &.show {
       opacity: 1;
-      transform: translateX(0);
+
       cursor: pointer;
       &:hover {
         opacity: 0.6;

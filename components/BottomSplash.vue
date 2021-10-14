@@ -208,6 +208,7 @@ export default {
       &.show {
         max-height: 100vw;
         margin: 95px 0;
+        padding-left: calc(11vw - 4.15vw);
       }
     }
 

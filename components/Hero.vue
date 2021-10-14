@@ -83,6 +83,7 @@ export default {
   max-height: 100vh;
   .title {
     position: absolute;
+    z-index: 2;
     width: 200%;
     padding: 0 55%;
     left: -50%;
@@ -132,6 +133,7 @@ export default {
   .background {
     animation: appear 2s;
     min-height: 100vh;
+    z-index: 1;
 
     @media screen and (max-width: 768px) {
       object-fit: cover;

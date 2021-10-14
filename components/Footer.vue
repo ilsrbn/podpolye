@@ -49,6 +49,7 @@ footer {
 
   background-color: #0d0d0d;
   border-top: 6px dashed #d9d5cc;
+  position: absolute;
 
   .footer__container {
     display: flex;
