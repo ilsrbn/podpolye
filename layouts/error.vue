@@ -126,7 +126,7 @@ export default {
       }
       p {
         font-size: 1.5rem;
-        font-family: 'Merriweather', cursive;
+        font-family: "Merriweather", cursive;
         font-weight: 300;
         font-style: italic;
       }
@@ -137,11 +137,25 @@ export default {
         transition: color 150ms ease-in;
 
         &:hover {
-          color: #8C7764;
+          color: #8c7764;
         }
       }
     }
+  }
+  @media screen and (max-width: 768px) {
+    .block {
+      flex-direction: column;
+      justify-content: space-between;
+      .text {
+        align-items: center;
+        text-align: center;
+        .link {
+          width: 100%;
+          text-align: center;
+        }
+      }
 
+    }
   }
 }
 </style>
