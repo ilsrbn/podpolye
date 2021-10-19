@@ -102,8 +102,8 @@
                 />
                 <div class="text">
                   <h1 class="title">{{ event.summary }}</h1>
-                  <p class="description">{{ event.description }}</p>
-                  <div class="time">
+                  <!--<p v-if="event.description" class="description">{{ event.description }}</p>-->
+                  <div :class="!event.description ? 'bordered-top' : ''" class="time bordered-top">
                     <span class="el">
                       <img :src="require('~/assets/images/time.png')" alt="" />
                     </span>
@@ -297,6 +297,13 @@ export default {
           .description {
             border-top: 1px solid #d9d5cc;
             border-bottom: 1px solid #d9d5cc;
+            color: #BF895A;
+            font-family: 'Merriweather', cursive;
+            font-style: italic;
+            font-weight: light;
+            font-size: 1.8rem;
+            padding: 5px;
+            text-align: center;
           }
           .time {
             display: flex;
@@ -305,6 +312,10 @@ export default {
             justify-content: space-around;
             align-items: center;
             padding: 1rem;
+
+            &.bordered-top {
+              border-top: 1px solid #d9d5cc;
+            }
             .el {
               display: flex;
               justify-content: center;
@@ -356,6 +367,12 @@ export default {
           outline: 3px solid #d9d5cc !important;
         }
         .text {
+          .description {
+            display: none;
+          }
+          .time {
+            border-top: 1px solid #d9d5cc;
+          }
           h1 {
             font-size: 2.2rem !important;
           }
