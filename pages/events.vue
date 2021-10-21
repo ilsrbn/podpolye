@@ -301,7 +301,7 @@ export default {
             font-family: 'Merriweather', cursive;
             font-style: italic;
             font-weight: light;
-            font-size: 1.8rem;
+            font-size: 1.875rem;
             padding: 5px;
             text-align: center;
           }
@@ -369,6 +369,7 @@ export default {
         .text {
           .description {
             display: none;
+            font-size: 1rem;
           }
           .time {
             border-top: 1px solid #d9d5cc;
