@@ -107,11 +107,16 @@
                     <span class="el">
                       <img :src="require('~/assets/images/time.png')" alt="" />
                     </span>
-                    <span class="el">
+                    <span class="el" v-if="event.start.dateTime != undefined">
                       <small class="date">
                         {{ formatDate(event.start.dateTime) }}
                       </small>
                       <small>{{ event.start.dateTime.slice(11, 16) }}</small>
+                    </span>
+                    <span class="el" v-else>
+                      <small class="date">
+                        {{ formatDate(event.start.date) }}
+                      </small>
                     </span>
                   </div>
                 </div>
