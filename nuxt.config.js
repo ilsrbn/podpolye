@@ -48,7 +48,6 @@ export default {
   pwa: {
     meta: {
       title: 'Подполье',
-      mobileAppIOS: true,
     },
     manifest: {
       name: 'Подполье',
