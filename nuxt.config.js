@@ -47,9 +47,9 @@ export default {
 
   pwa: {
     meta: {
-      title: 'Подполье'
+      title: 'Подполье',
+      mobileAppIOS: true,
     },
-    icon: false,
     manifest: {
       name: 'Podpolye',
       short_name: 'podpolye',
