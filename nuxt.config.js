@@ -46,5 +46,10 @@ export default {
   build: {
 
   },
+  pwa: {
+    manifest: {
+      lang: 'ru',
+    },
+  },
   target: 'static'
 }
