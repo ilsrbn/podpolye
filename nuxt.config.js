@@ -51,8 +51,8 @@ export default {
       mobileAppIOS: true,
     },
     manifest: {
-      name: 'Podpolye',
-      short_name: 'podpolye',
+      name: 'Подполье',
+      short_name: 'Подполье',
       lang: 'ru',
     },
 
