@@ -41,14 +41,21 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/pwa',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
 
   pwa: {
+    meta: {
+      title: 'Подполье'
+    },
+    icon: false,
     manifest: {
+      name: 'Podpolye',
+      short_name: 'podpolye',
       lang: 'ru',
     },
+
   },
+  target: 'static'
 }
