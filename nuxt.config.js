@@ -43,7 +43,6 @@ export default {
     "@nuxtjs/axios",
     "@nuxtjs/sitemap",
     "@nuxtjs/robots",
-    ["@nuxtjs/google-gtag", {id: "G-5LSBGF20G9"}]
   ],
   gsap: {
     extraPlugins: {
