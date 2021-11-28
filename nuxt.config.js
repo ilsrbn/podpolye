@@ -22,6 +22,9 @@ export default {
     color: "#400D09",
     height: "5px"
   },
+  server: {
+    host: '0.0.0.0'
+  },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["~/assets/styles/globals.css"],
@@ -44,6 +47,9 @@ export default {
   },
   robots: {
     Sitemap: "https://podpolye.org/sitemap.xml"
+  },
+  sitemap: {
+    hostname: "https://podpolye.org"
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
