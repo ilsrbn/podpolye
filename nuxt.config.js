@@ -23,7 +23,7 @@ export default {
     height: "5px"
   },
   server: {
-    host: '0.0.0.0'
+    host: "0.0.0.0"
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -39,7 +39,12 @@ export default {
   buildModules: ["@nuxtjs/pwa", "nuxt-gsap-module"],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ["@nuxtjs/axios", "@nuxtjs/sitemap", '@nuxtjs/robots',],
+  modules: [
+    "@nuxtjs/axios",
+    "@nuxtjs/sitemap",
+    "@nuxtjs/robots",
+    ["@nuxtjs/google-gtag", {id: "G-5LSBGF20G9"}]
+  ],
   gsap: {
     extraPlugins: {
       scrollTrigger: true
@@ -61,7 +66,8 @@ export default {
     manifest: {
       name: "Подполье",
       short_name: "Подполье",
-      description: "Некоммерческий, аполитичный, нерелигиозный проект. Сейчас он создается исключительно силами инициативной группы единомышленников, волонтеров и меценатов. Мы всегда рады помощи и открыты для общения и сотрудничества.",
+      description:
+        "Некоммерческий, аполитичный, нерелигиозный проект. Сейчас он создается исключительно силами инициативной группы единомышленников, волонтеров и меценатов. Мы всегда рады помощи и открыты для общения и сотрудничества.",
       lang: "ru"
     }
   },
