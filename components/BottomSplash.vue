@@ -76,7 +76,9 @@ export default {
   }
 }
 .splash__wrapper {
-  overflow: hidden;
+  @media screen and (max-width: 768px) {
+    overflow: hidden;
+  }
 }
 .splash {
     width: 100%;
