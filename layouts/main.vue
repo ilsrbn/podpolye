@@ -1,14 +1,12 @@
 <template>
   <div class="all">
     <Header @showMenu="showMenu" :isNav="isNav" class="show"/>
-
-      <nuxt @showMenu="showMenu" keep-alive class="cnt" :class="isNav ? 'hide' : ''"/>
-
+    <nuxt @showMenu="showMenu" keep-alive class="cnt" :class="isNav ? 'hide' : ''"/>
     <LazyFooter class="footer" :class="isNav ? 'hide' : ''"/>
     <nav :class="isNav ? 'nav' : ''">
       <nuxt-link class="item" to="/">Главная</nuxt-link>
-      <span :class="$route.path == '/events' ? 'nuxt-link-exact-active' : ''" class="item" @click="rou('/events')">События</span>
-      <span :class="$route.path == '/contacts' ? 'nuxt-link-exact-active' : ''" class="item" @click="rou('/contacts')">Контакты</span>
+      <span :class="$route.path === '/events' ? 'nuxt-link-exact-active' : ''" class="item" @click="rou('/events')">События</span>
+      <span :class="$route.path === '/contacts' ? 'nuxt-link-exact-active' : ''" class="item" @click="rou('/contacts')">Контакты</span>
     </nav>
   </div>
 </template>

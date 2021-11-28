@@ -2,7 +2,7 @@
   <header :class="classN">
     <div class="header-container">
       <nuxt-link class="logo" to="/">
-        <img src="@/assets/images/logo/wide2.png" alt="Логотип Подполья" />
+        <img src="@/assets/images/logo/wide2.png" alt="Логотип Подполья"/>
       </nuxt-link>
       <nav>
         <nuxt-link class="item" to="/">Главная</nuxt-link>
@@ -10,47 +10,24 @@
         <nuxt-link class="item" to="/contacts">Контакты</nuxt-link>
         <div class="links">
           <a class="link" href="https://t.me/de_profundis_clamavi">
-            <img :src="require('~/assets/images/telega.png')" alt="" />
+            <img :src="require('~/assets/images/telega.png')" alt=""/>
           </a>
           <a class="link" href="https://www.instagram.com/podpolie.odessa/">
-            <img :src="require('~/assets/images/insta.png')" alt="" />
+            <img :src="require('~/assets/images/insta.png')" alt=""/>
           </a>
         </div>
       </nav>
     </div>
     <div class="header__container-mobile">
       <nuxt-link class="logo" to="/">
-        <img src="@/assets/images/logo/wide2.png" alt="Логотип Подполья" />
+        <img src="@/assets/images/logo/wide2.png" alt="Логотип Подполья"/>
       </nuxt-link>
       <div @click="$emit('showMenu')" class="icon__container">
-        <svg
-          class="hamburger"
-          :class="!isNav ? 'show' : 'hide'"
-          xmlns="http://www.w3.org/2000/svg"
-          height="36px"
-          viewBox="0 0 24 24"
-          width="36px"
-          fill="#FFFFFF"
-        >
-          <path d="M0 0h24v24H0V0z" fill="none" />
-          <path
-            d="M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zm0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zM3 7c0 .55.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1z"
-          />
-        </svg>
-        <svg
-          class="close"
-          :class="!isNav ? 'hide' : 'show'"
-          xmlns="http://www.w3.org/2000/svg"
-          height="36px"
-          viewBox="0 0 24 24"
-          width="36px"
-          fill="#FFFFFF"
-        >
-          <path d="M0 0h24v24H0V0z" fill="none" />
-          <path
-            d="M18.3 5.71c-.39-.39-1.02-.39-1.41 0L12 10.59 7.11 5.7c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L10.59 12 5.7 16.89c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0L12 13.41l4.89 4.89c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"
-          />
-        </svg>
+        <button class="hamburger hamburger--collapse" :class="isNav? 'is-active' : ''" type="button">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
       </div>
     </div>
   </header>
@@ -124,15 +101,19 @@ header {
           transition: color 150ms ease-in;
         }
       }
+
       .links {
         margin-left: 2rem;
+
         .link {
           opacity: 1;
           transition: opacity 150ms ease-in;
           margin: 0 0.3rem;
+
           img {
             max-height: 1.8rem;
           }
+
           &:hover {
             opacity: 0.7;
           }
@@ -155,6 +136,7 @@ header {
 
       .logo {
         flex: 0 1 50%;
+
         img {
           max-width: 100%;
         }
@@ -162,6 +144,26 @@ header {
       .icon__container {
         flex: 0 1 50%;
         position: relative;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .hamburger-inner, .hamburger-inner::after, .hamburger-inner::before {
+          background-color: #d9d5cc;
+        }
+        .hamburger-box:focus-visible {
+          outline: none;
+          border: none;
+        }
+        .hamburger:focus-visible {
+          border: none;
+          outline: none;
+        }
+        .hamburger:hover,
+        .hamburger.is-active:hover {
+          opacity: 1;
+        }
+
 
         .show {
           position: absolute;
@@ -171,6 +173,7 @@ header {
           right: 0;
           transition: opacity 150ms ease-in;
         }
+
         .hide {
           position: absolute;
           opacity: 0;
