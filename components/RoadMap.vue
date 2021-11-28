@@ -2,7 +2,7 @@
   <div class="wrapper">
     <div class="steps">
       <h1>Как попасть в <span>подполье</span> ?</h1>
-      <hr />
+      <hr/>
       <summary>
         Как Вы сами понимаете, подпольная деятельность - штука серьёзная.
         Поэтому, чтобы попасть к нам — нужно пройти испытания:
@@ -11,13 +11,13 @@
         <span id="first" class="step">
           <small>Найти ворота во двор по адресу Канатная, 79</small>
           <div class="number">
-            <img :src="require('~/assets/images/circle.png')" alt="" />
+            <img :src="require('~/assets/images/circle.png')" alt=""/>
             <span>1</span>
           </div>
         </span>
         <span id="second" class="step">
           <div class="number">
-            <img :src="require('~/assets/images/circle.png')" alt="" />
+            <img :src="require('~/assets/images/circle.png')" alt=""/>
             <img
               class="line first"
               :src="require('~/assets/images/line1.png')"
@@ -31,16 +31,16 @@
             <span>2</span>
           </div>
           <small
-            >На воротах кодовый замок. Подсказка написана над воротами.</small
+          >На воротах кодовый замок. Подсказка написана над воротами.</small
           >
         </span>
         <span id="third" class="step">
           <small
-            >Зашли во двор? Справа есть пристройка с домофоном - звоните, и
+          >Зашли во двор? Справа есть пристройка с домофоном - звоните, и
             отворят вам.</small
           >
           <div class="number">
-            <img :src="require('~/assets/images/circle.png')" alt="" />
+            <img :src="require('~/assets/images/circle.png')" alt=""/>
             <span>3</span>
           </div>
         </span>
@@ -66,14 +66,37 @@
       </p>
 
       <p>
-        Карта для донатов: <span>4441 1144 5406 1506</span>
+        Карта для донатов:
+        <span v-gsap.from="{
+          textContent: 0,
+          duration: .3,
+          snap: { textContent: 1 }
+        }">{{ card1 }}</span>
+        <span v-gsap.from="{
+          textContent: 0,
+          duration: .3,
+          delay: .3,
+          snap: { textContent: 1 }
+        }">{{ card2 }}</span>
+        <span v-gsap.from="{
+          textContent: 0,
+          duration: .3,
+          delay: .6,
+          snap: { textContent: 1 }
+        }">{{ card3 }}</span>
+        <span v-gsap.from="{
+          textContent: 0,
+          duration: .3,
+          delay: .9,
+          snap: { textContent: 1 }
+        }">{{ card4 }}</span>
       </p>
       <span class="icons">
         <a class="link" href="https://t.me/de_profundis_clamavi">
-          <img :src="require('~/assets/images/telega.png')" alt="" />
+          <img :src="require('~/assets/images/telega.png')" alt=""/>
         </a>
         <a class="link" href="https://www.instagram.com/podpolie.odessa/">
-          <img :src="require('~/assets/images/insta.png')" alt="" />
+          <img :src="require('~/assets/images/insta.png')" alt=""/>
         </a>
       </span>
     </div>
@@ -81,7 +104,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data: () => ({
+    card1: 4441,
+    card2: 1144,
+    card3: 5406,
+    card4: 1506,
+  })
+};
 </script>
 
 <style lang="scss" scoped>
@@ -94,11 +124,13 @@ export default {};
   @media screen and (max-width: 768px) {
     padding: 2rem 2rem 0;
   }
+
   .steps {
     h1 {
       color: #d9d5cc;
       font-size: 7rem;
       font-weight: 700;
+
       span {
         color: #bf895a;
       }
@@ -107,6 +139,7 @@ export default {};
     hr {
       margin: 4.2rem 0;
     }
+
     summary {
       font-family: "Merriweather", cursive;
       font-style: italic;
@@ -137,15 +170,18 @@ export default {};
         width: 100%;
         justify-content: center;
         margin: 2rem -1rem;
+
         * {
           padding: 0 1rem;
         }
+
         small {
           font-size: 3.75rem;
           color: #bf895a;
           font-weight: bold;
           text-shadow: 0 0 3px #0d0d0d;
         }
+
         .number {
           position: relative;
 
@@ -184,6 +220,7 @@ export default {};
         }
       }
     }
+
     @media screen and (max-width: 768px) {
       h1 {
         font-size: 2.5rem;
@@ -200,27 +237,34 @@ export default {};
       section {
         min-width: unset;
         padding: 2rem 0;
+
         .step {
           margin: 1rem;
+
           * {
             padding: 0;
           }
+
           small {
             font-size: 1.5rem;
             padding: 0 1rem;
           }
+
           &#second {
             small {
               text-align: right;
             }
           }
+
           .number {
             span {
               font-size: 5rem;
             }
+
             img {
               max-width: 110px;
             }
+
             .line {
               display: none;
             }
@@ -229,6 +273,7 @@ export default {};
       }
     }
   }
+
   .map {
     border: 6px dashed #d9d5cc;
     width: 70%;
@@ -240,6 +285,7 @@ export default {};
       border-right: none;
     }
   }
+
   .contacts {
     width: 100%;
 
@@ -248,6 +294,7 @@ export default {};
       color: #d9d5cc;
       font-weight: bold;
     }
+
     p {
       color: #d9d5cc;
       font-size: 3.4rem;
@@ -256,16 +303,20 @@ export default {};
       font-weight: light;
       letter-spacing: 0.065em;
       margin: 68px 0;
+
       span {
         color: #bf895a;
       }
+
       @media screen and (max-width: 1500px) {
         font-size: 2rem;
       }
     }
+
     .icons {
       display: flex;
       justify-content: center;
+
       * {
         margin: 0 1rem;
         opacity: 1;
@@ -283,6 +334,7 @@ export default {};
         }
       }
     }
+
     @media screen and (max-width: 768px) {
       h1 {
         font-size: 2.5rem;

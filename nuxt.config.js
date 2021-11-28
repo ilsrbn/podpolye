@@ -1,60 +1,63 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Подполье',
+    title: "Подполье",
     htmlAttrs: {
-      lang: 'ru'
+      lang: "ru"
     },
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "Некоммерческий, аполитичный, нерелигиозный проект. Сейчас он создается исключительно силами инициативной группы единомышленников, волонтеров и меценатов. Мы всегда рады помощи и открыты для общения и сотрудничества."
+      },
+      { name: "format-detection", content: "telephone=no" }
     ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
   loading: {
-    color: '#400D09',
-    height: '5px'
+    color: "#400D09",
+    height: "5px"
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-    "~/assets/styles/globals.css",
-  ],
+  css: ["~/assets/styles/globals.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    { src: '~/plugins/VueAwesomeSwiper.js' }
-  ],
+  plugins: [{ src: "~/plugins/VueAwesomeSwiper.js" }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    '@nuxtjs/pwa',
-  ],
+  buildModules: ["@nuxtjs/pwa", "nuxt-gsap-module"],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    '@nuxtjs/axios',
-  ],
+  modules: ["@nuxtjs/axios", "@nuxtjs/sitemap", '@nuxtjs/robots',],
+  gsap: {
+    extraPlugins: {
+      scrollTrigger: true
+    }
+  },
+  robots: {
+    Sitemap: "https://podpolye.org/sitemap.xml"
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
 
   pwa: {
     meta: {
-      title: 'Подполье',
+      title: "Подполье"
     },
     manifest: {
-      name: 'Подполье',
-      short_name: 'Подполье',
-      lang: 'ru',
-    },
-
+      name: "Подполье",
+      short_name: "Подполье",
+      description: "Некоммерческий, аполитичный, нерелигиозный проект. Сейчас он создается исключительно силами инициативной группы единомышленников, волонтеров и меценатов. Мы всегда рады помощи и открыты для общения и сотрудничества.",
+      lang: "ru"
+    }
   },
-  target: 'static'
-}
+  target: "static"
+};

@@ -59,7 +59,7 @@
 export default {
   data: () => ({
     spreaded1: false,
-    spreaded2: false,
+    spreaded2: false
   }),
   methods: {
     collapse(id) {
@@ -70,8 +70,8 @@ export default {
         this.spreaded2 = !this.spreaded2;
         return;
       }
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -80,7 +80,6 @@ export default {
   margin: 30px 4.15vw 0 11vw;
   display: flex;
   flex-direction: column;
-
 
   @media screen and (max-width: 768px) {
     margin: 30px 4.15vw;
