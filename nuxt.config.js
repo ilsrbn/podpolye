@@ -60,7 +60,11 @@ export default {
 
   pwa: {
     meta: {
-      title: "Подполье"
+      title: "Подполье",
+      mobileAppIOS: true,
+      appleStatusBarStyle: "black",
+      theme_color: "#0d0d0d",
+      nativeUI: true
     },
     manifest: {
       name: "Подполье",

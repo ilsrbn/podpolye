@@ -36,3 +36,16 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
+
+.layout-enter-active,
+.layout-leave-active,
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.3s;
+}
+.layout-enter,
+.page-enter,
+.layout-leave-active,
+.page-leave-active {
+  opacity: 0;
+}

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="splash__wrapper">
     <article class="splash">
       <button
         @click="spreaded = !spreaded"
@@ -74,6 +74,9 @@ export default {
   100% {
     transform: rotate(0);
   }
+}
+.splash__wrapper {
+  overflow: hidden;
 }
 .splash {
     width: 100%;

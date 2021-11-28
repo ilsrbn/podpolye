@@ -1,8 +1,10 @@
 <template>
   <div class="all">
-    <Header @showMenu="showMenu" :isNav="isNav" class="show" />
-    <nuxt @showMenu="showMenu" keep-alive class="cnt" :class="isNav ? 'hide' : ''" />
-    <LazyFooter class="footer" :class="isNav ? 'hide' : ''" />
+    <Header @showMenu="showMenu" :isNav="isNav" class="show"/>
+
+      <nuxt @showMenu="showMenu" keep-alive class="cnt" :class="isNav ? 'hide' : ''"/>
+
+    <LazyFooter class="footer" :class="isNav ? 'hide' : ''"/>
     <nav :class="isNav ? 'nav' : ''">
       <nuxt-link class="item" to="/">Главная</nuxt-link>
       <span :class="$route.path == '/events' ? 'nuxt-link-exact-active' : ''" class="item" @click="rou('/events')">События</span>
@@ -28,8 +30,18 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.layout-enter-active,
+.layout-leave-active {
+  transition: opacity 0.5s;
+}
+.layout-enter,
+.layout-leave-active {
+  opacity: 0;
+}
+
 .all {
   position: relative;
+
   .show {
     opacity: 1;
     transform: translateY(5rem);
@@ -38,8 +50,10 @@ export default {
     transition-timing-function: ease-in;
     position: fixed;
   }
+
   .cnt {
     margin-top: 5rem;
+
     &.hide {
       display: none;
     }
@@ -97,6 +111,14 @@ export default {
       }
     }
   }
+}
+
+.fade-enter-active {
+  animation: fadeIn .3s ease-in;
+}
+
+.fade-leave-active {
+  animation: fadeOut .3s ease-in;
 }
 
 @keyframes fadeOut {
