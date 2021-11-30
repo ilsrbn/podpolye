@@ -2,7 +2,7 @@
   <header :class="classN">
     <div class="header-container">
       <nuxt-link class="logo" to="/">
-        <img src="@/assets/images/logo/wide2.png" alt="Логотип Подполья"/>
+        <img src="@/assets/images/logo/wide2.png" alt="Подполье Одесса Антикафе пространство"/>
       </nuxt-link>
       <nav>
         <nuxt-link class="item" to="/">Главная</nuxt-link>
@@ -10,17 +10,17 @@
         <nuxt-link class="item" to="/contacts">Контакты</nuxt-link>
         <div class="links">
           <a class="link" href="https://t.me/de_profundis_clamavi">
-            <img :src="require('~/assets/images/telega.png')" alt=""/>
+            <img :src="require('~/assets/images/telega.png')" alt="Подполье Одесса Антикафе пространство"/>
           </a>
           <a class="link" href="https://www.instagram.com/podpolie.odessa/">
-            <img :src="require('~/assets/images/insta.png')" alt=""/>
+            <img :src="require('~/assets/images/insta.png')" alt="Подполье Одесса Антикафе пространство"/>
           </a>
         </div>
       </nav>
     </div>
     <div class="header__container-mobile">
       <nuxt-link class="logo" to="/">
-        <img src="@/assets/images/logo/wide2.png" alt="Логотип Подполья"/>
+        <img src="@/assets/images/logo/wide2.png" alt="Подполье Одесса Антикафе пространство"/>
       </nuxt-link>
       <div @click="$emit('showMenu')" class="icon__container">
         <button class="hamburger hamburger--collapse" :class="isNav? 'is-active' : ''" type="button">

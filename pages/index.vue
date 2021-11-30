@@ -5,7 +5,7 @@
     <LazyGallery />
     <BottomSplash />
     <nuxt-link to="/events" class="sidelink" :class="isSide ? 'show': ''">
-      <img :src="require('~/assets/images/ANNOUNCE.png')" alt="" />
+      <img :src="require('~/assets/images/ANNOUNCE.png')" alt="Подполье Одесса Антикафе пространство" />
     </nuxt-link>
   </div>
 </template>

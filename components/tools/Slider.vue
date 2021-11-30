@@ -9,7 +9,7 @@
               <img
                 class="slide-imagee"
                 :src="require(`~/assets/images/gallery/${image}.jpg`)"
-                :alt="`Подполье. Фото галереи №${image}`"
+                :alt="`Подполье Одесса Антикафе пространство. Фото галереи №${image}`"
               />
             </div>
           </div>
@@ -25,7 +25,7 @@
               <img
                 class="slide-imagee"
                 :src="require(`~/assets/images/gallery/${image}.jpg`)"
-                :alt="`Подполье. Фото галереи №${image}`"
+                :alt="`Подполье Одесса Антикафе пространство. Фото галереи №${image}`"
               />
             </div>
           </div>

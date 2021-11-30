@@ -9,7 +9,7 @@
         <img
           class="button__image"
           src="~/assets/images/index__splash-2.png"
-          alt=""
+          alt="Пространство подполье антикафе одесса"
         />
         <div class="button__text">Какие мероприятия вы проводите?</div>
       </button>

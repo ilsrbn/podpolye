@@ -4,7 +4,7 @@
       <div class="footer__item">
         <img
           :src="require('~/assets/images/logo/Лого.png')"
-          alt="Лого Подполья"
+          alt="Подполье Одесса Антикафе пространство"
         />
       </div>
       <div class="footer__item text">
@@ -17,7 +17,7 @@
         <div class="text-bottom">
           <section>
             <span>2021</span>
-            <img :src="require('~/assets/images/copyright.png')" />
+            <img :src="require('~/assets/images/copyright.png')" alt="Подполье Одесса Антикафе пространство" />
           </section>
           <section class="names">
             <div class="name">

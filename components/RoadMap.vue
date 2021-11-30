@@ -11,22 +11,22 @@
         <span id="first" class="step">
           <small>Найти ворота во двор по адресу Канатная, 79</small>
           <div class="number">
-            <img :src="require('~/assets/images/circle.png')" alt=""/>
+            <img :src="require('~/assets/images/circle.png')" alt="Подполье Одесса Антикафе пространство"/>
             <span>1</span>
           </div>
         </span>
         <span id="second" class="step">
           <div class="number">
-            <img :src="require('~/assets/images/circle.png')" alt=""/>
+            <img :src="require('~/assets/images/circle.png')" alt="Подполье Одесса Антикафе пространство"/>
             <img
               class="line first"
               :src="require('~/assets/images/line1.png')"
-              alt=""
+              alt="Подполье Одесса Антикафе пространство"
             />
             <img
               class="line second"
               :src="require('~/assets/images/line2.png')"
-              alt=""
+              alt="Подполье Одесса Антикафе пространство"
             />
             <span>2</span>
           </div>
@@ -40,7 +40,7 @@
             отворят вам.</small
           >
           <div class="number">
-            <img :src="require('~/assets/images/circle.png')" alt=""/>
+            <img :src="require('~/assets/images/circle.png')" alt="Подполье Одесса Антикафе пространство"/>
             <span>3</span>
           </div>
         </span>
@@ -56,8 +56,8 @@
       <h1>Как с нами связаться ?</h1>
       <p>
         По вопросам сотрудничества можно обращаться к
-        <span>Кириллу (+380631327600)</span> или
-        <span>Павлу (+380634869957)</span>.
+        <span>Кириллу (<a href="tel:+380631327600">+380631327600</a>)</span> или
+        <span>Павлу (<a href="tel:+380634869957">+380634869957</a>)</span>.
       </p>
       <p>
         А еще есть чат подпольщиков в <span>Телеграмме</span>. В нём можно
@@ -93,10 +93,10 @@
       </p>
       <span class="icons">
         <a class="link" href="https://t.me/de_profundis_clamavi">
-          <img :src="require('~/assets/images/telega.png')" alt=""/>
+          <img :src="require('~/assets/images/telega.png')" alt="Подполье Одесса Антикафе пространство"/>
         </a>
         <a class="link" href="https://www.instagram.com/podpolie.odessa/">
-          <img :src="require('~/assets/images/insta.png')" alt=""/>
+          <img :src="require('~/assets/images/insta.png')" alt="Подполье Одесса Антикафе пространство"/>
         </a>
       </span>
     </div>
@@ -306,6 +306,14 @@ export default {
 
       span {
         color: #bf895a;
+        a {
+          color: #bf895a;
+          text-decoration: none;
+          transition: color .15s ease-in;
+          &:hover {
+            color: #d9d5cc;
+          }
+        }
       }
 
       @media screen and (max-width: 1500px) {

@@ -1,73 +1,22 @@
 <template>
   <div class="container" @click="shadow = !shadow">
-    <img class="background" src="@/assets/images/gallery/1-test.jpg" alt="" />
+    <img class="background" src="@/assets/images/gallery/1-test.jpg" alt="Подполье Одесса Антикафе пространство" />
     <img
       class="title"
       :class="shadow ? 'light' : ''"
       src="@/assets/images/logo/wide2.png"
+      alt="Подполье Одесса Антикафе пространство"
     />
-    <svg
-      class="arrow"
-      width="26.442059"
-      height="70.16523"
-      viewBox="0 0 6.9961279 18.564551"
-      version="1.1"
-      id="svg5"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:svg="http://www.w3.org/2000/svg"
-    >
-      <g id="layer1" transform="translate(-9.7311026,-3.0519878)">
-        <path
-          style="
-            fill: none;
-            fill-opacity: 0;
-            stroke: #bf895a;
-            stroke-width: 0.26458334;
-            stroke-linecap: round;
-            stroke-linejoin: bevel;
-            stroke-miterlimit: 4;
-            stroke-dasharray: none;
-            stroke-opacity: 1;
-            paint-order: markers fill stroke;
-          "
-          d="m 12.567708,15.875 v 2.116667 h -1.322916 l 1.984374,3.44154 1.984375,-3.44154 H 13.890625 V 15.875 Z"
-          id="path14970"
-        />
-      </g>
-    </svg>
-    <!--<svg
-   class="arrow"
-   width="16.730911"
-   height="14.508376"
-   viewBox="0 0 4.4267202 3.8386746"
-   version="1.1"
-   id="svg5"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <defs
-     id="defs2">
-    <linearGradient
-       id="linearGradient18227">
-      <stop
-         style="stop-color:#000000;stop-opacity:1;"
-         offset="0"
-         id="stop18225" />
-    </linearGradient>
-  </defs>
-  <g
-     id="layer1"
-     transform="translate(-11.015807,-17.859376)">
-    <path
-       style="fill:none;fill-opacity:1;stroke:#bf895a;stroke-width:0.264583;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
-       d="m 13.229159,19.191571 -0.661451,-1.199904 h -1.322916 l 1.984367,3.44154 1.984382,-3.44154 h -1.322916 z"
-       id="path14970" />
-  </g>
-</svg>-->
+    <ArrowIcon />
   </div>
 </template>
 
 <script>
+import ArrowIcon from '@/assets/images/arrow.svg?inline'
 export default {
+  components: {
+    ArrowIcon
+  },
   data: () => ({
     shadow: false,
   }),
