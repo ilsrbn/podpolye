@@ -15,14 +15,13 @@
               class="swiper-slide"
             >
               <div class="event">
-                <img
+                <!--<img
                   class="event__image"
                   v-if="event.attachments != undefined"
                   :src="imageURL + event.attachments[0].fileId"
                   alt="Подполье Одесса Антикафе пространство"
-                />
+                />-->
                 <img
-                  v-else
                   class="event__image"
                   :src="require(`~/assets/images/gallery/${randomPicture()}.jpg`)"
                   alt="Подполье Одесса Антикафе пространство"
