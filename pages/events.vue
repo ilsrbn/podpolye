@@ -15,14 +15,14 @@
               class="swiper-slide"
             >
               <div class="event">
-                <!--<img
+                <img
                   class="event__image"
                   v-if="event.attachments != undefined"
                   :src="imageURL + event.attachments[0].fileId"
                   alt="Подполье Одесса Антикафе пространство"
-                />-->
+                />
                 <img
-                  
+                  v-else
                   class="event__image"
                   :src="require(`~/assets/images/gallery/${randomPicture()}.jpg`)"
                   alt="Подполье Одесса Антикафе пространство"
@@ -215,6 +215,7 @@ export default {
         .event__image {
           max-width: 100%;
           outline: 6px solid #d9d5cc;
+          aspect-ratio: 1.5;
 
           transition-property: border-right;
           transition-duration: 80ms;
