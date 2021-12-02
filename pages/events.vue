@@ -62,7 +62,7 @@
 import LampIcon from '@/assets/images/лампа2.svg?inline'
 export default {
   head:() => ({
-    title: 'События - Пространство Подполье , Одесса'
+    title: 'События - Подполье - Одесса'
   }),
   components: {
     LampIcon

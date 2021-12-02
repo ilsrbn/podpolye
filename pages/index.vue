@@ -13,7 +13,7 @@
 <script>
 export default {
   head:() => ({
-    title: 'Пространство Подполье , Одесса'
+    title: 'Подполье - Одесса'
   }),
   data:() => ({
     isSide: false,

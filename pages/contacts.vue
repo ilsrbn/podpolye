@@ -9,7 +9,7 @@
 <script>
 export default {
   head:() => ({
-    title: 'Контакты - Пространство Подполье , Одесса'
+    title: 'Контакты - Подполье - Одесса'
   }),
   layout: 'main',
   mounted() {
