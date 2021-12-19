@@ -10,7 +10,7 @@
         задаваемые вопросы для тех, кто недавно узнал о нас:
       </small>
     </article>
-    <article class="splash">
+    <article class="splash" id="splash1">
       <button
         @click="collapse(1)"
         class="button"
@@ -37,8 +37,7 @@
                 с компанией.
               </p>
               <p class="col__description">
-                Оплата free donation (желаемая сумма: 30
-                грн/час).
+                Оплата free donation (желаемая сумма: 30 грн/час).
               </p>
             </div>
             <div class="content__col col">
@@ -48,9 +47,9 @@
                 посиделки образовательного и развлекательного характеров.
               </p>
               <p class="col__description">
-                Также вы можете провести у нас свое мероприятие, взяв помещение в
-                аренду за 100 грн/час. Мы можем предоставить проектор, колонки,
-                столы и стулья.
+                Также вы можете провести у нас свое мероприятие, взяв помещение
+                в аренду за 100 грн/час. Мы можем предоставить проектор,
+                колонки, столы и стулья.
               </p>
             </div>
           </div>
@@ -64,8 +63,23 @@
 export default {
   data: () => ({
     spreaded1: false,
-    spreaded2: false
+    spreaded2: false,
   }),
+  mounted() {
+    this.$gsap.fromTo(
+      "article#splash1",
+      { opacity: 0, x: "100%" },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: "article#splash1",
+          start: "top bottom",
+        },
+      }
+    );
+  },
   methods: {
     collapse(id) {
       if (id == 1) {
@@ -75,8 +89,8 @@ export default {
         this.spreaded2 = !this.spreaded2;
         return;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
