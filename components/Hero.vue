@@ -30,6 +30,7 @@ export default {
   position: relative;
   min-height: 100vh;
   max-height: 100vh;
+  overflow: hidden;
   .title {
     position: absolute;
     z-index: 2;
@@ -41,8 +42,9 @@ export default {
     transition-duration: 100ms;
     transition-timing-function: ease-in-out;
     height: 100%;
+    opacity: 0;
     object-fit: contain;
-    animation: appear 3s;
+    animation: opacity 3s 1s forwards;
     &.light {
       background-color: rgba(0, 0, 0, 0.2);
       transition-property: background-color;
@@ -81,7 +83,8 @@ export default {
   }
 
   .background {
-    animation: appear 2s;
+    opacity: 0;
+    animation: appear 2s forwards;
     min-height: 100vh;
     z-index: 1;
 
@@ -113,10 +116,29 @@ export default {
 @keyframes appear {
   0% {
     opacity: 0;
+    transform: scale(1.4);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.4);
   }
 
   100% {
     opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 </style>

@@ -1,10 +1,39 @@
 <template>
   <div class="container2">
     <article class="title">
-      <h1 class="title__header">
+      <h1
+        v-gsap.fromTo="[
+          { opacity: 0, x: -50 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 1,
+            scrollTrigger: {
+              trigger: 'article.title',
+              start: 'center bottom',
+            },
+          },
+        ]"
+        class="title__header"
+      >
         Что такое <span class="title__header-colored">ПОДПОЛЬЕ</span>?
       </h1>
-      <small class="title__description">
+      <small
+        v-gsap.fromTo="[
+          { opacity: 0, x: -100 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 1,
+            delay: 0.3,
+            scrollTrigger: {
+              trigger: 'article.title',
+              start: 'center bottom',
+            },
+          },
+        ]"
+        class="title__description"
+      >
         Это некоммерческое городское пространство для интеллектуального (и не
         очень) отдыха, развития или работы. Мы подготовили ответы на часто
         задаваемые вопросы для тех, кто недавно узнал о нас:

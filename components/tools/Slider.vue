@@ -1,38 +1,77 @@
 <template>
-  <client-only>
-    <div class="wrapper">
-      <h1>Наша галерея</h1>
-      <div class="container3">
-        <div v-swiper="second" instance-name="another">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide" v-for="image in firstArr" :key="image">
-              <img
-                class="slide-imagee"
-                :src="require(`~/assets/images/gallery/${image}.jpg`)"
-                :alt="`Подполье Одесса Антикафе пространство. Фото галереи №${image}`"
-              />
-            </div>
+  <div class="wrapper galleryWrapper">
+    <h1
+      v-gsap.fromTo="[
+        { opacity: 0, scale: 0.8 },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          scrollTrigger: { trigger: '.galleryWrapper', start: 'center bottom' },
+        },
+      ]"
+    >
+      Наша галерея
+    </h1>
+    <div class="container3">
+      <div
+        v-gsap.fromTo="[
+          { opacity: 0, scale: 0.8, x: '-100%' },
+          {
+            opacity: 1,
+            x: 0,
+            scale: 1,
+            duration: 1,
+            scrollTrigger: {
+              trigger: '.galleryWrapper',
+              start: 'center bottom',
+            },
+          },
+        ]"
+        v-swiper="second"
+        instance-name="another"
+      >
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" v-for="image in firstArr" :key="image">
+            <img
+              class="slide-imagee"
+              :src="require(`~/assets/images/gallery/${image}.jpg`)"
+              :alt="`Подполье Одесса Антикафе пространство. Фото галереи №${image}`"
+            />
           </div>
         </div>
-        <div
-          v-swiper="swiperOption"
-          @slidePrevTransitionStart="move('prev')"
-          @slideNextTransitionStart="move('next')"
-          class="new_slider"
-        >
-          <div class="swiper-wrapper">
-            <div class="swiper-slide" v-for="image in secondArr" :key="image">
-              <img
-                class="slide-imagee"
-                :src="require(`~/assets/images/gallery/${image}.jpg`)"
-                :alt="`Подполье Одесса Антикафе пространство. Фото галереи №${image}`"
-              />
-            </div>
+      </div>
+      <div
+        v-gsap.fromTo="[
+          { opacity: 0, scale: 0.8, x: '-100%' },
+          {
+            opacity: 1,
+            x: 0,
+            scale: 1,
+            duration: 1,
+            scrollTrigger: {
+              trigger: '.galleryWrapper',
+              start: 'center bottom',
+            },
+          },
+        ]"
+        v-swiper="swiperOption"
+        @slidePrevTransitionStart="move('prev')"
+        @slideNextTransitionStart="move('next')"
+        class="new_slider"
+      >
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" v-for="image in secondArr" :key="image">
+            <img
+              class="slide-imagee"
+              :src="require(`~/assets/images/gallery/${image}.jpg`)"
+              :alt="`Подполье Одесса Антикафе пространство. Фото галереи №${image}`"
+            />
           </div>
         </div>
       </div>
     </div>
-  </client-only>
+  </div>
 </template>
 
 <script>
@@ -123,7 +162,7 @@ export default {
     .new_slider {
       display: none;
     }
-
   }
 }
-</style>>
+</style>
+>
