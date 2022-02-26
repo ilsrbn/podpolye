@@ -31,7 +31,7 @@ export default defineNuxtConfig ({
   css: ["~/assets/styles/globals.css", "~/assets/styles/hamburgers.min.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: "~/plugins/VueAwesomeSwiper.js" }],
+  plugins: [{ src: "~/plugins/VueAwesomeSwiper.js" }, {src: "~/plugins/vue-modal.js"}],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
