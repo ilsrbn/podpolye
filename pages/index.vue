@@ -10,7 +10,7 @@
         alt="Подполье Одесса Антикафе пространство"
       />
     </nuxt-link>
-    <war-modal class="war__modal"></war-modal>
+<!--    <war-modal class="war__modal"></war-modal>-->
   </div>
 </template>
 
@@ -29,11 +29,7 @@ export default {
       this.isSide = !this.isSide;
     },
     handleScroll() {
-      if (window.scrollY >= window.innerHeight * 0.4) {
-        this.isSide = true;
-      } else {
-        this.isSide = false;
-      }
+      this.isSide = window.scrollY >= window.innerHeight * 0.4;
     },
   },
   beforeMount() {
