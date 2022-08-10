@@ -141,6 +141,7 @@ footer {
           display: none;
         }
         &.text {
+
           order: 1;
           border-left: none;
           padding: 2rem 1rem 0;
