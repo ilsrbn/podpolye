@@ -24,11 +24,7 @@ export default {
     },
     handleScroll() {
       if (!this.isNav) {
-        if (window.scrollY <= window.innerHeight * 0.2) {
-          this.appear = true;
-        } else {
-          this.appear = false;
-        }
+        this.appear = window.scrollY <= window.innerHeight * 0.2;
       }
     },
   },

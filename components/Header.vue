@@ -10,10 +10,10 @@
         <nuxt-link class="item" to="/contacts">Контакты</nuxt-link>
         <div class="links">
           <a class="link" href="https://t.me/de_profundis_clamavi">
-            <img :src="require('~/assets/images/telega.png')" alt="Подполье Одесса Антикафе пространство"/>
+            <img :src="require('~/assets/icons/tg_icon.svg')" alt="Подполье Одесса Антикафе пространство"/>
           </a>
           <a class="link" href="https://www.instagram.com/podpolie.odessa/">
-            <img :src="require('~/assets/images/insta.png')" alt="Подполье Одесса Антикафе пространство"/>
+            <img :src="require('~/assets/icons/inst_icon.svg')" alt="Подполье Одесса Антикафе пространство"/>
           </a>
         </div>
       </nav>
@@ -46,7 +46,7 @@ header {
   max-width: 100vw;
   overflow-x: hidden;
   padding: 0;
-  background: #bf895a;
+  background: rgba(22, 22, 22, 0.77);
   position: fixed;
   top: -5rem;
   height: auto;
@@ -62,31 +62,31 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 2rem;
+    padding: 20px 80px;
 
     .logo {
-      max-width: 10rem;
+      max-height: 50px;
       margin-right: 1rem;
 
       img {
-        max-width: 10rem;
+        max-height: inherit;
       }
     }
 
     nav {
       display: flex;
-
-      width: 50%;
       justify-content: flex-end;
       align-items: center;
+      gap: 34px;
 
-      .item {
-        margin: 0 2rem;
-        color: #400d09;
-        text-transform: uppercase;
-        font-weight: 600;
-        font-size: 1.5rem;
+      .item, .item:visited {
+        font-family: 'Amatic SC';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 61px;
         text-decoration: none;
+        color: #D9D5CC;
 
         cursor: pointer;
         transition: color 150ms ease-in;
@@ -97,21 +97,23 @@ header {
         }
 
         &.nuxt-link-exact-active {
-          color: #d9d5cc;
+          color: #8c7764;
           transition: color 150ms ease-in;
         }
       }
 
       .links {
-        margin-left: 2rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 34px;
 
         .link {
           opacity: 1;
           transition: opacity 150ms ease-in;
-          margin: 0 0.3rem;
 
           img {
-            max-height: 1.8rem;
+            max-height: inherit;
           }
 
           &:hover {

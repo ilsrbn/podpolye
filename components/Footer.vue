@@ -16,13 +16,17 @@
         </div>
         <div class="text-bottom">
           <section>
-            <span>2021</span>
+            <span>{{ new Date().getFullYear() }}</span>
             <img :src="require('~/assets/images/copyright.png')" alt="Подполье Одесса Антикафе пространство" />
           </section>
           <section class="names">
             <div class="name">
               <span>Designed by</span>
               <a href="https://instagram.com/earl_g6">EarlG6</a>
+              <span>&</span>
+              <a href="https://www.instagram.com/krmisabitchh.photo/">
+                Krmisabitchh
+              </a>
             </div>
             <div class="name">
               <span>Coded by</span><a href="https://t.me/Zhyvny">Serbin</a>
@@ -70,9 +74,13 @@ footer {
         padding-left: 1rem;
         flex-direction: column;
         .text-top {
-          font-size: 3.438rem;
-          color: #d9d5cc;
+          font-family: 'Amatic SC';
+          font-style: normal;
           font-weight: 700;
+          font-size: 55px;
+          line-height: 69px;
+
+          color: #D9D5CC;;
 
           @media screen and (max-width: 1500px) {
             font-size: 2.2rem;

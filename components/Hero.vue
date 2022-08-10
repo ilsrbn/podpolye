@@ -1,9 +1,8 @@
 <template>
-  <div class="container" @click="shadow = !shadow">
-    <img class="background" src="@/assets/images/gallery/1-test.jpg" alt="Подполье Одесса Антикафе пространство" />
+  <div class="container">
+    <img class="background" src="@/assets/images/arc_2.webp" alt="Подполье Одесса Антикафе пространство" />
     <img
       class="title"
-      :class="shadow ? 'light' : ''"
       src="@/assets/images/logo/wide2.png"
       alt="Подполье Одесса Антикафе пространство"
     />
@@ -37,7 +36,7 @@ export default {
     width: 200%;
     padding: 0 55%;
     left: -50%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.78) 4.17%, rgba(0, 0, 0, 0) 100%);
     transition-property: background-color;
     transition-duration: 100ms;
     transition-timing-function: ease-in-out;
@@ -45,12 +44,6 @@ export default {
     opacity: 0;
     object-fit: contain;
     animation: opacity 3s 1s forwards;
-    &.light {
-      background-color: rgba(0, 0, 0, 0.2);
-      transition-property: background-color;
-      transition-duration: 100ms;
-      transition-timing-function: ease-in;
-    }
   }
 
   .arrow {

@@ -4,20 +4,20 @@
     <LazyAbout />
     <LazyGallery />
     <BottomSplash />
-    <nuxt-link to="/events" class="sidelink" :class="isSide ? 'show' : ''">
-      <img
-        :src="require('~/assets/images/ANNOUNCE.png')"
-        alt="Подполье Одесса Антикафе пространство"
-      />
-    </nuxt-link>
+<!--    <nuxt-link to="/events" class="sidelink" :class="isSide ? 'show' : ''">-->
+<!--      <img-->
+<!--        :src="require('~/assets/images/ANNOUNCE.png')"-->
+<!--        alt="Подполье Одесса Антикафе пространство"-->
+<!--      />-->
+<!--    </nuxt-link>-->
 <!--    <war-modal class="war__modal"></war-modal>-->
   </div>
 </template>
 
 <script>
-import warModal from "~/components/war-modal.vue";
+// import warModal from "~/components/war-modal.vue";
 export default {
-  components: { warModal },
+  // components: { warModal },
   head: () => ({
     title: "Подполье - Одесса",
   }),

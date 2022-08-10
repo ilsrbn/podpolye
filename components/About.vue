@@ -140,8 +140,13 @@ export default {
     flex-direction: column;
     margin-bottom: 90px;
     .title__header {
-      font-size: 7rem;
-      color: #d9d5cc;
+      font-family: 'Amatic SC';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 112px;
+      line-height: 141px;
+
+      color: #D9D5CC;
 
       .title__header-colored {
         color: #bf895a;
@@ -150,11 +155,13 @@ export default {
     .title__description {
       margin-top: 30px;
 
-      font-family: "Merriweather", serif;
+      font-family: 'Merriweather';
       font-style: italic;
       font-weight: 300;
-      font-size: 2.17rem;
-      color: #d9d5cc;
+      font-size: 35px;
+      line-height: 44px;
+
+      color: #D9D5CC;
     }
 
     @media screen and (max-width: 768px) {
@@ -202,10 +209,11 @@ export default {
         left: 40%;
         transform: translateX(-50%) translateY(-50%);
 
-        font-family: "Amatic SC", cursive;
-        font-weight: bold;
-        line-height: 100%;
-        font-size: 3.75rem;
+        font-family: 'Amatic SC';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 60px;
+        line-height: 76px;
         color: #592202;
 
         transition-property: color;
