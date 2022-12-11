@@ -2,8 +2,7 @@
   <div class="boeng">
     <Hero />
     <LazyAbout />
-    <LazyGallery />
-    <BottomSplash />
+    <Events />
 <!--    <nuxt-link to="/events" class="sidelink" :class="isSide ? 'show' : ''">-->
 <!--      <img-->
 <!--        :src="require('~/assets/images/ANNOUNCE.png')"-->

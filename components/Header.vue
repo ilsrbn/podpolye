@@ -6,7 +6,7 @@
       </nuxt-link>
       <nav>
         <nuxt-link class="item" to="/">Главная</nuxt-link>
-        <nuxt-link class="item" to="/events">События</nuxt-link>
+        <nuxt-link class="item" to="/rules">Правила</nuxt-link>
         <nuxt-link class="item" to="/contacts">Контакты</nuxt-link>
         <div class="links">
           <a class="link" href="https://t.me/de_profundis_clamavi">
@@ -34,6 +34,7 @@
 </template>
 <script>
 export default {
+  layout: 'main',
   props: ["classN", "isNav"],
   name: "Header",
 };
@@ -83,8 +84,7 @@ header {
         font-family: 'Amatic SC';
         font-style: normal;
         font-weight: 700;
-        font-size: 48px;
-        line-height: 61px;
+        font-size: 36px;
         text-decoration: none;
         color: #D9D5CC;
 

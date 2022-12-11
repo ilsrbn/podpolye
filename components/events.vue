@@ -52,8 +52,6 @@
         </div>
       </div>
     </div>
-    <hr>
-    <Rules />
   </div>
 </template>
 
@@ -66,7 +64,6 @@ export default {
   components: {
     LampIcon
   },
-  layout: "main",
   data: () => ({
     loaded: false,
     light: false,
