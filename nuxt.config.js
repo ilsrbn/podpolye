@@ -1,5 +1,5 @@
 import { defineNuxtConfig } from '@nuxt/bridge'
-export default defineNuxtConfig ({
+export default defineNuxtConfig({
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: "Подполье - Одесса",
@@ -23,27 +23,18 @@ export default defineNuxtConfig ({
     color: "#400D09",
     height: "5px"
   },
-  server: {
-    host: "0.0.0.0"
-  },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["~/assets/styles/globals.css", "~/assets/styles/hamburgers.min.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: "~/plugins/VueAwesomeSwiper.js" }, {src: "~/plugins/vue-modal.js"}],
+  plugins: [{ src: "~/plugins/VueAwesomeSwiper.js" }, { src: "~/plugins/vue-modal.js" }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: ["@nuxtjs/pwa", "nuxt-gsap-module", "@nuxtjs/svg"],
-
-  gsap: {
-    extraPlugins: {
-      scrollTrigger: true
-    }
-  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
