@@ -3,20 +3,13 @@
     <Hero />
     <LazyAbout />
     <Events />
-<!--    <nuxt-link to="/events" class="sidelink" :class="isSide ? 'show' : ''">-->
-<!--      <img-->
-<!--        :src="require('~/assets/images/ANNOUNCE.png')"-->
-<!--        alt="Подполье Одесса Антикафе пространство"-->
-<!--      />-->
-<!--    </nuxt-link>-->
-<!--    <war-modal class="war__modal"></war-modal>-->
   </div>
 </template>
 
 <script>
-// import warModal from "~/components/war-modal.vue";
+
 export default {
-  // components: { warModal },
+
   head: () => ({
     title: "Подполье - Одесса",
   }),

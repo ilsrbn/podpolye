@@ -6,6 +6,7 @@
       </nuxt-link>
       <nav>
         <nuxt-link class="item" to="/">Главная</nuxt-link>
+        <!-- <nuxt-link class="item" to="/gallery">Галерея</nuxt-link> -->
         <nuxt-link class="item" to="/rules">Правила</nuxt-link>
         <nuxt-link class="item" to="/contacts">Контакты</nuxt-link>
         <div class="links">
