@@ -53,6 +53,7 @@ export default {
   sitemap: {
     hostname: "https://podpolye.org"
   },
+  buildDir: 'dist',
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
 
