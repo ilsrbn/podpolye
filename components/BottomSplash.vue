@@ -151,7 +151,7 @@ export default {
       left: 40%;
       transform: translateX(-50%) translateY(-50%);
 
-      font-family: "Amatic SC", cursive;
+      font-family: "Nunito", cursive;
       font-weight: bold;
       line-height: 100%;
       font-size: 3.75rem;
@@ -191,7 +191,7 @@ export default {
       padding: 3.75rem 0;
 
       .content__header {
-        font-family: "Amatic SC", cursive;
+        font-family: "Nunito", cursive;
         font-style: normal;
         font-weight: bold;
         text-transform: uppercase;
@@ -212,7 +212,7 @@ export default {
           .col__description {
             font-size: 2.17rem;
             color: #d9d5cc;
-            font-family: "Merriweather", serif;
+            font-family: "Nunito", serif;
             font-weight: 300;
             font-style: italic;
             text-align: center;

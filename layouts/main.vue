@@ -5,7 +5,8 @@
     <LazyFooter class="footer" :class="isNav ? 'hide' : ''"/>
     <nav :class="isNav ? 'nav' : ''">
       <nuxt-link class="item" to="/">Главная</nuxt-link>
-      <span :class="$route.path === '/events' ? 'nuxt-link-exact-active' : ''" class="item" @click="rou('/events')">События</span>
+      <span :class="$route.path === '/rules' ? 'nuxt-link-exact-active' : ''" class="item" @click="rou('/rules')">Правила</span>
+      <span :class="$route.path === '/gallery' ? 'nuxt-link-exact-active' : ''" class="item" @click="rou('/gallery')">Галерея</span>
       <span :class="$route.path === '/contacts' ? 'nuxt-link-exact-active' : ''" class="item" @click="rou('/contacts')">Контакты</span>
     </nav>
   </div>

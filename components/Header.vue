@@ -2,11 +2,11 @@
   <header :class="classN">
     <div class="header-container">
       <nuxt-link class="logo" to="/">
-        <img src="@/assets/images/logo/wide2.png" alt="Подполье Одесса Антикафе пространство"/>
+        <img src="~/assets/images/logo/wide2.png" alt="Подполье Одесса Антикафе пространство"/>
       </nuxt-link>
       <nav>
         <nuxt-link class="item" to="/">Главная</nuxt-link>
-        <!-- <nuxt-link class="item" to="/gallery">Галерея</nuxt-link> -->
+        <nuxt-link class="item" to="/gallery">Галерея</nuxt-link>
         <nuxt-link class="item" to="/rules">Правила</nuxt-link>
         <nuxt-link class="item" to="/contacts">Контакты</nuxt-link>
         <div class="links">
@@ -58,7 +58,7 @@ header {
   box-shadow: -2px 0 0.5rem 0.2rem black;
 
   .header-container {
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
       display: none;
     }
     display: flex;
@@ -129,7 +129,7 @@ header {
     display: none;
     position: relative;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
       display: flex;
       width: 100%;
       max-width: 100vw;

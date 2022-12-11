@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxi dev",
-    "build": "nuxi generate"
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
@@ -19,7 +21,7 @@
     "vue-js-modal": "^2.0.1"
   },
   "devDependencies": {
-    "@nuxt/bridge": "npm:@nuxt/bridge-edge@^3.0.0-27306529.1ef6e3f",
+    "nuxt": "^2.15.0",
     "@nuxtjs/pwa": "^3.3.5",
     "node-sass": "^6.0.1",
     "nuxt-gsap-module": "^1.5.0",

@@ -155,7 +155,7 @@ export default {
     .title__description {
       margin-top: 30px;
 
-      font-family: 'Merriweather';
+      font-family: 'Nunito';
       font-style: italic;
       font-weight: 300;
       font-size: 35px;
@@ -174,6 +174,7 @@ export default {
 
       .title__description {
         font-size: 1.1rem;
+        line-height: 1.2em;
         text-align: justify;
       }
     }
@@ -283,7 +284,7 @@ export default {
             .col__description {
               font-size: 2.17rem;
               color: #d9d5cc;
-              font-family: "Merriweather", serif;
+              font-family: "Nunito", serif;
               font-weight: 300;
               font-style: italic;
               text-align: left;

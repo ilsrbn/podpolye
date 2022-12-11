@@ -74,11 +74,12 @@ footer {
         padding-left: 1rem;
         flex-direction: column;
         .text-top {
-          font-family: 'Amatic SC';
+          padding: 1em 2em;
+          font-family: 'Nunito';
           font-style: normal;
-          font-weight: 700;
-          font-size: 55px;
-          line-height: 69px;
+          font-weight: 400;
+          font-size: 36px;
+          line-height: 1.2em;
 
           color: #D9D5CC;;
 

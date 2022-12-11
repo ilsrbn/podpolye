@@ -59,7 +59,7 @@ export default {
       margin-top: 0.3rem;
     }
     p, li {
-      font-family: "Merriweather";
+      font-family: "Nunito";
       font-size: 1rem;
       margin: 0.5rem 0;
     }

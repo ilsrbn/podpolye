@@ -4,8 +4,8 @@
     <nuxt keep-alive class="cnt" :class="isNav ? 'hide' : ''" />
     <LazyFooter class="footer" :class="isNav ? 'hide' : ''" />
     <nav :class="isNav ? 'nav' : ''">
-      <nuxt-link  class="item" to="/">Главная</nuxt-link>
-      <nuxt-link  class="item" to="/events">События</nuxt-link>
+      <nuxt-link class="item" to='/rules'>Правила</nuxt-link>
+      <nuxt-link class="item" to='/gallery'>Галерея</nuxt-link>
       <nuxt-link  class="item" to="/contacts">Контакты</nuxt-link>
     </nav>
   </div>

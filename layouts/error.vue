@@ -57,7 +57,7 @@ export default {
       }
       p {
         font-size: 1.5rem;
-        font-family: "Merriweather", cursive;
+        font-family: "Nunito", cursive;
         font-weight: 300;
         font-style: italic;
       }

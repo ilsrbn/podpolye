@@ -149,12 +149,13 @@ export default {
     margin: 2.85rem 0;
     height: auto;
     .rule {
+      font-family: 'Nunito', serif;
       padding: 1rem 0;
       display: flex;
       align-items: center;
       color: #d9d5cc;
-      font-size: 3rem;
-      font-weight: 700;
+      font-size: 32px;
+      font-weight: 500;
       height: auto;
       &.highlighted {
         color: #bf895a;

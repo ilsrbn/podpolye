@@ -58,9 +58,6 @@
 <script>
 import LampIcon from '@/assets/images/лампа2.svg?inline'
 export default {
-  head:() => ({
-    title: 'События - Подполье - Одесса'
-  }),
   components: {
     LampIcon
   },
@@ -226,7 +223,7 @@ export default {
           h1 {
             color: #d9d5cc;
             font-size: 3rem;
-            font-family: "Amatic SC", cursive;
+            font-family: "Nunito", cursive;
             font-weight: 600;
             letter-spacing: 2px;
             text-align: center;
@@ -237,7 +234,7 @@ export default {
             border-top: 1px solid #d9d5cc;
             border-bottom: 1px solid #d9d5cc;
             color: #BF895A;
-            font-family: 'Merriweather', cursive;
+            font-family: 'Nunito', cursive;
             font-style: italic;
             font-weight: light;
             font-size: 1.875rem;
@@ -272,7 +269,7 @@ export default {
               text-transform: uppercase;
               opacity: 0.7;
               font-size: 2.18rem;
-              font-family: "Merriweather", serif;
+              font-family: "Nunito", serif;
               font-style: italic;
             }
           }
@@ -286,7 +283,7 @@ export default {
   @media screen and (max-width: 768px) {
     .events {
       h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         line-height: unset;
         text-align: center;
       }
@@ -314,7 +311,7 @@ export default {
             border-top: 1px solid #d9d5cc;
           }
           h1 {
-            font-size: 2.2rem !important;
+            font-size: 1.4rem !important;
           }
                   .time {
           .el img {

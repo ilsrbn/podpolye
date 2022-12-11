@@ -184,7 +184,7 @@ export default {
     }
 
     summary {
-      font-family: "Merriweather", cursive;
+      font-family: "Nunito", cursive;
       font-style: italic;
       font-weight: light;
       color: #d9d5cc;
@@ -340,12 +340,12 @@ export default {
 
     p {
       color: #d9d5cc;
-      font-size: 3.4rem;
-      font-family: "Merriweather", cursive;
+      font-size: 28px;
+      font-family: "Nunito", cursive;
       font-style: italic;
       font-weight: light;
       letter-spacing: 0.065em;
-      margin: 68px 0;
+      margin: 1.5em 0;
 
       span {
         color: #bf895a;
