@@ -15,7 +15,7 @@ export default {
     title: 'Галерея - Подполье - Одесса'
   }),
   data: () => ({
-    baseUrl: 'http://localhost:3000/api/post',
+    baseUrl: 'https://back.podpolye_api.serbin.co/api/post',
     search: null,
     posts: []
   }),

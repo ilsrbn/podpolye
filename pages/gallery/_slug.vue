@@ -15,7 +15,7 @@
 export default {
   layout: 'main',
   data: () => ({
-    baseUrl: 'http://localhost:3000/api/post/',
+    baseUrl: 'https://back.podpolye_api.serbin.co/api/post/',
     title: null,
     description: null,
     event_date: null,
