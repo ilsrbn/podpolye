@@ -54,6 +54,7 @@ export default {
     hostname: "https://podpolye.org"
   },
   buildDir: 'dist',
+  target: 'static',
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
 
