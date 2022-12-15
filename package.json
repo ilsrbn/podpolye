@@ -22,9 +22,10 @@
     "vue-js-modal": "^2.0.1"
   },
   "devDependencies": {
-    "nuxt": "^2.15.0",
+    "@nuxt/types": "^2.15.8",
     "@nuxtjs/pwa": "^3.3.5",
     "node-sass": "^6.0.1",
+    "nuxt": "^2.15.0",
     "nuxt-gsap-module": "^1.5.0",
     "sass": "^1.41.1",
     "sass-loader": "^10.2.0"

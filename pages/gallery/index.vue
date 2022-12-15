@@ -1,6 +1,9 @@
 <template>
   <div class="gallery">
-    <h1> <img src="@/assets/icons/lines-to-left.svg" alt=""> Галерея событий <img src="@/assets/icons/lines-to-right.svg" alt=""></h1>
+    <div class="gallery__header">
+      <h1> <img src="@/assets/icons/lines-to-left.svg" alt=""> Галерея событий <img src="@/assets/icons/lines-to-right.svg" alt=""></h1>
+      <text-input class="textInput" v-model="search" @input="getItems" />
+    </div>
     <hr>
     <gallery-card v-for="(post, i) in posts" :key="i" :item="post" />
   </div>
@@ -16,24 +19,26 @@ export default {
   }),
   data: () => ({
     baseUrl: 'https://back.podpolye-api.serbin.co/api/post',
-    search: null,
+    search: '',
     posts: []
   }),
-  async created() {
-    try {
-      const resp = await this.fetchItems()
-      this.posts = resp.filter(post => post.posted)
-    } catch(e) {
-      console.log({e})
-    }
-    
+  created() {
+    this.getItems()
   },
   methods: {
+    async getItems() {
+      try {
+        const resp = await this.fetchItems()
+        this.posts = resp.filter(post => post.posted)
+      } catch(e) {
+        console.log({e})
+      }
+    },
     fetchItems() {
       return this.$axios.$get(this.baseUrl + this.buildQuery())
     },
     buildQuery() {
-      if (this.search) return '?' + new URLSearchParams(this.search).toString()
+      if (this.search) return '?' + new URLSearchParams({ search: this.search }).toString()
       else return ''
     }
   }
@@ -41,16 +46,34 @@ export default {
 </script>
 <style lang="scss" scoped>
 .gallery {
-  padding: 2rem 1rem;
-}
-  h1 {
-    font-size: 7rem;
-    color: #d9d5cc;
-    img {
-      max-height: 0.7em;
+  padding: 1.5rem 1rem 2rem;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-block: 24px;
+    h1 {
+      flex-basis: 60%;
+    }
+    .textInput {
+      flex-basis: 40%;
     }
     @media screen and (max-width: 992px) {
-      font-size: 2.5rem;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      gap: 32px;
     }
   }
+}
+h1 {
+  font-size: 7rem;
+  color: #d9d5cc;
+  img {
+    max-height: 0.7em;
+  }
+  @media screen and (max-width: 992px) {
+    font-size: 2.5rem;
+  }
+}
 </style>
