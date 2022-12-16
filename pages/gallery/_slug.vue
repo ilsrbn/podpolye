@@ -6,8 +6,9 @@
     </div>
     <p>{{ description }}</p>
     <gallery-layout>
-      <img v-for="(image, i) in attachments" :src="image.file_url" :key="i" alt="">
+      <img v-for="(image, i) in attachments" :src="image.file_url" @click="$refs['image-preview'].show(image.file_url)" :key="i" alt="">
     </gallery-layout>
+    <lazy-image-preview-modal ref="image-preview" />
   </div>
 </template>
 <script>
@@ -51,7 +52,7 @@ export default {
     justify-content: space-between;
     span {
       font-size: 5rem;
-      color: #d9d5cc; 
+      color: #d9d5cc;
     }
 
       @media screen and (max-width: 992px) {
@@ -91,10 +92,10 @@ p {
   color: rgba(191, 137, 90, 1);
 
   @media screen and (max-width: 992px) {
-    
+
       font-size: 20px;
       line-height: 1.2em;
-    
+
   }
 
 }

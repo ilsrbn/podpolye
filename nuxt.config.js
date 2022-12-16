@@ -28,7 +28,7 @@ export default {
   css: ["~/assets/styles/globals.css", "~/assets/styles/hamburgers.min.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: "~/plugins/VueAwesomeSwiper.js" }, { src: "~/plugins/vue-modal.js" }],
+  plugins: [{ src: "~/plugins/VueAwesomeSwiper.js" }, { src: `~/plugins/modal.js` }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -73,5 +73,8 @@ export default {
         "Некоммерческий, аполитичный, нерелигиозный проект. Сейчас пространство Подполье создается исключительно силами инициативной группы единомышленников, волонтеров и меценатов. Мы всегда рады помощи и открыты для общения и сотрудничества.",
       lang: "ru"
     }
+  },
+  build: {
+    transpile: ['vue-final-modal']
   }
 }

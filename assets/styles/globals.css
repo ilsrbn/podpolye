@@ -50,3 +50,7 @@ body {
 .page-leave-active {
   opacity: 0;
 }
+
+.vfm {
+  z-index: 9999 !important;
+}
