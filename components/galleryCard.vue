@@ -1,14 +1,16 @@
 <template>
   <div class="gallery__card" :class="{'gallery__card-left': direction === 'left', 'gallery__card-right': direction === 'right'}">
     <div class="gallery__images">
+      <template v-if="item.attachments.length">
       <img :src="item.attachments[0].file_url" alt="">
-      <img :src="item.attachments[1] ? item.attachments[1].file_url : item.attachments[0].file_url" alt="">
+      <img v-if="item.attachments[1]" :src="item.attachments[1].file_url" alt="">
+      </template>
     </div>
     <div class="gallery__text">
       <h4>{{ item.title }} <br /> <span>({{ formatDate(item.event_date) }})</span></h4>
       <p class="truncate">{{ item.description }}</p>
       <nuxt-link :to="'/gallery/' + item.id">
-        <button class="gallery__button">Смотреть...</button>
+        <button class="gallery__button">Смотреть</button>
       </nuxt-link>
     </div>
   </div>
@@ -96,6 +98,9 @@ export default {
     text-align: right;
     color: rgba(191, 137, 90, 1);
 
+  }
+  span {
+    display: inline-block;
   }
   a {
     align-self: flex-end;

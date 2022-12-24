@@ -10,6 +10,11 @@
   gap: 24px;
   align-items: flex-start;
 }
+.gallery__layout img {
+
+  cursor: pointer;
+
+}
 @media screen and (max-width: 1239px) {
   .gallery__layout {
     grid-template-columns: repeat(2, 1fr);

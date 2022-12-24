@@ -113,13 +113,13 @@
         >
       </p>
       <span class="icons desc__paragraph">
-        <a class="link" href="https://t.me/de_profundis_clamavi">
+        <a class="link" href="https://t.me/de_profundis_clamavi" target=”_blank”>
           <img
             :src="require('~/assets/images/telega.png')"
             alt="Подполье Одесса Антикафе пространство"
           />
         </a>
-        <a class="link" href="https://www.instagram.com/podpolie.odessa/">
+        <a class="link" href="https://www.instagram.com/podpolie.odessa/" target=”_blank”>
           <img
             :src="require('~/assets/images/insta.png')"
             alt="Подполье Одесса Антикафе пространство"

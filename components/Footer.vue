@@ -22,14 +22,14 @@
           <section class="names">
             <div class="name">
               <span>Designed by</span>
-              <a href="https://instagram.com/earl_g6">EarlG6</a>
+              <a href="https://instagram.com/earl_g6" target=”_blank”>EarlG6</a>
               <span>&</span>
-              <a href="https://www.instagram.com/krmisabitchh.photo/">
+              <a href="https://www.instagram.com/krmisabitchh.photo/" target=”_blank”>
                 Krmisabitchh
               </a>
             </div>
             <div class="name">
-              <span>Coded by</span><a href="https://t.me/Zhyvny">Serbin</a>
+              <span>Coded by</span><a href="https://t.me/Zhyvny" target=”_blank”>Serbin</a>
             </div>
           </section>
         </div>
