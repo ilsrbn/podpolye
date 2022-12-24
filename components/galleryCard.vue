@@ -7,7 +7,7 @@
     <div class="gallery__text">
       <h4>{{ item.title }} <br /> <span>({{ formatDate(item.event_date) }})</span></h4>
       <p class="truncate">{{ item.description }}</p>
-      <nuxt-link :to="'/gallery/' + item.slug">
+      <nuxt-link :to="'/gallery/' + item.id">
         <button class="gallery__button">Смотреть...</button>
       </nuxt-link>
     </div>
