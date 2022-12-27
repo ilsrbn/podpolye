@@ -1,16 +1,14 @@
 <template>
   <div class="gallery__card" :class="{'gallery__card-left': direction === 'left', 'gallery__card-right': direction === 'right'}">
-    <div class="gallery__images">
-      <template v-if="item.attachments.length">
+    <div class="gallery__images" v-if="item.attachments.length">
       <img :src="item.attachments[0].file_url" alt="">
       <img v-if="item.attachments[1]" :src="item.attachments[1].file_url" alt="">
-      </template>
     </div>
-    <div class="gallery__text">
+    <div class="gallery__text" :class="{'gallery__text-wide' : !item.attachments.length}">
       <h4>{{ item.title }} <br /> <span>({{ formatDate(item.event_date) }})</span></h4>
       <p class="truncate">{{ item.description }}</p>
       <nuxt-link :to="'/gallery/' + item.id">
-        <button class="gallery__button">Смотреть</button>
+        <button class="gallery__button">Поподробнее</button>
       </nuxt-link>
     </div>
   </div>
@@ -127,11 +125,23 @@ export default {
       color: white;
     }
   }
+  &-wide {
+    h4 {
+      text-align: center;
+    }
+    p {
+      text-align: justify;
+    }
+    a {
+      align-self: center;
+      margin-top: 1rem;
+    }
+  }
   @media screen and (max-width: 992px) {
     h4 {
       font-size: 48px;
       line-height: 1.2em;
-      line-break: none;
+
       text-align: center;
       br {
         display: block;

@@ -10,10 +10,10 @@
         <nuxt-link class="item" to="/rules">Правила</nuxt-link>
         <nuxt-link class="item" to="/contacts">Контакты</nuxt-link>
         <div class="links">
-          <a class="link" href="https://t.me/de_profundis_clamavi">
+          <a class="link" href="https://t.me/de_profundis_clamavi" target="_blank">
             <img :src="require('~/assets/icons/tg_icon.svg')" alt="Подполье Одесса Антикафе пространство"/>
           </a>
-          <a class="link" href="https://www.instagram.com/podpolie.odessa/">
+          <a class="link" href="https://www.instagram.com/podpolie.odessa/" target="_blank">
             <img :src="require('~/assets/icons/inst_icon.svg')" alt="Подполье Одесса Антикафе пространство"/>
           </a>
         </div>
