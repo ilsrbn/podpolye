@@ -2,7 +2,7 @@
   <div class="boeng">
     <Hero />
     <LazyAbout />
-    <Events />
+<!--    <Events />-->
   </div>
 </template>
 
