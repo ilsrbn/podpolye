@@ -31,7 +31,9 @@ export default {
   async created() {
     const { slug } = this.$route.params
     try {
-      const { title, description, event_date, attachments } = await this.$axios.$get(this.baseUrl + slug)
+      const resp = await this.$axios.$get(this.baseUrl + slug)
+      if (!resp) return await this.$router.push('/gallery')
+      const { title, description, event_date, attachments } = resp
       this.title = title
       this.description = description
       this.event_date = event_date
