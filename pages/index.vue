@@ -73,6 +73,7 @@ export default {
   }
 }
 .boeng {
+  overflow: hidden;
   position: relative;
   .sidelink {
     position: fixed;
