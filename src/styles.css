@@ -165,6 +165,12 @@
   --safe-top: env(safe-area-inset-top, 0px);
 }
 
+@supports (-webkit-touch-callout: none) {
+  :root {
+    --safe-top: max(env(safe-area-inset-top, 0px), 44px);
+  }
+}
+
 html {
   background: var(--bg);
   scroll-behavior: auto;
