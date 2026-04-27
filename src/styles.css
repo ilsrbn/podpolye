@@ -1,0 +1,155 @@
+/* ── FONTS ── */
+@font-face {
+  font-family: 'Oswald';
+  src: url('/assets/fonts/oswald-latin-300-normal.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Oswald';
+  src: url('/assets/fonts/oswald-latin-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Oswald';
+  src: url('/assets/fonts/oswald-latin-500-normal.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Oswald';
+  src: url('/assets/fonts/oswald-latin-600-normal.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Oswald';
+  src: url('/assets/fonts/oswald-latin-700-normal.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('/assets/fonts/ibm-plex-mono-latin-300-normal.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('/assets/fonts/ibm-plex-mono-latin-400-normal.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('/assets/fonts/ibm-plex-mono-latin-500-normal.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('/assets/fonts/ibm-plex-mono-latin-700-normal.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── VARS ── */
+:root {
+  --bg: #0c0f14;
+  --bg2: #121720;
+  --bg3: #1a2030;
+  --line: #2a3348;
+  --text: #bfcce8;
+  --text-dim: #5a6a8a;
+  --head: #e8eeff;
+  --accent: oklch(0.62 0.10 48);
+  --accent2: oklch(0.68 0.10 55);
+  --accent-dim: oklch(0.32 0.07 48);
+  --mono: 'IBM Plex Mono', monospace;
+  --display: 'Oswald', sans-serif;
+}
+
+html { scroll-behavior: auto; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── NOISE OVERLAY ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ── SHARED BUTTON ── */
+.btn {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border: 1px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.1s, color 0.1s;
+  display: inline-block;
+}
+.btn:hover { background: var(--accent); color: var(--bg); }
+.btn-ghost { border-color: var(--line); color: var(--text-dim); }
+.btn-ghost:hover { border-color: var(--text-dim); background: transparent; color: var(--text); }
+
+/* ── PAGE SHELL ── */
+.page-content {
+  padding-top: 52px;
+  min-height: 100vh;
+}
+
+/* ── VIEW TRANSITIONS ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+::view-transition-old(root) {
+  animation: 150ms ease-out both fade-out;
+}
+::view-transition-new(root) {
+  animation: 200ms ease-in both fadeIn;
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* ── MARQUEE KEYFRAME ── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
