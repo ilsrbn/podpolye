@@ -3,7 +3,16 @@
   "outputDirectory": "dist/podpolye-v2/browser",
   "headers": [
     {
-      "source": "/assets/(.*)",
+      "source": "/assets/(.*).json",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*).(jpg|jpeg|png|webp|gif|svg|ico|woff|woff2|ttf)",
       "headers": [
         {
           "key": "Cache-Control",
