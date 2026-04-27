@@ -1,0 +1,145 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "cli": {
+    "packageManager": "npm"
+  },
+  "newProjectRoot": "projects",
+  "projects": {
+    "podpolye-v2": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:component": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "src/main.ts",
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              },
+              {
+                "glob": "files/oswald-latin-300-normal.woff2",
+                "input": "node_modules/@fontsource/oswald",
+                "output": "assets/fonts"
+              },
+              {
+                "glob": "files/oswald-latin-400-normal.woff2",
+                "input": "node_modules/@fontsource/oswald",
+                "output": "assets/fonts"
+              },
+              {
+                "glob": "files/oswald-latin-500-normal.woff2",
+                "input": "node_modules/@fontsource/oswald",
+                "output": "assets/fonts"
+              },
+              {
+                "glob": "files/oswald-latin-600-normal.woff2",
+                "input": "node_modules/@fontsource/oswald",
+                "output": "assets/fonts"
+              },
+              {
+                "glob": "files/oswald-latin-700-normal.woff2",
+                "input": "node_modules/@fontsource/oswald",
+                "output": "assets/fonts"
+              },
+              {
+                "glob": "files/ibm-plex-mono-latin-300-normal.woff2",
+                "input": "node_modules/@fontsource/ibm-plex-mono",
+                "output": "assets/fonts"
+              },
+              {
+                "glob": "files/ibm-plex-mono-latin-400-normal.woff2",
+                "input": "node_modules/@fontsource/ibm-plex-mono",
+                "output": "assets/fonts"
+              },
+              {
+                "glob": "files/ibm-plex-mono-latin-500-normal.woff2",
+                "input": "node_modules/@fontsource/ibm-plex-mono",
+                "output": "assets/fonts"
+              },
+              {
+                "glob": "files/ibm-plex-mono-latin-700-normal.woff2",
+                "input": "node_modules/@fontsource/ibm-plex-mono",
+                "output": "assets/fonts"
+              }
+            ],
+            "styles": [
+              "src/styles.css"
+            ],
+            "server": "src/main.server.ts",
+            "outputMode": "static",
+            "security": {
+              "allowedHosts": []
+            }
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "podpolye-v2:build:production"
+            },
+            "development": {
+              "buildTarget": "podpolye-v2:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        }
+      }
+    }
+  }
+}
