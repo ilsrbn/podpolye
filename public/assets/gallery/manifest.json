@@ -1,3 +1,16 @@
 {
-  "photos": []
+  "photos": [
+    {
+      "src": "/assets/gallery/place.jpg",
+      "caption": "пространство подполье"
+    },
+    {
+      "src": "/assets/gallery/place2.jpg",
+      "caption": "зал подполье"
+    },
+    {
+      "src": "/assets/gallery/event.jpg",
+      "caption": "мероприятие в подполье"
+    }
+  ]
 }
