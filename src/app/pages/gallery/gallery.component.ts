@@ -26,7 +26,7 @@ const PLACEHOLDERS: GalleryPhoto[] = [
   styleUrl: './gallery.component.css',
 })
 export class GalleryComponent {
-  photos = httpResource<GalleryManifest>('/assets/gallery/manifest.json');
+  photos = httpResource<GalleryManifest>(() => '/assets/gallery/manifest.json');
 
   get displayPhotos(): GalleryPhoto[] {
     const data = this.photos.value();
