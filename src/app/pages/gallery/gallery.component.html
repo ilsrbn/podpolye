@@ -15,7 +15,7 @@
       @for (photo of displayPhotos; track photo.caption) {
         @if (photo.src) {
           <div class="gallery-cell">
-            <img [src]="photo.src" [alt]="photo.caption" loading="lazy">
+            <img [src]="photo.src" [alt]="photo.caption" loading="lazy" decoding="async">
           </div>
         } @else {
           <div class="gallery-cell placeholder">

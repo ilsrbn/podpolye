@@ -1,8 +1,11 @@
 <nav>
   <a class="nav-logo" routerLink="/" (click)="closeMenu()">
-    <img src="https://www.podpolye.org/_nuxt/img/wide2.079a83f.png"
+    <img src="/assets/images/logo/wide2.png"
          alt="ПОДПОЛЬЕ"
-         width="auto" height="28">
+         width="162"
+         height="28"
+         decoding="async"
+         fetchpriority="high">
   </a>
 
   <div class="nav-links">
@@ -13,8 +16,8 @@
   </div>
 
   <div class="nav-social">
-    <a href="https://t.me/de_profundis_clamavi" target="_blank" rel="noopener">TG</a>
-    <a href="https://www.instagram.com/podpolie.odessa/" target="_blank" rel="noopener">IG</a>
+    <a [href]="site.socials.telegram" target="_blank" rel="noopener">TG</a>
+    <a [href]="site.socials.instagram" target="_blank" rel="noopener">IG</a>
   </div>
 
   <button class="nav-burger"
@@ -26,12 +29,12 @@
 </nav>
 
 <div class="mobile-menu" [class.open]="mobileMenuOpen()">
-  <a class="mobile-nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">Главная</a>
-  <a class="mobile-nav-link" routerLink="/gallery" routerLinkActive="active" (click)="closeMenu()">Галерея</a>
-  <a class="mobile-nav-link" routerLink="/rules" routerLinkActive="active" (click)="closeMenu()">Правила</a>
-  <a class="mobile-nav-link" routerLink="/contacts" routerLinkActive="active" (click)="closeMenu()">Контакты</a>
+  <a class="mobile-nav-link" href="/" [class.active]="isActive('/')" (click)="navigateFromMenu('/', $event)">Главная</a>
+  <a class="mobile-nav-link" href="/gallery" [class.active]="isActive('/gallery')" (click)="navigateFromMenu('/gallery', $event)">Галерея</a>
+  <a class="mobile-nav-link" href="/rules" [class.active]="isActive('/rules')" (click)="navigateFromMenu('/rules', $event)">Правила</a>
+  <a class="mobile-nav-link" href="/contacts" [class.active]="isActive('/contacts')" (click)="navigateFromMenu('/contacts', $event)">Контакты</a>
   <div class="mobile-menu-footer">
-    <a href="https://t.me/de_profundis_clamavi" target="_blank" rel="noopener">Telegram</a>
-    <a href="https://www.instagram.com/podpolie.odessa/" target="_blank" rel="noopener">Instagram</a>
+    <a [href]="site.socials.telegram" target="_blank" rel="noopener">Telegram</a>
+    <a [href]="site.socials.instagram" target="_blank" rel="noopener">Instagram</a>
   </div>
 </div>

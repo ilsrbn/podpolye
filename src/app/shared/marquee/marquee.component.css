@@ -8,12 +8,16 @@
 
 .marquee-inner {
   display: flex;
-  gap: 0;
+  width: max-content;
   white-space: nowrap;
   animation: marquee 18s linear infinite;
 }
 
-.marquee-inner span {
+.marquee-group {
+  display: flex;
+}
+
+.marquee-group span {
   font-family: var(--display);
   font-weight: 500;
   font-size: 13px;
@@ -23,4 +27,8 @@
   padding: 0 32px;
 }
 
-.marquee-inner span.accent { color: var(--accent); }
+.marquee-group span.accent { color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-inner { animation: none; }
+}

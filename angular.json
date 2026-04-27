@@ -2,7 +2,8 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "ff057f5f-409c-44e5-9fb0-a2dde45866e7"
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -49,12 +50,22 @@
                 "input": "public"
               },
               {
-                "glob": "oswald-latin-*-normal.woff2",
+                "glob": "oswald-latin-{300,400,500,600,700}-normal.woff2",
                 "input": "node_modules/@fontsource/oswald/files",
                 "output": "assets/fonts"
               },
               {
-                "glob": "ibm-plex-mono-latin-*-normal.woff2",
+                "glob": "oswald-cyrillic-{300,400,500,600,700}-normal.woff2",
+                "input": "node_modules/@fontsource/oswald/files",
+                "output": "assets/fonts"
+              },
+              {
+                "glob": "ibm-plex-mono-latin-{300,400,500,700}-normal.woff2",
+                "input": "node_modules/@fontsource/ibm-plex-mono/files",
+                "output": "assets/fonts"
+              },
+              {
+                "glob": "ibm-plex-mono-cyrillic-{300,400,500,700}-normal.woff2",
                 "input": "node_modules/@fontsource/ibm-plex-mono/files",
                 "output": "assets/fonts"
               }

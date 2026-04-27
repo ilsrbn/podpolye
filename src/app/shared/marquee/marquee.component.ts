@@ -6,4 +6,15 @@ import { Component } from '@angular/core';
   templateUrl: './marquee.component.html',
   styleUrl: './marquee.component.css',
 })
-export class MarqueeComponent {}
+export class MarqueeComponent {
+  readonly items = [
+    'Коворкинг',
+    'Мероприятия',
+    'Одесса',
+    'Канатная 79',
+    'Free Donation',
+    'Антикафе',
+  ];
+
+  readonly copies = [0, 1];
+}

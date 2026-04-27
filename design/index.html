@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ПОДПОЛЬЕ — Одесса</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0c0f14;
+    --bg2: #121720;
+    --bg3: #1a2030;
+    --line: #2a3348;
+    --text: #bfcce8;
+    --text-dim: #5a6a8a;
+    --head: #e8eeff;
+    --accent: oklch(0.62 0.10 48);
+    --accent2: oklch(0.68 0.10 55);
+    --accent-dim: oklch(0.32 0.07 48);
+    --mono: 'IBM Plex Mono', monospace;
+    --display: 'Oswald', sans-serif;
+  }
+
+  html { scroll-behavior: auto; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--line);
+    background: var(--bg);
+    display: flex;
+    align-items: stretch;
+    height: 52px;
+  }
+
+  .nav-logo {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.12em;
+    color: var(--head);
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid var(--line);
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .nav-logo span {
+    color: var(--accent);
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: stretch;
+    flex: 1;
+  }
+
+  .nav-link {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    padding: 0 22px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-right: 1px solid var(--line);
+    text-decoration: none;
+    transition: color 0.1s, background 0.1s;
+    user-select: none;
+  }
+
+  .nav-link:hover, .nav-link.active {
+    color: var(--head);
+    background: var(--bg2);
+  }
+
+  .nav-link.active {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+  }
+
+  .nav-social {
+    margin-left: auto;
+    display: flex;
+    align-items: stretch;
+    border-left: 1px solid var(--line);
+  }
+
+  .nav-social a {
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    border-left: 1px solid var(--line);
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    transition: color 0.1s, background 0.1s;
+  }
+
+  .nav-social a:hover {
+    color: var(--accent);
+    background: var(--bg2);
+  }
+
+  /* ── PAGE SHELL ── */
+  .page {
+    display: none;
+    padding-top: 52px;
+    min-height: 100vh;
+  }
+  .page.active { display: block; }
+
+  /* ── HOME ── */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - 52px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero-left {
+    padding: 80px 60px;
+    border-right: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .hero-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 40px;
+  }
+
+  .hero-eyebrow span {
+    color: var(--accent);
+    margin-right: 12px;
+  }
+
+  .hero-title {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(72px, 10vw, 140px);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: var(--head);
+    text-wrap: balance;
+  }
+
+  .hero-title em {
+    font-style: normal;
+    color: var(--accent);
+    display: block;
+  }
+
+  .hero-sub {
+    margin-top: 48px;
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.7;
+    max-width: 380px;
+    border-left: 2px solid var(--accent);
+    padding-left: 16px;
+  }
+
+  .hero-cta {
+    margin-top: 60px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.1s, color 0.1s;
+    display: inline-block;
+  }
+
+  .btn:hover {
+    background: var(--accent);
+    color: var(--bg);
+  }
+
+  .btn-ghost {
+    border-color: var(--line);
+    color: var(--text-dim);
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--text-dim);
+    background: transparent;
+    color: var(--text);
+  }
+
+  .hero-right {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .hero-card {
+    padding: 50px 48px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-card::after {
+    content: attr(data-num);
+    position: absolute;
+    bottom: -20px;
+    right: 24px;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 120px;
+    color: var(--line);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .card-tag {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .card-title {
+    font-family: var(--display);
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--head);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+  }
+
+  .card-body {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.65;
+    max-width: 340px;
+  }
+
+  .card-price {
+    margin-top: 20px;
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--accent2);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── ABOUT STRIP ── */
+  .about-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .strip-cell {
+    padding: 40px 48px;
+    border-right: 1px solid var(--line);
+    position: relative;
+  }
+
+  .strip-cell:last-child { border-right: none; }
+
+  .strip-num {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 48px;
+    color: var(--head);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .strip-num span {
+    color: var(--accent);
+  }
+
+  .strip-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 12px;
+  }
+
+  .strip-desc {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  /* ── MANIFESTO ── */
+  .manifesto {
+    padding: 80px 60px;
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .manifesto-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    align-self: flex-start;
+    padding-top: 4px;
+  }
+
+  .manifesto-text {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(20px, 2.5vw, 36px);
+    line-height: 1.4;
+    color: var(--head);
+    letter-spacing: 0.01em;
+  }
+
+  .manifesto-text strong {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  /* ── MARQUEE ── */
+  .marquee-wrap {
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+    border-top: 1px solid var(--line);
+    padding: 14px 0;
+    background: var(--bg2);
+  }
+
+  .marquee-inner {
+    display: flex;
+    gap: 0;
+    white-space: nowrap;
+    animation: marquee 18s linear infinite;
+  }
+
+  .marquee-inner span {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    padding: 0 32px;
+  }
+
+  .marquee-inner span.accent { color: var(--accent); }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ── RULES PAGE ── */
+  .rules-hero {
+    padding: 80px 60px 60px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+  }
+
+  .page-title {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(48px, 7vw, 100px);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: var(--head);
+  }
+
+  .page-title em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .rules-meta {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    max-width: 300px;
+    text-align: right;
+  }
+
+  .rules-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .rule-item {
+    padding: 36px 48px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .rule-item:nth-child(even) { border-right: none; }
+
+  .rule-num {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 36px;
+    color: var(--line);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 48px;
+    text-align: right;
+    transition: color 0.15s;
+  }
+
+  .rule-item:hover .rule-num { color: var(--accent); }
+
+  .rule-content {}
+
+  .rule-headline {
+    font-family: var(--display);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--head);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+
+  .rule-body {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.65;
+  }
+
+  .rules-footer {
+    padding: 40px 48px;
+    border-bottom: 1px solid var(--line);
+    background: var(--bg2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .rules-footer-text {
+    font-family: var(--display);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    max-width: 600px;
+  }
+
+  /* ── CONTACTS PAGE ── */
+  .contacts-hero {
+    padding: 80px 60px 60px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .contacts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .contact-block {
+    padding: 48px;
+    border-right: 1px solid var(--line);
+  }
+
+  .contact-block:last-child { border-right: none; }
+
+  .contact-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+
+  .contact-name {
+    font-family: var(--display);
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--head);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+  }
+
+  .contact-info {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.8;
+  }
+
+  .contact-info a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-dim);
+    transition: border-color 0.1s;
+  }
+
+  .contact-info a:hover { border-color: var(--accent); }
+
+  .steps-section {
+    padding: 60px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .steps-title {
+    font-family: var(--display);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 48px;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+
+  .step {
+    background: var(--bg);
+    padding: 40px 36px;
+    position: relative;
+  }
+
+  .step-num {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 64px;
+    color: var(--bg3);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .step-title {
+    font-family: var(--display);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--head);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+  }
+
+  .step-body {
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.65;
+  }
+
+  .step-accent-line {
+    width: 32px;
+    height: 2px;
+    background: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  .donate-strip {
+    padding: 40px 60px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background: var(--bg2);
+  }
+
+  .donate-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    flex-shrink: 0;
+  }
+
+  .donate-card {
+    font-family: var(--display);
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--head);
+    letter-spacing: 0.1em;
+  }
+
+  .donate-note {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-left: auto;
+    max-width: 300px;
+    text-align: right;
+  }
+
+  /* ── GALLERY ── */
+  .gallery-hero {
+    padding: 80px 60px 60px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .gallery-note {
+    margin-top: 24px;
+    font-size: 12px;
+    color: var(--text-dim);
+    border-left: 2px solid var(--line);
+    padding-left: 16px;
+    max-width: 500px;
+  }
+
+  .gallery-placeholder {
+    padding: 60px;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    margin-bottom: 1px;
+  }
+
+  .gallery-cell {
+    background: var(--bg2);
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    font-family: var(--mono);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gallery-cell::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 8px,
+      var(--bg3) 8px,
+      var(--bg3) 9px
+    );
+    opacity: 0.4;
+  }
+
+  .gallery-cell span {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 16px;
+    line-height: 1.8;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 40px 60px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-left {
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+  }
+
+  .footer-left strong {
+    font-family: var(--display);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--head);
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .footer-right {
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    text-align: right;
+    line-height: 1.8;
+  }
+
+  .footer-right a {
+    color: var(--text-dim);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .footer-right a:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ── PHOTO STRIP ── */
+  .photo-strip {
+    border-bottom: 1px solid var(--line);
+    height: 420px;
+  }
+
+  .photo-strip-img {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  .photo-strip-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    filter: brightness(0.75) contrast(1.1);
+  }
+
+  .photo-strip-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 28px 36px;
+    background: linear-gradient(to top, rgba(12,15,20,0.85) 0%, transparent 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .photo-strip-tag {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .photo-strip-caption {
+    font-family: var(--display);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--head);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .photo-strip-side {
+    overflow: hidden;
+  }
+
+  .photo-strip-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    filter: brightness(0.6) contrast(1.1) saturate(0.7);
+  }
+
+  @media (max-width: 900px) {
+    .photo-strip { height: 260px; }
+    .photo-strip-side { display: none; }
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(12px);
+    animation: fadeIn 0.25s forwards;
+  }
+
+  @keyframes fadeIn {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .page.active > * {
+    animation: fadeIn 0.2s ease forwards;
+  }
+
+  /* hover accent on cards */
+  .hero-card { transition: background 0.1s; }
+  .hero-card:hover { background: var(--bg2); }
+
+  /* ── MAP ── */
+  .map-section {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    border-bottom: 1px solid var(--line);
+    height: 380px;
+  }
+
+  .map-section iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    filter: invert(0.9) hue-rotate(180deg) saturate(0.6) brightness(0.85);
+  }
+
+  .map-label {
+    padding: 48px 36px;
+    border-left: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--bg2);
+  }
+
+  @media (max-width: 768px) {
+    .map-section {
+      grid-template-columns: 1fr;
+      height: auto;
+    }
+    .map-section iframe { height: 240px; }
+    .map-label {
+      border-left: none;
+      border-top: 1px solid var(--line);
+      padding: 28px 24px;
+    }
+  }
+
+  /* ── BURGER BUTTON ── */
+  .nav-burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    padding: 0 18px;
+    cursor: pointer;
+    margin-left: auto;
+    border: none;
+    background: none;
+    height: 52px;
+  }
+  .nav-burger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text-dim);
+    transition: transform 0.15s, opacity 0.15s;
+  }
+  .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-burger.open span:nth-child(2) { opacity: 0; }
+  .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* ── MOBILE MENU ── */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 52px; left: 0; right: 0; bottom: 0;
+    background: var(--bg);
+    z-index: 99;
+    flex-direction: column;
+    padding: 0;
+    border-top: 1px solid var(--line);
+    overflow-y: auto;
+  }
+  .mobile-menu.open { display: flex; }
+
+  .mobile-nav-link {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 36px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    padding: 24px 32px;
+    border-bottom: 1px solid var(--line);
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    transition: color 0.1s, background 0.1s;
+  }
+  .mobile-nav-link:hover, .mobile-nav-link.active { color: var(--accent); background: var(--bg2); }
+
+  .mobile-menu-footer {
+    padding: 32px;
+    margin-top: auto;
+    display: flex;
+    gap: 16px;
+  }
+  .mobile-menu-footer a {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    text-decoration: none;
+    border: 1px solid var(--line);
+    padding: 10px 20px;
+  }
+  .mobile-menu-footer a:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .nav-links, .nav-social { display: none; }
+    .nav-burger { display: flex; }
+    .nav-logo { padding: 0 20px; }
+
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 48px 24px 40px; border-right: none; }
+    .hero-title { font-size: clamp(56px, 18vw, 100px); }
+    .hero-cta { margin-top: 36px; }
+    .hero-right { display: block; }
+    .hero-card { padding: 32px 24px; }
+    .hero-card::after { font-size: 64px; }
+    .hero-card:last-child { border-bottom: none; }
+
+    .photo-strip { height: 220px; }
+
+    .about-strip { grid-template-columns: 1fr; }
+    .strip-cell { border-right: none; border-bottom: 1px solid var(--line); padding: 32px 24px; }
+    .strip-cell:last-child { border-bottom: none; }
+
+    .manifesto { grid-template-columns: 1fr; padding: 48px 24px; gap: 24px; }
+    .manifesto-label { writing-mode: horizontal-tb; transform: none; }
+
+    .rules-hero { padding: 48px 24px 36px; flex-direction: column; align-items: flex-start; gap: 16px; }
+    .rules-meta { text-align: left; max-width: 100%; }
+    .rules-grid { grid-template-columns: 1fr; }
+    .rule-item { border-right: none !important; padding: 28px 24px; }
+    .rules-footer { flex-direction: column; gap: 16px; padding: 28px 24px; align-items: flex-start; }
+
+    .contacts-hero { padding: 48px 24px 36px; }
+    .contacts-grid { grid-template-columns: 1fr; }
+    .contact-block { border-right: none; border-bottom: 1px solid var(--line); padding: 32px 24px; }
+    .steps-section { padding: 40px 24px; }
+    .steps { grid-template-columns: 1fr; }
+    .step { padding: 32px 24px; }
+    .donate-strip { padding: 28px 24px; flex-direction: column; align-items: flex-start; gap: 12px; }
+    .donate-note { margin-left: 0; text-align: left; }
+    .donate-card { font-size: 20px; }
+
+    .gallery-hero { padding: 48px 24px 36px; }
+    .gallery-placeholder { padding: 24px; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+
+    footer { flex-direction: column; gap: 20px; padding: 28px 24px; text-align: center; }
+    .footer-right { text-align: center; }
+  }
+
+  @media (max-width: 480px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+    .hero-title { font-size: clamp(48px, 22vw, 80px); }
+    .step-num { font-size: 48px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" onclick="showPage('home')" href="#">
+    <img src="https://www.podpolye.org/_nuxt/img/wide2.079a83f.png" alt="ПОДПОЛЬЕ" style="height:28px; width:auto; display:block; filter:brightness(1.1);">
+  </a>
+  <div class="nav-links">
+    <a class="nav-link active" data-page="home" onclick="showPage('home');return false;" href="#">Главная</a>
+    <a class="nav-link" data-page="gallery" onclick="showPage('gallery');return false;" href="#">Галерея</a>
+    <a class="nav-link" data-page="rules" onclick="showPage('rules');return false;" href="#">Правила</a>
+    <a class="nav-link" data-page="contacts" onclick="showPage('contacts');return false;" href="#">Контакты</a>
+  </div>
+  <div class="nav-social">
+    <a href="https://t.me/de_profundis_clamavi" target="_blank">TG</a>
+    <a href="https://www.instagram.com/podpolie.odessa/" target="_blank">IG</a>
+  </div>
+  <button class="nav-burger" id="burger" onclick="toggleMenu()" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a class="mobile-nav-link active" data-mpage="home" onclick="showPage('home');toggleMenu();return false;" href="#">Главная</a>
+  <a class="mobile-nav-link" data-mpage="gallery" onclick="showPage('gallery');toggleMenu();return false;" href="#">Галерея</a>
+  <a class="mobile-nav-link" data-mpage="rules" onclick="showPage('rules');toggleMenu();return false;" href="#">Правила</a>
+  <a class="mobile-nav-link" data-mpage="contacts" onclick="showPage('contacts');toggleMenu();return false;" href="#">Контакты</a>
+  <div class="mobile-menu-footer">
+    <a href="https://t.me/de_profundis_clamavi" target="_blank">Telegram</a>
+    <a href="https://www.instagram.com/podpolie.odessa/" target="_blank">Instagram</a>
+  </div>
+</div>
+
+<!-- ══════════════ HOME ══════════════ -->
+<div class="page active" id="page-home">
+
+  <section class="hero">
+    <div class="hero-left">
+      <div>
+        <div class="hero-eyebrow"><span>///</span> Одесса — Канатная, 79</div>
+        <h1 class="hero-title">ПОД<em>ПОЛЬЕ</em></h1>
+        <p class="hero-sub">Некоммерческое городское пространство для интеллектуального отдыха, развития и работы. Антикафе. Коворкинг. Мероприятия.</p>
+        <div class="hero-cta">
+          <a class="btn" onclick="showPage('contacts');return false;" href="#">Как попасть →</a>
+          <a class="btn btn-ghost" onclick="showPage('rules');return false;" href="#">Правила</a>
+        </div>
+      </div>
+      <div style="font-size:11px; color:var(--text-dim); letter-spacing:0.08em; margin-top:40px;">
+        <span style="color:var(--accent);">○</span>&nbsp; Открыто для всех, кто соблюдает правила<br>
+        <span style="color:var(--text-dim);">○</span>&nbsp; Аполитичное · Нерелигиозное · Некоммерческое
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card" data-num="01">
+        <div>
+          <div class="card-tag">// Формат 01</div>
+          <div class="card-title">Антикафе / Коворкинг</div>
+          <p class="card-body">Место, электричество, Wi-Fi, умные книги, настольные игры, чай и кофе. Тихо в будние дни до 17:00 — можно работать или просто отдохнуть.</p>
+        </div>
+        <div class="card-price">Free donation · 30 грн / час</div>
+      </div>
+      <div class="hero-card" data-num="02" style="border-bottom:none;">
+        <div>
+          <div class="card-tag">// Формат 02</div>
+          <div class="card-title">Проведение мероприятий</div>
+          <p class="card-body">Образовательные и развлекательные посиделки. Берите помещение в аренду для своего мероприятия — проектор, колонки, столы и стулья.</p>
+        </div>
+        <div class="card-price">Аренда · 100 грн / час</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="photo-strip">
+    <div class="photo-strip-img">
+      <img src="https://www.podpolye.org/_nuxt/img/arc_2.627008c.webp" alt="Подполье — интерьер" />
+      <div class="photo-strip-overlay">
+        <div class="photo-strip-tag">// интерьер</div>
+        <div class="photo-strip-caption">Канатная, 79 — Одесса</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee-wrap">
+    <div class="marquee-inner">
+      <span>Антикафе</span><span class="accent">///</span>
+      <span>Коворкинг</span><span class="accent">///</span>
+      <span>Мероприятия</span><span class="accent">///</span>
+      <span>Одесса</span><span class="accent">///</span>
+      <span>Канатная 79</span><span class="accent">///</span>
+      <span>Free Donation</span><span class="accent">///</span>
+      <span>Антикафе</span><span class="accent">///</span>
+      <span>Коворкинг</span><span class="accent">///</span>
+      <span>Мероприятия</span><span class="accent">///</span>
+      <span>Одесса</span><span class="accent">///</span>
+      <span>Канатная 79</span><span class="accent">///</span>
+      <span>Free Donation</span><span class="accent">///</span>
+    </div>
+  </div>
+
+  <section class="about-strip">
+    <div class="strip-cell">
+      <div class="strip-num">30<span>грн</span></div>
+      <div class="strip-label">Желаемая оплата / час</div>
+      <div class="strip-desc">Free donation — плати столько, сколько считаешь нужным.</div>
+    </div>
+    <div class="strip-cell">
+      <div class="strip-num">100<span>грн</span></div>
+      <div class="strip-label">Аренда для мероприятий</div>
+      <div class="strip-desc">Со своим событием? Берём площадку в аренду с оборудованием.</div>
+    </div>
+    <div class="strip-cell">
+      <div class="strip-num">∞</div>
+      <div class="strip-label">Открыто для всех</div>
+      <div class="strip-desc">Инклюзивное пространство без возрастных, расовых или иных барьеров.</div>
+    </div>
+  </section>
+
+  <section class="manifesto">
+    <div style="display:flex; align-items:flex-start;">
+      <div class="manifesto-label">О пространстве</div>
+    </div>
+    <div>
+      <p class="manifesto-text">
+        <strong>Некоммерческий</strong> и <strong>аполитичный</strong> проект, созданный силами инициативной группы, волонтёров и меценатов.<br><br>
+        Мы всегда рады <strong>помощи</strong> и открыты для общения и сотрудничества.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-left">
+      <strong>ПОДПОЛЬЕ — ОДЕССА</strong>
+      Некоммерческое городское пространство · 2026
+    </div>
+    <div class="footer-right">
+      Designed by <a href="https://instagram.com/earl_g6" target="_blank">EarlG6</a> & <a href="https://www.instagram.com/krmisabitchh.photo/" target="_blank">Krmisabitchh</a><br>
+      Coded by <a href="https://t.me/Zhyvny" target="_blank">Serbin</a>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════ GALLERY ══════════════ -->
+<div class="page" id="page-gallery">
+
+  <section class="gallery-hero">
+    <h1 class="page-title">ГА<em>ЛЕ</em>РЕЯ</h1>
+    <p class="gallery-note">Визуальная хроника пространства — мероприятия, атмосфера, люди. Фотографии появляются здесь по мере их добавления.</p>
+  </section>
+
+  <div class="gallery-placeholder">
+    <div class="gallery-grid">
+      <div class="gallery-cell"><span>фото<br>пространства</span></div>
+      <div class="gallery-cell"><span>фото<br>мероприятия</span></div>
+      <div class="gallery-cell"><span>фото<br>атмосферы</span></div>
+      <div class="gallery-cell"><span>фото<br>людей</span></div>
+      <div class="gallery-cell"><span>фото<br>библиотеки</span></div>
+      <div class="gallery-cell"><span>фото<br>игр</span></div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-left">
+      <strong>ПОДПОЛЬЕ — ОДЕССА</strong>
+      Некоммерческое городское пространство · 2026
+    </div>
+    <div class="footer-right">
+      <a href="https://t.me/de_profundis_clamavi" target="_blank">Telegram</a> &nbsp;·&nbsp; <a href="https://www.instagram.com/podpolie.odessa/" target="_blank">Instagram</a>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════ RULES ══════════════ -->
+<div class="page" id="page-rules">
+
+  <section class="rules-hero">
+    <h1 class="page-title">ПРА<em>ВИ</em>ЛА</h1>
+    <p class="rules-meta">Наше пространство держится на доверии и уважении. Правила — это не ограничения, а основа комфорта для всех.</p>
+  </section>
+
+  <div class="rules-grid">
+    <div class="rule-item">
+      <div class="rule-num">01</div>
+      <div class="rule-content">
+        <div class="rule-headline">Трезвость</div>
+        <p class="rule-body">В «Подполье» запрещено курить, употреблять или приносить алкоголь, наркотические или токсические вещества. Приходим трезвыми.</p>
+      </div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-num">02</div>
+      <div class="rule-content">
+        <div class="rule-headline">Нейтралитет</div>
+        <p class="rule-body">Пространство аполитично и нерелигиозно. Обговаривай и дискутируй — но не агитируй. Уважай мнение и выбор других.</p>
+      </div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-num">03</div>
+      <div class="rule-content">
+        <div class="rule-headline">Инклюзивность</div>
+        <p class="rule-body">Тут рады всем, кто соблюдает правила — независимо от возраста, расы, гендера и других индивидуальных особенностей.</p>
+      </div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-num">04</div>
+      <div class="rule-content">
+        <div class="rule-headline">Чистота</div>
+        <p class="rule-body">Заботимся о чистоте пространства и окружающей среды. Убираем за собой мусор.</p>
+      </div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-num">05</div>
+      <div class="rule-content">
+        <div class="rule-headline">Вещи</div>
+        <p class="rule-body">Не оставляем личных вещей без присмотра. Всё оставленное без надзора становится общим.</p>
+      </div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-num">06</div>
+      <div class="rule-content">
+        <div class="rule-headline">Уважение к волонтёрам</div>
+        <p class="rule-body">Ценим труд команды волонтёров. Ставим вещи на свои места и оставляем пространство таким, каким пришли.</p>
+      </div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-num">07</div>
+      <div class="rule-content">
+        <div class="rule-headline">Компромисс</div>
+        <p class="rule-body">Сотрудничаем и ищем взаимопонимание. Любые конфликты выносим за границы пространства.</p>
+      </div>
+    </div>
+    <div class="rule-item">
+      <div class="rule-num">08</div>
+      <div class="rule-content">
+        <div class="rule-headline">Тишина и атмосфера</div>
+        <p class="rule-body">Уважаем посетителей, не мешаем шумом. Приоритет — мероприятиям, которые проходят в «Подполье».</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="rules-footer">
+    <div class="rules-footer-text">Администрация оставляет за собой право просить покинуть помещение без объяснения причин.</div>
+    <a class="btn" onclick="showPage('contacts');return false;" href="#">Контакты →</a>
+  </div>
+
+  <footer>
+    <div class="footer-left">
+      <strong>ПОДПОЛЬЕ — ОДЕССА</strong>
+      Некоммерческое городское пространство · 2026
+    </div>
+    <div class="footer-right">
+      <a href="https://t.me/de_profundis_clamavi" target="_blank">Telegram</a> &nbsp;·&nbsp; <a href="https://www.instagram.com/podpolie.odessa/" target="_blank">Instagram</a>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════ CONTACTS ══════════════ -->
+<div class="page" id="page-contacts">
+
+  <section class="contacts-hero">
+    <h1 class="page-title">КОН<em>ТАК</em>ТЫ</h1>
+  </section>
+
+  <div class="contacts-grid">
+    <div class="contact-block">
+      <div class="contact-label">// Координатор 01</div>
+      <div class="contact-name">Кирилл</div>
+      <div class="contact-info">
+        <a href="tel:+380631327600">+38 063 132-76-00</a>
+      </div>
+    </div>
+    <div class="contact-block">
+      <div class="contact-label">// Координатор 02</div>
+      <div class="contact-name">Павел</div>
+      <div class="contact-info">
+        <a href="tel:+380634869957">+38 063 486-99-57</a>
+      </div>
+    </div>
+    <div class="contact-block">
+      <div class="contact-label">// Социальные сети</div>
+      <div class="contact-name" style="font-size:20px;">Чат &amp; соцсети</div>
+      <div class="contact-info">
+        <a href="https://t.me/de_profundis_clamavi" target="_blank">Telegram чат подпольщиков</a><br>
+        <a href="https://www.instagram.com/podpolie.odessa/" target="_blank">Instagram @podpolie.odessa</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="steps-section">
+    <div class="steps-title">// Как попасть в подполье</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-accent-line"></div>
+        <div class="step-title">Найти ворота</div>
+        <p class="step-body">Идёте по адресу <strong style="color:var(--head)">Канатная, 79</strong>. Ищите ворота во двор.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-accent-line"></div>
+        <div class="step-title">Кодовый замок</div>
+        <p class="step-body">На воротах кодовый замок. Подсказка написана прямо над воротами — читайте внимательно.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-accent-line"></div>
+        <div class="step-title">Домофон</div>
+        <p class="step-body">Зашли во двор? Справа есть пристройка с домофоном — звоните, и отворят вам.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="map-section">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2746.8!2d30.7326!3d46.4825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c633b4a0a8a0a1%3A0x0!2z0JrQsNC90LDRgtC90LDRjywgNzksINCe0LTQtdGB0YHQsCwg0KPQutGA0LDQuNC90LA!5e0!3m2!1sru!2sua!4v1714000000000"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Подполье на карте">
+    </iframe>
+    <div class="map-label">
+      <div class="contact-label">// Адрес</div>
+      <div class="contact-name" style="font-size:22px;">Канатная, 79</div>
+      <div class="contact-info" style="margin-top:8px;">Одесса, Украина</div>
+    </div>
+  </div>
+
+  <div class="donate-strip">
+    <div class="donate-label">// Карта для донатов</div>
+    <div class="donate-card">4441 1144 5406 1506</div>
+    <div class="donate-note">Поддержите некоммерческое пространство — любая сумма важна для нас.</div>
+  </div>
+
+  <footer>
+    <div class="footer-left">
+      <strong>ПОДПОЛЬЕ — ОДЕССА</strong>
+      Некоммерческое городское пространство · 2026
+    </div>
+    <div class="footer-right">
+      Designed by <a href="https://instagram.com/earl_g6" target="_blank">EarlG6</a> & <a href="https://www.instagram.com/krmisabitchh.photo/" target="_blank">Krmisabitchh</a><br>
+      Coded by <a href="https://t.me/Zhyvny" target="_blank">Serbin</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+  function showPage(name) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-link').forEach(a => a.classList.remove('active'));
+    document.querySelectorAll('.mobile-nav-link').forEach(a => a.classList.remove('active'));
+    document.getElementById('page-' + name).classList.add('active');
+    const desktopLink = document.querySelector('[data-page="' + name + '"]');
+    if (desktopLink) desktopLink.classList.add('active');
+    const mobileLink = document.querySelector('[data-mpage="' + name + '"]');
+    if (mobileLink) mobileLink.classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
+  function toggleMenu() {
+    const burger = document.getElementById('burger');
+    const menu = document.getElementById('mobile-menu');
+    burger.classList.toggle('open');
+    menu.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  }
+</script>
+</body>
+</html>

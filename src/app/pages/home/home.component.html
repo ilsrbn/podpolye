@@ -22,7 +22,7 @@
         <div class="card-title">Антикафе / Коворкинг</div>
         <p class="card-body">Место, электричество, Wi-Fi, умные книги, настольные игры, чай и кофе. Тихо в будние дни до 17:00 — можно работать или просто отдохнуть.</p>
       </div>
-      <div class="card-price">Free donation · 30 грн / час</div>
+      <div class="card-price">Free donation · {{ site.prices.coworkingHour }} грн / час</div>
     </div>
     <div class="hero-card" data-num="02">
       <div>
@@ -30,16 +30,19 @@
         <div class="card-title">Проведение мероприятий</div>
         <p class="card-body">Образовательные и развлекательные посиделки. Берите помещение в аренду для своего мероприятия — проектор, колонки, столы и стулья.</p>
       </div>
-      <div class="card-price">Аренда · 100 грн / час</div>
+      <div class="card-price">Аренда · {{ site.prices.eventHour }} грн / час</div>
     </div>
   </div>
 </section>
 
 <section class="photo-strip">
   <div class="photo-strip-img">
-    <img src="https://www.podpolye.org/_nuxt/img/arc_2.627008c.webp"
+    <img src="/assets/images/arc_2.webp"
          alt="Подполье — интерьер"
-         loading="lazy">
+         width="1920"
+         height="1270"
+         loading="lazy"
+         decoding="async">
     <div class="photo-strip-overlay">
       <div class="photo-strip-tag">// интерьер</div>
       <div class="photo-strip-caption">Канатная, 79 — Одесса</div>
@@ -51,12 +54,12 @@
 
 <section class="about-strip">
   <div class="strip-cell">
-    <div class="strip-num">30<span>грн</span></div>
+    <div class="strip-num">{{ site.prices.coworkingHour }}<span>грн</span></div>
     <div class="strip-label">Желаемая оплата / час</div>
     <div class="strip-desc">Free donation — плати столько, сколько считаешь нужным.</div>
   </div>
   <div class="strip-cell">
-    <div class="strip-num">100<span>грн</span></div>
+    <div class="strip-num">{{ site.prices.eventHour }}<span>грн</span></div>
     <div class="strip-label">Аренда для мероприятий</div>
     <div class="strip-desc">Со своим событием? Берём площадку в аренду с оборудованием.</div>
   </div>

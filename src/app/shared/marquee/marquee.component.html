@@ -1,16 +1,11 @@
 <div class="marquee-wrap">
   <div class="marquee-inner">
-    <span>Антикафе</span><span class="accent">///</span>
-    <span>Коворкинг</span><span class="accent">///</span>
-    <span>Мероприятия</span><span class="accent">///</span>
-    <span>Одесса</span><span class="accent">///</span>
-    <span>Канатная 79</span><span class="accent">///</span>
-    <span>Free Donation</span><span class="accent">///</span>
-    <span>Антикафе</span><span class="accent">///</span>
-    <span>Коворкинг</span><span class="accent">///</span>
-    <span>Мероприятия</span><span class="accent">///</span>
-    <span>Одесса</span><span class="accent">///</span>
-    <span>Канатная 79</span><span class="accent">///</span>
-    <span>Free Donation</span><span class="accent">///</span>
+    @for (copy of copies; track copy) {
+      <div class="marquee-group" [attr.aria-hidden]="copy === 1">
+        @for (item of items; track item) {
+          <span>{{ item }}</span><span class="accent">///</span>
+        }
+      </div>
+    }
   </div>
 </div>
