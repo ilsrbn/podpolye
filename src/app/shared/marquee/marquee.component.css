@@ -1,0 +1,26 @@
+.marquee-wrap {
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  border-top: 1px solid var(--line);
+  padding: 14px 0;
+  background: var(--bg2);
+}
+
+.marquee-inner {
+  display: flex;
+  gap: 0;
+  white-space: nowrap;
+  animation: marquee 18s linear infinite;
+}
+
+.marquee-inner span {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 0 32px;
+}
+
+.marquee-inner span.accent { color: var(--accent); }
