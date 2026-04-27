@@ -1,0 +1,28 @@
+<section class="gallery-hero">
+  <h1 class="page-title">ГА<em>ЛЕ</em>РЕЯ</h1>
+  <p class="gallery-note">Визуальная хроника пространства — мероприятия, атмосфера, люди. Фотографии появляются здесь по мере их добавления.</p>
+</section>
+
+<div class="gallery-placeholder">
+  @if (photos.isLoading()) {
+    <div class="gallery-grid">
+      @for (p of [1,2,3,4,5,6]; track p) {
+        <div class="gallery-cell skeleton"><span>...</span></div>
+      }
+    </div>
+  } @else {
+    <div class="gallery-grid">
+      @for (photo of displayPhotos; track photo.caption) {
+        @if (photo.src) {
+          <div class="gallery-cell">
+            <img [src]="photo.src" [alt]="photo.caption" loading="lazy">
+          </div>
+        } @else {
+          <div class="gallery-cell placeholder">
+            <span>{{ photo.caption }}</span>
+          </div>
+        }
+      }
+    </div>
+  }
+</div>
