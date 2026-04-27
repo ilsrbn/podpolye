@@ -49,47 +49,12 @@
                 "input": "public"
               },
               {
-                "glob": "files/oswald-latin-300-normal.woff2",
+                "glob": "files/oswald-latin-*-normal.woff2",
                 "input": "node_modules/@fontsource/oswald",
                 "output": "assets/fonts"
               },
               {
-                "glob": "files/oswald-latin-400-normal.woff2",
-                "input": "node_modules/@fontsource/oswald",
-                "output": "assets/fonts"
-              },
-              {
-                "glob": "files/oswald-latin-500-normal.woff2",
-                "input": "node_modules/@fontsource/oswald",
-                "output": "assets/fonts"
-              },
-              {
-                "glob": "files/oswald-latin-600-normal.woff2",
-                "input": "node_modules/@fontsource/oswald",
-                "output": "assets/fonts"
-              },
-              {
-                "glob": "files/oswald-latin-700-normal.woff2",
-                "input": "node_modules/@fontsource/oswald",
-                "output": "assets/fonts"
-              },
-              {
-                "glob": "files/ibm-plex-mono-latin-300-normal.woff2",
-                "input": "node_modules/@fontsource/ibm-plex-mono",
-                "output": "assets/fonts"
-              },
-              {
-                "glob": "files/ibm-plex-mono-latin-400-normal.woff2",
-                "input": "node_modules/@fontsource/ibm-plex-mono",
-                "output": "assets/fonts"
-              },
-              {
-                "glob": "files/ibm-plex-mono-latin-500-normal.woff2",
-                "input": "node_modules/@fontsource/ibm-plex-mono",
-                "output": "assets/fonts"
-              },
-              {
-                "glob": "files/ibm-plex-mono-latin-700-normal.woff2",
+                "glob": "files/ibm-plex-mono-latin-*-normal.woff2",
                 "input": "node_modules/@fontsource/ibm-plex-mono",
                 "output": "assets/fonts"
               }
