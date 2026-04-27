@@ -49,13 +49,13 @@
                 "input": "public"
               },
               {
-                "glob": "files/oswald-latin-*-normal.woff2",
-                "input": "node_modules/@fontsource/oswald",
+                "glob": "oswald-latin-*-normal.woff2",
+                "input": "node_modules/@fontsource/oswald/files",
                 "output": "assets/fonts"
               },
               {
-                "glob": "files/ibm-plex-mono-latin-*-normal.woff2",
-                "input": "node_modules/@fontsource/ibm-plex-mono",
+                "glob": "ibm-plex-mono-latin-*-normal.woff2",
+                "input": "node_modules/@fontsource/ibm-plex-mono/files",
                 "output": "assets/fonts"
               }
             ],
