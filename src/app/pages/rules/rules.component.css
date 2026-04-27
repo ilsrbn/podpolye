@@ -1,0 +1,94 @@
+.rules-hero {
+  padding: 80px 60px 60px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+}
+
+.page-title {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(48px, 7vw, 100px);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--head);
+}
+
+.page-title em { font-style: normal; color: var(--accent); }
+
+.rules-meta {
+  font-size: 12px;
+  color: var(--text-dim);
+  line-height: 1.6;
+  max-width: 300px;
+  text-align: right;
+}
+
+.rules-grid { display: grid; grid-template-columns: 1fr 1fr; }
+
+.rule-item {
+  padding: 36px 48px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.rule-item:nth-child(even) { border-right: none; }
+
+.rule-num {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 36px;
+  color: var(--line);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 48px;
+  text-align: right;
+  transition: color 0.15s;
+}
+
+.rule-item:hover .rule-num { color: var(--accent); }
+
+.rule-headline {
+  font-family: var(--display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--head);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.rule-body { font-size: 12px; color: var(--text-dim); line-height: 1.65; }
+
+.rules-footer {
+  padding: 40px 48px;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rules-footer-text {
+  font-family: var(--display);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  max-width: 600px;
+}
+
+@media (max-width: 768px) {
+  .rules-hero { padding: 48px 24px 36px; flex-direction: column; align-items: flex-start; gap: 16px; }
+  .rules-meta { text-align: left; max-width: 100%; }
+  .rules-grid { grid-template-columns: 1fr; }
+  .rule-item { border-right: none !important; padding: 28px 24px; }
+  .rules-footer { flex-direction: column; gap: 16px; padding: 28px 24px; align-items: flex-start; }
+}
