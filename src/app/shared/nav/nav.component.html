@@ -1,0 +1,37 @@
+<nav>
+  <a class="nav-logo" routerLink="/" (click)="closeMenu()">
+    <img src="https://www.podpolye.org/_nuxt/img/wide2.079a83f.png"
+         alt="ПОДПОЛЬЕ"
+         width="auto" height="28">
+  </a>
+
+  <div class="nav-links">
+    <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Главная</a>
+    <a class="nav-link" routerLink="/gallery" routerLinkActive="active">Галерея</a>
+    <a class="nav-link" routerLink="/rules" routerLinkActive="active">Правила</a>
+    <a class="nav-link" routerLink="/contacts" routerLinkActive="active">Контакты</a>
+  </div>
+
+  <div class="nav-social">
+    <a href="https://t.me/de_profundis_clamavi" target="_blank" rel="noopener">TG</a>
+    <a href="https://www.instagram.com/podpolie.odessa/" target="_blank" rel="noopener">IG</a>
+  </div>
+
+  <button class="nav-burger"
+          [class.open]="mobileMenuOpen()"
+          (click)="toggleMenu()"
+          aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" [class.open]="mobileMenuOpen()">
+  <a class="mobile-nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">Главная</a>
+  <a class="mobile-nav-link" routerLink="/gallery" routerLinkActive="active" (click)="closeMenu()">Галерея</a>
+  <a class="mobile-nav-link" routerLink="/rules" routerLinkActive="active" (click)="closeMenu()">Правила</a>
+  <a class="mobile-nav-link" routerLink="/contacts" routerLinkActive="active" (click)="closeMenu()">Контакты</a>
+  <div class="mobile-menu-footer">
+    <a href="https://t.me/de_profundis_clamavi" target="_blank" rel="noopener">Telegram</a>
+    <a href="https://www.instagram.com/podpolie.odessa/" target="_blank" rel="noopener">Instagram</a>
+  </div>
+</div>

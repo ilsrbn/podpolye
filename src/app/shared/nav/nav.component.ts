@@ -1,0 +1,31 @@
+import { Component, signal, inject } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive, NavigationEnd } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { filter } from 'rxjs/operators';
+
+@Component({
+  selector: 'app-nav',
+  standalone: true,
+  imports: [RouterLink, RouterLinkActive],
+  templateUrl: './nav.component.html',
+  styleUrl: './nav.component.css',
+})
+export class NavComponent {
+  private router = inject(Router);
+
+  mobileMenuOpen = signal(false);
+
+  readonly navEvents = toSignal(
+    this.router.events.pipe(filter(e => e instanceof NavigationEnd))
+  );
+
+  toggleMenu() {
+    this.mobileMenuOpen.update(v => !v);
+    document.body.style.overflow = this.mobileMenuOpen() ? 'hidden' : '';
+  }
+
+  closeMenu() {
+    this.mobileMenuOpen.set(false);
+    document.body.style.overflow = '';
+  }
+}
