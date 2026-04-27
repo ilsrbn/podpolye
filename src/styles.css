@@ -161,9 +161,14 @@
   --accent-dim: oklch(0.32 0.07 48);
   --mono: 'IBM Plex Mono', monospace;
   --display: 'Oswald', sans-serif;
+  --nav-height: 52px;
+  --safe-top: env(safe-area-inset-top, 0px);
 }
 
-html { scroll-behavior: auto; }
+html {
+  background: var(--bg);
+  scroll-behavior: auto;
+}
 
 body {
   background: var(--bg);
@@ -207,7 +212,7 @@ body::before {
 
 /* ── PAGE SHELL ── */
 .page-content {
-  padding-top: 52px;
+  padding-top: calc(var(--nav-height) + var(--safe-top));
   min-height: 100vh;
 }
 

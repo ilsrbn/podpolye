@@ -6,7 +6,8 @@ nav {
   background: var(--bg);
   display: flex;
   align-items: stretch;
-  height: 52px;
+  height: calc(var(--nav-height) + var(--safe-top));
+  padding-top: var(--safe-top);
 }
 
 .nav-logo {
@@ -80,7 +81,7 @@ nav {
   margin-left: auto;
   border: none;
   background: none;
-  height: 52px;
+  height: var(--nav-height);
 }
 
 .nav-burger span {
@@ -98,12 +99,13 @@ nav {
 .mobile-menu {
   display: none;
   position: fixed;
-  top: 52px; left: 0; right: 0; bottom: 0;
+  top: calc(var(--nav-height) + var(--safe-top)); left: 0; right: 0; bottom: 0;
   background: var(--bg);
   z-index: 99;
   flex-direction: column;
   border-top: 1px solid var(--line);
   overflow-y: auto;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 .mobile-menu.open { display: flex; }
