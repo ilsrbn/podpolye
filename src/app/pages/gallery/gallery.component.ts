@@ -11,12 +11,12 @@ interface GalleryManifest {
 }
 
 const PLACEHOLDERS: GalleryPhoto[] = [
-  { src: '', caption: 'фото пространства' },
-  { src: '', caption: 'фото мероприятия' },
-  { src: '', caption: 'фото атмосферы' },
+  { src: '', caption: 'фото простору' },
+  { src: '', caption: 'фото події' },
+  { src: '', caption: 'фото атмосфери' },
   { src: '', caption: 'фото людей' },
-  { src: '', caption: 'фото библиотеки' },
-  { src: '', caption: 'фото игр' },
+  { src: '', caption: 'фото бібліотеки' },
+  { src: '', caption: 'фото ігор' },
 ];
 
 @Component({

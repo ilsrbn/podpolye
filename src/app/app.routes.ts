@@ -6,8 +6,8 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/home/home.component').then(m => m.HomeComponent),
     data: {
       seo: {
-        title: 'ПОДПОЛЬЕ — антикафе, коворкинг и мероприятия в Одессе',
-        description: 'Некоммерческое городское пространство на Канатной, 79: антикафе, коворкинг, мероприятия, чай, кофе, книги и настольные игры.',
+        title: 'ПІДПІЛЛЯ — антикафе, коворкінг і події в Одесі',
+        description: 'Некомерційний міський простір на Канатній, 79: антикафе, коворкінг, події, чай, кава, книжки та настільні ігри.',
       },
     },
   },
@@ -16,8 +16,8 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/gallery/gallery.component').then(m => m.GalleryComponent),
     data: {
       seo: {
-        title: 'Галерея — ПОДПОЛЬЕ Одесса',
-        description: 'Фотографии пространства ПОДПОЛЬЕ: интерьер, мероприятия, атмосфера и люди.',
+        title: 'Галерея — ПІДПІЛЛЯ Одеса',
+        description: 'Фотографії простору ПІДПІЛЛЯ: інтерʼєр, події, атмосфера та люди.',
       },
     },
   },
@@ -26,8 +26,8 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/rules/rules.component').then(m => m.RulesComponent),
     data: {
       seo: {
-        title: 'Правила — ПОДПОЛЬЕ Одесса',
-        description: 'Правила посещения пространства ПОДПОЛЬЕ: трезвость, уважение, нейтралитет, чистота и комфорт для всех.',
+        title: 'Правила — ПІДПІЛЛЯ Одеса',
+        description: 'Правила відвідування простору ПІДПІЛЛЯ: тверезість, повага, нейтралітет, чистота й комфорт для всіх.',
       },
     },
   },
@@ -36,8 +36,8 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/contacts/contacts.component').then(m => m.ContactsComponent),
     data: {
       seo: {
-        title: 'Контакты — ПОДПОЛЬЕ Одесса',
-        description: 'Адрес, контакты координаторов, социальные сети и карта пространства ПОДПОЛЬЕ на Канатной, 79 в Одессе.',
+        title: 'Контакти — ПІДПІЛЛЯ Одеса',
+        description: 'Адреса, контакти координаторів, соціальні мережі та карта простору ПІДПІЛЛЯ на Канатній, 79 в Одесі.',
       },
     },
   },

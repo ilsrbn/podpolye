@@ -2,15 +2,15 @@
   "photos": [
     {
       "src": "/assets/gallery/place.jpg",
-      "caption": "пространство подполье"
+      "caption": "простір ПІДПІЛЛЯ"
     },
     {
       "src": "/assets/gallery/place2.jpg",
-      "caption": "зал подполье"
+      "caption": "зал ПІДПІЛЛЯ"
     },
     {
       "src": "/assets/gallery/event.jpg",
-      "caption": "мероприятие в подполье"
+      "caption": "подія в ПІДПІЛЛЯ"
     }
   ]
 }

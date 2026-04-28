@@ -2,7 +2,7 @@
   <a class="nav-logo" routerLink="/" (click)="closeMenu()">
     <img src="/assets/images/logo/wide2-162.png"
          srcset="/assets/images/logo/wide2-162.png 1x, /assets/images/logo/wide2-324.png 2x"
-         alt="ПОДПОЛЬЕ"
+         alt="ПІДПІЛЛЯ"
          width="162"
          height="28"
          decoding="async"
@@ -10,10 +10,10 @@
   </a>
 
   <div class="nav-links">
-    <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Главная</a>
+    <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Головна</a>
     <a class="nav-link" routerLink="/gallery" routerLinkActive="active">Галерея</a>
     <a class="nav-link" routerLink="/rules" routerLinkActive="active">Правила</a>
-    <a class="nav-link" routerLink="/contacts" routerLinkActive="active">Контакты</a>
+    <a class="nav-link" routerLink="/contacts" routerLinkActive="active">Контакти</a>
   </div>
 
   <div class="nav-social">
@@ -30,10 +30,10 @@
 </nav>
 
 <div class="mobile-menu" [class.open]="mobileMenuOpen()">
-  <a class="mobile-nav-link" href="/" [class.active]="isActive('/')" (click)="navigateFromMenu('/', $event)">Главная</a>
+  <a class="mobile-nav-link" href="/" [class.active]="isActive('/')" (click)="navigateFromMenu('/', $event)">Головна</a>
   <a class="mobile-nav-link" href="/gallery" [class.active]="isActive('/gallery')" (click)="navigateFromMenu('/gallery', $event)">Галерея</a>
   <a class="mobile-nav-link" href="/rules" [class.active]="isActive('/rules')" (click)="navigateFromMenu('/rules', $event)">Правила</a>
-  <a class="mobile-nav-link" href="/contacts" [class.active]="isActive('/contacts')" (click)="navigateFromMenu('/contacts', $event)">Контакты</a>
+  <a class="mobile-nav-link" href="/contacts" [class.active]="isActive('/contacts')" (click)="navigateFromMenu('/contacts', $event)">Контакти</a>
   <div class="mobile-menu-footer">
     <a [href]="site.socials.telegram" target="_blank" rel="noopener">Telegram</a>
     <a [href]="site.socials.instagram" target="_blank" rel="noopener">Instagram</a>

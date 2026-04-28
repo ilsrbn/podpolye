@@ -8,10 +8,10 @@ import { Component } from '@angular/core';
 })
 export class MarqueeComponent {
   readonly items = [
-    'Коворкинг',
-    'Мероприятия',
-    'Одесса',
-    'Канатная 79',
+    'Коворкінг',
+    'Події',
+    'Одеса',
+    'Канатна 79',
     'Free Donation',
     'Антикафе',
   ];
