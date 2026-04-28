@@ -37,14 +37,19 @@
 
 <section class="photo-strip">
   <div class="photo-strip-img">
-    <img src="/assets/images/arc_2-768.jpg"
-         srcset="/assets/images/arc_2-480.jpg 480w, /assets/images/arc_2-768.jpg 768w, /assets/images/arc_2.webp 1920w"
-         sizes="(max-width: 768px) calc(100vw - 48px), 100vw"
-         alt="ПІДПІЛЛЯ — інтерʼєр"
-         width="1920"
-         height="1270"
-         loading="lazy"
-         decoding="async">
+    <picture>
+      <source type="image/webp"
+              srcset="/assets/images/arc_2-480.webp 480w, /assets/images/arc_2-768.webp 768w, /assets/images/arc_2.webp 1920w"
+              sizes="(max-width: 768px) calc(100vw - 48px), 100vw">
+      <img src="/assets/images/arc_2-768.jpg"
+           srcset="/assets/images/arc_2-480.jpg 480w, /assets/images/arc_2-768.jpg 768w"
+           sizes="(max-width: 768px) calc(100vw - 48px), 100vw"
+           alt="ПІДПІЛЛЯ — інтерʼєр"
+           width="1920"
+           height="1270"
+           loading="lazy"
+           decoding="async">
+    </picture>
     <div class="photo-strip-overlay">
       <div class="photo-strip-tag">// інтерʼєр</div>
       <div class="photo-strip-caption">Канатна, 79 — Одеса</div>

@@ -1,7 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRouteSnapshot, NavigationEnd, Router } from '@angular/router';
-import { filter } from 'rxjs/operators';
 import { SITE_CONFIG } from '../config/site.config';
 
 interface RouteSeoData {
@@ -19,9 +18,9 @@ export class SeoService {
   init(): void {
     this.applyCurrentRoute();
 
-    this.router.events
-      .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
-      .subscribe(() => this.applyCurrentRoute());
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) this.applyCurrentRoute();
+    });
   }
 
   private applyCurrentRoute(): void {

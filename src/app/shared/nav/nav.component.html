@@ -30,10 +30,10 @@
 </nav>
 
 <div class="mobile-menu" [class.open]="mobileMenuOpen()">
-  <a class="mobile-nav-link" href="/" [class.active]="isActive('/')" (click)="navigateFromMenu('/', $event)">Головна</a>
-  <a class="mobile-nav-link" href="/gallery" [class.active]="isActive('/gallery')" (click)="navigateFromMenu('/gallery', $event)">Галерея</a>
-  <a class="mobile-nav-link" href="/rules" [class.active]="isActive('/rules')" (click)="navigateFromMenu('/rules', $event)">Правила</a>
-  <a class="mobile-nav-link" href="/contacts" [class.active]="isActive('/contacts')" (click)="navigateFromMenu('/contacts', $event)">Контакти</a>
+  <a class="mobile-nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">Головна</a>
+  <a class="mobile-nav-link" routerLink="/gallery" routerLinkActive="active" (click)="closeMenu()">Галерея</a>
+  <a class="mobile-nav-link" routerLink="/rules" routerLinkActive="active" (click)="closeMenu()">Правила</a>
+  <a class="mobile-nav-link" routerLink="/contacts" routerLinkActive="active" (click)="closeMenu()">Контакти</a>
   <div class="mobile-menu-footer">
     <a [href]="site.socials.telegram" target="_blank" rel="noopener">Telegram</a>
     <a [href]="site.socials.instagram" target="_blank" rel="noopener">Instagram</a>
